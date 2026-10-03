@@ -132,3 +132,21 @@ An actual capture means that a captured project/output image is present. It does
 A source-derived visual means that the interface structure was derived from inspected public source. It does not establish execution.
 
 A missing visual or repository artifact means it was not discovered in the current bounded public view. It does not prove that no such artifact exists elsewhere.
+
+
+## v3.1 capture-factory data rules
+
+Capture automation must use isolated local/runner state unless a future policy explicitly authorizes another source.
+
+Current capture factories must not ingest private production records for the purpose of generating public screenshots.
+
+Where representative data is needed, it must be:
+
+- repository-defined seed data; or
+- explicitly synthetic capture-only data.
+
+The runtime manifest must disclose that boundary.
+
+Ephemeral capture credentials are not public evidence and must not be committed to the repository, embedded in screenshots, included in manifests or printed in logs after generation.
+
+A discovered capture workflow/harness is automation evidence only. The Command Center must not translate it into a runtime-capture claim until an actual captured artifact is available.
