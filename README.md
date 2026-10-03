@@ -319,3 +319,21 @@ Each Product World now supports:
 - Evidence telemetry — actual captures, source-derived UI, artwork, release count and latest public push age.
 
 The boot sequence is explicitly presentation-only and does not imply a real product process or production service was started.
+
+
+## v4.1 live product shells
+
+v4.1 adds an application-like shell inside each major Product World.
+
+The shell navigation is derived from each product's public subsystem model. It is intentionally labeled as simulated interaction: selecting a navigation item changes presentation context and, only when a directly related mapped visual is discoverable, promotes that evidence into the monitor.
+
+The monitor wall itself uses the real public evidence registry:
+
+- validated runtime-manifest captures first;
+- static actual captures next;
+- source-derived interface evidence after that;
+- artwork only as a lower-priority fallback.
+
+Every shell includes a primary evidence monitor, two secondary monitors, source-structured module navigation, product context, public counts, architecture-path mode, previous/next evidence controls, Full Focus access and the v4.0 public-demo boot sequence.
+
+New validated runtime evidence therefore becomes visible automatically on the next normal Command Center evidence refresh without hand-editing the Product World.
