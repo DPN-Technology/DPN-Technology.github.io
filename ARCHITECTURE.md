@@ -531,3 +531,20 @@ World selection and pointer effects are local browser state only.
 The Product Worlds layer introduces no authenticated APIs, private repository discovery, production telemetry or server-side state.
 
 A world's visual proof label remains independent from its repository activity. Repository activity does not convert a source-verified interface into an actual runtime capture.
+
+
+## v3.8 immersive interaction layer
+
+The v3.8 immersive layer is client-side presentation only.
+
+It adds:
+
+- a session-scoped boot presentation;
+- ecosystem navigation between public Product Worlds;
+- a full-screen Product Focus dialog;
+- evidence-gallery selection;
+- local pointer and active-world effects.
+
+Product Focus draws from the same already-public visual evidence registry and public GitHub metadata used elsewhere in the Command Center.
+
+No new server, credential, private API or production telemetry boundary is introduced. A larger presentation of a source-derived interface does not change its evidence classification.
