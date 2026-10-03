@@ -218,3 +218,21 @@ Accepted manifests must:
 The site does not copy auto-ingested images into the Command Center repository. It renders them from the originating public repository and preserves links to both the image source and manifest.
 
 Invalid, unreadable or mismatched manifests are rejected and surfaced as rejected/unreadable instead of silently becoming runtime evidence.
+
+
+## v3.5 capture run intelligence
+
+v3.5 adds a deliberately on-demand view of the latest public GitHub Actions execution state for each standardized UI evidence capture factory.
+
+The normal Command Center load still discovers repository metadata, capture automation and committed runtime manifests without automatically spending additional API budget on workflow history. A visitor can explicitly choose **CHECK LATEST CAPTURE RUNS** to inspect the most recent `workflow_dispatch` run for each installed public factory.
+
+Run states are kept separate from proof states:
+
+- a successful run means the public workflow reports success;
+- a failed run means the capture workflow needs attention;
+- an active run means the workflow has not finished;
+- no discovered run means the public API returned no manual run in the queried workflow history;
+- unknown means the run state could not be established;
+- none of these states becomes runtime screenshot proof until a valid `docs/evidence/runtime/manifest.json` and referenced public images are committed.
+
+The run-history scan is cached briefly in the browser and fetched in small batches to reduce unauthenticated GitHub API pressure.
