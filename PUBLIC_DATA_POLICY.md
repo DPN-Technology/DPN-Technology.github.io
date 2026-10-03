@@ -72,3 +72,24 @@ Artifact presence is presented as repository evidence, not a quality score.
 To reduce repeated unauthenticated GitHub API requests, the Command Center may store recently discovered public artifact-path evidence in the visitor's browser for up to 10 minutes.
 
 The cache contains only public repository evidence already returned by GitHub, is keyed to public repository push metadata, and is not transmitted to DPN Technology by the static Command Center.
+
+
+## v2.8 browser state and deep links
+
+The Command Center may store the selected visual performance mode in the visitor's browser using local storage.
+
+The existing short-lived public repository evidence cache remains limited to public evidence returned by GitHub.
+
+v2.8 deep links may place the following public identifiers in the page URL:
+
+- a visual-evidence slug;
+- a public repository name;
+- a public release repository/tag identifier.
+
+No private repository identifier, credential, account token, internal infrastructure name or private telemetry is intentionally written into these deep links.
+
+## Offline cache
+
+The v2.8 service worker may cache same-origin static presentation files such as HTML, CSS, JavaScript, the DPN logo and visual evidence assets after they are requested.
+
+The service worker does not turn GitHub API data into a claimed live offline state. If public API data cannot be refreshed, the Command Center's existing unavailable/fallback labels remain authoritative.
