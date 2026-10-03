@@ -95,3 +95,22 @@ No private repository identifier, credential, account token, internal infrastruc
 The v2.8 service worker may cache same-origin static presentation files such as HTML, CSS, JavaScript, the DPN logo and visual evidence assets after they are requested.
 
 The service worker does not turn GitHub API data into a claimed live offline state. If public API data cannot be refreshed, the Command Center's existing unavailable/fallback labels remain authoritative.
+
+
+## v2.9 provenance disclosure
+
+Exact source-file provenance links are shown only for visual evidence where the corresponding public repository paths were verified.
+
+These links may expose:
+
+- the already-public repository name;
+- the already-public default branch;
+- an already-public source path.
+
+They do not intentionally expose private repositories, internal infrastructure inventory, credentials, private telemetry or customer data.
+
+## Browser connectivity and presentation state
+
+The online/offline indicator represents the visitor browser's network state only. It must not be interpreted as DPN service health.
+
+Presentation mode is local UI state and does not grant additional data access.
