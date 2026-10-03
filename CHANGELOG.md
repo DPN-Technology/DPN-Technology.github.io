@@ -2,6 +2,14 @@
 
 ## v2.7 — Visual Evidence Wall Expansion
 
+- Expanded ecosystem UI coverage with five additional source-derived interface views:
+  - DPN OS Control Center;
+  - DPN Executive Control System Command Center;
+  - DPN Workforce Executive Dashboards;
+  - DPN HR Executive HR Dashboard;
+  - DPN WatchTower Command Center.
+- Backend-dependent metrics and personnel/security values are deliberately blank or marked as source view rather than fabricated.
+
 - Added a visual-evidence registry with live counts for total visuals, actual captures, source-derived interfaces and artwork.
 - Added interactive evidence filters so visitors can isolate actual captures from source-derived views instead of conflating evidence types.
 
