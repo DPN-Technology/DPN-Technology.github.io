@@ -1,5 +1,23 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.7 — Public Engineering Evidence Matrix
+
+- Added a live evidence matrix for currently public project repositories.
+- Added public repository tree inspection for:
+  - README presence;
+  - security policy presence;
+  - license or third-party notice presence;
+  - architecture documentation presence.
+- Merged repository-tree evidence with:
+  - public GitHub release records;
+  - recent public push activity.
+- Added evidence summary counters.
+- Added an explicit **present / not discovered** vocabulary instead of pass/fail scoring.
+- Added API-error handling so an unavailable tree is shown as unknown instead of falsely absent.
+- Limited tree scanning to public repositories discovered through the public organization API.
+- Excluded `.github` and the Command Center repository from the project evidence matrix.
+- Confirmed the first public project evidence row against `DPN-QB-FiveM-Scripts`.
+
 ## v2.6 — Public Fusion Mesh
 
 - Added a public-safe DPN Fusion Mesh inspired by the DPN Website status center.
