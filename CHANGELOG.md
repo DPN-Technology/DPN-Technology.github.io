@@ -1,3 +1,18 @@
+## v2.9 — Provenance + Presentation
+
+- Added exact public source-file provenance for verified source-derived UI evidence.
+- Added a provenance-mapped evidence metric.
+- Added platform filtering: Desktop, Web, Mobile, Game and Artwork.
+- Added platform information to the full-screen evidence inspector.
+- Added dynamic browser title/description context for deep-linked public views.
+- Added Share View behavior using the Web Share API with clipboard fallback.
+- Added browser online/offline state and an offline-mode notice.
+- Added guided client Presentation Mode with ten DPN Command Center stops.
+- Added PageUp/PageDown navigation and Escape exit behavior for presentation mode.
+- Added Twitter/Open Graph image alt metadata.
+- Updated the service-worker cache namespace and core files for v2.9.
+- Preserved all public-evidence truth boundaries; exact provenance is only shown when a public source path was verified.
+
 ## v2.8 — Public Command Experience
 
 - Added full-screen visual evidence inspector with previous/next keyboard navigation.
