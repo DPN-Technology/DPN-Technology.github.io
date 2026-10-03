@@ -466,3 +466,33 @@ Fetch/parse/validation failures are stored as rejected/unreadable manifest state
 ### Product proof aggregation
 
 Auto-ingested runtime artifacts contribute to the public product proof state as actual rendered evidence, but they do not alter production-health, deployment-readiness or security claims.
+
+
+## v3.5 capture-run intelligence
+
+Capture-run intelligence is an optional browser-side read of the public GitHub Actions workflow-run API.
+
+It is not part of the mandatory page-load path. The visitor must explicitly request the scan.
+
+For each public repository with the standardized capture factory, the browser requests the latest manual `workflow_dispatch` run for the discovered UI evidence workflow and normalizes only bounded public fields such as:
+
+- workflow status and conclusion;
+- run number;
+- public run URL;
+- update timestamp;
+- source commit SHA.
+
+Requests are performed in small batches and cached in browser storage for five minutes.
+
+The hierarchy remains:
+
+```text
+factory installed
+  != workflow executed
+workflow succeeded
+  != runtime evidence committed
+valid public manifest + referenced image
+  = accepted runtime evidence record
+```
+
+GitHub API failure or rate limiting is represented as unknown. It must not be translated into a failed workflow claim.
