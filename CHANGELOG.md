@@ -1,3 +1,15 @@
+## v3.2 — Capture Expansion
+
+- Expanded standardized capture automation from 12 to 16 public DPN product repositories.
+- Added Tool & Die Simulator, DPN War Simulator, MemeSpace and DPN Website capture factories.
+- Added real runner-class labels to Capture Factory cards.
+- Marked Tool & Die as a self-hosted Windows / Unreal Engine 5.8 capture path.
+- Added native X11 labels for DPN OS, Death the Developer and War Simulator.
+- Added PySide6/Xvfb labeling for Aqua Labs and Playwright labeling for browser/server products.
+- Promoted Command Center assets to `app.v3.2.js` and `styles.v3.2.css`.
+- Bumped the service-worker cache namespace to `dpn-command-center-v3.2`.
+- Preserved the evidence boundary: installed automation is not counted as executed runtime proof.
+
 ## v3.1 — Runtime Capture Factory
 
 - Added public Capture Factory discovery to the Command Center.
@@ -26,6 +38,13 @@
 - Death the Developer uses the real Tk desktop studio and captures Editor, Neural Forge and Browser Studio without API keys or production workspace data.
 - ECS capture was hardened to generate the required COO boot secret and now authenticates to the runner-local CEO account for Command Center, Servers & Systems, Integrations and Clearance Matrix captures.
 - ECS authenticated screenshots are explicitly bounded to repository seed records and runner-local state, not production infrastructure or live telemetry.
+- Simulation and web capture wave added Tool & Die Simulator, DPN War Simulator, MemeSpace and DPN Website.
+- Standardized capture-factory coverage now spans 16 public product repositories.
+- War Simulator captures real Tk seamless-3D runtime scenes from an isolated profile.
+- MemeSpace captures the real local Next.js/SQLite runtime including the Neon Arcade and three v2.5 cabinets.
+- DPN Website captures the real DPN Web Core across company, leadership, product-world and public-status pages.
+- Tool & Die uses a manual self-hosted Windows/Unreal 5.8 factory rather than pretending the Unreal project can render on a stock GitHub runner.
+- Verification after this wave found all 16 factories installed and no standardized runtime manifest/PNG committed yet; execution proof remains pending manual workflow runs.
 
 ## v3.0 — Evidence Uplift
 
