@@ -230,7 +230,7 @@
   function setDeepLink(key,value){
     const url=new URL(window.location.href);
     if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
-    ["evidence","project","release"].forEach(other=>{if(other!==key)url.searchParams.delete(other);});
+    ["evidence","project","release","arch","mesh"].forEach(other=>{if(other!==key)url.searchParams.delete(other);});
     history.pushState({[key]:value},"",url);
   }
 
@@ -694,7 +694,7 @@
         els.meshDrawerBody.innerHTML=`<p>Public DPN organization surface.</p><dl><div><dt>TYPE</dt><dd>Public organization interface</dd></div><div><dt>RELATIONSHIP</dt><dd>Linked from the DPN GitHub public core</dd></div></dl><a href="${escapeHtml(node.url)}" target="_blank" rel="noreferrer">OPEN SURFACE ↗</a>`;
       }
     }
-    els.meshDrawer.classList.add("open");els.meshDrawer.setAttribute("aria-hidden","false");
+    els.meshDrawer.classList.add("open");els.meshDrawer.setAttribute("aria-hidden","false");setDeepLink("mesh",id);
   }
   function renderMeshEvents() {
     if (!els.meshConsole) return;
@@ -863,9 +863,13 @@
   }
   function setupArchitecture() {
     document.querySelectorAll(".fabric-node").forEach(node => {
-      node.addEventListener("click", () => renderArchitecture(node.dataset.arch));
+      node.addEventListener("click", () => {
+        renderArchitecture(node.dataset.arch);
+        setDeepLink("arch",node.dataset.arch);
+      });
     });
-    renderArchitecture("core");
+    const direct=new URL(location.href).searchParams.get("arch");
+    renderArchitecture(architecture[direct] ? direct : "core");
   }
 
   function setupCommandPalette(){
@@ -1236,6 +1240,8 @@
     const params=new URL(location.href).searchParams,project=params.get("project"),releaseKey=params.get("release");
     if(project&&!state.deepLinkHandled.has("project")){state.deepLinkHandled.add("project");openProjectDossier(project,{updateUrl:false});}
     else if(releaseKey&&!state.deepLinkHandled.has("release")){const[repoName,tag]=releaseKey.split("::"),index=state.releases.findIndex(item=>item.repo===repoName&&item.tag===tag);if(index>=0){state.deepLinkHandled.add("release");openReleaseInspector(index,{updateUrl:false});}}
+    const mesh=params.get("mesh");
+    if(mesh&&!state.deepLinkHandled.has("mesh")){const node=els.topology?.querySelector(`[data-node="${CSS.escape(mesh)}"]`);if(node){state.deepLinkHandled.add("mesh");node.dispatchEvent(new MouseEvent("click",{bubbles:true}));}}
   }
 
   function setupEvents() {
@@ -1251,6 +1257,7 @@
       els.meshDrawer?.classList.remove("open");
       els.meshDrawer?.setAttribute("aria-hidden","true");
       els.topology?.querySelectorAll(".selected").forEach(node=>node.classList.remove("selected"));
+      clearDeepLink("mesh");
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
