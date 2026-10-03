@@ -583,3 +583,23 @@ For each supported public product repository, the browser:
 The “Boot Public Demo” control is intentionally a presentation sequence. It reports public repository/evidence discovery and never starts a product process, workflow, service, runner or deployment.
 
 Architecture drawers describe subsystem concepts, not verified runtime service connections.
+
+
+## v4.1 live-shell presentation model
+
+The live product shell separates interaction simulation from evidence.
+
+The navigation rail and application chrome are browser-side presentation components derived from the public product subsystem model. They do not claim that a real product process is executing.
+
+Monitor content is populated from the product evidence priority used elsewhere:
+
+1. validated runtime-manifest captures;
+2. mapped static actual captures;
+3. source-derived interfaces;
+4. artwork/fallback.
+
+Because the shell is rebuilt after the standard telemetry and runtime-evidence intake, newly accepted runtime captures automatically move ahead of lower-grade evidence on the next scan.
+
+Module navigation searches mapped evidence titles/descriptions for a related screen. If no direct mapped screen exists, the shell retains the current evidence and explicitly reports that no direct screen is mapped instead of inventing one.
+
+Architecture-path mode is decorative visualization of the public subsystem model, not a runtime network or service dependency graph.
