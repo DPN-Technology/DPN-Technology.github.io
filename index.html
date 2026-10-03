@@ -16,10 +16,26 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DPN Technology // GitHub Command Center">
   <meta name="twitter:description" content="Develop. Pioneer. Navigate. Public engineering, architecture and trust.">
-  <meta name="description" content="DPN Technology GitHub Command Center — public engineering, architecture, trust, releases and systems doctrine.">
+  <meta name="description" content="DPN Technology Command Center — inspect public products, engineering evidence, releases, architecture, build lineage and trust controls.">
+  <meta name="application-name" content="DPN Command Center">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"DPN Technology",
+    "url":"https://dpn-technology.github.io/",
+    "logo":"https://dpn-technology.github.io/assets/dpn-logo.webp",
+    "founder":{"@type":"Person","name":"Aaron Sherk"},
+    "sameAs":["https://github.com/DPN-Technology"],
+    "description":"DPN Technology develops software, infrastructure, AI, automation and operational systems."
+  }
+  </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v2.7.css">
+  <link rel="stylesheet" href="./styles.v2.8.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,7 +58,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -119,7 +135,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v2.7 EVIDENCE</span>
+      <span>BUILD // v2.8 COMMAND</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -339,6 +355,23 @@
       </div>
     </section>
 
+    <section class="section product-families" id="product-families">
+      <div class="section-head">
+        <p class="eyebrow">02B // PRODUCT CONSTELLATIONS</p>
+        <h2>One ecosystem.<br><span>Multiple operating domains.</span></h2>
+        <p>These groupings are a public navigation model based on repository purpose and visible product scope. They do not claim live runtime integration between products.</p>
+      </div>
+      <div class="family-grid">
+        <button type="button" data-family="control"><span>CONTROL + INFRASTRUCTURE</span><b>Operational Control • ECS • WatchTower • OS • Network Mapper</b><small>Command, observability, infrastructure and recovery surfaces</small></button>
+        <button type="button" data-family="ai"><span>AI + DEVELOPMENT</span><b>DPN AI • Death the Developer</b><small>Intelligence, agents, coding, research and developer tooling</small></button>
+        <button type="button" data-family="retail"><span>RETAIL + AQUARIUM SYSTEMS</span><b>DPN Aqua Labs</b><small>POS, store operations, livestock, maintenance and telemetry</small></button>
+        <button type="button" data-family="workforce"><span>WORKFORCE + BUSINESS</span><b>Workforce • HR • Service Desk</b><small>People operations, workforce controls and internal request workflows</small></button>
+        <button type="button" data-family="platform"><span>PLATFORM + IDENTITY</span><b>DPN One • Shared engineering foundations</b><small>Account, entitlement, trust, launch and reusable standards</small></button>
+        <button type="button" data-family="interactive"><span>INTERACTIVE + SIMULATION</span><b>MemeSpace • Tool & Die Simulator</b><small>Interactive experiences and simulation work</small></button>
+      </div>
+      <div class="family-note"><span>SELECT A CONSTELLATION</span><b id="family-state">ALL PUBLIC PRODUCTS</b><button type="button" id="family-reset">RESET CONSTELLATION</button></div>
+    </section>
+
     <section class="section projects" id="projects">
       <div class="section-head">
         <p class="eyebrow">03 // PUBLIC PROJECT DISCOVERY</p>
@@ -377,6 +410,14 @@
           <span class="legend-runtime">ACTUAL CAPTURE</span><small>image captured from project output or interface</small>
           <span class="legend-source">SOURCE-DERIVED VIEW</span><small>visual reconstruction from current UI source; not runtime</small>
           <span class="legend-art">PROJECT ARTWORK</span><small>identity/art asset; not application evidence</small>
+        </div>
+
+        <div class="evidence-coverage" id="evidence-coverage">
+          <div><span>RUNTIME CAPTURE SHARE</span><strong id="coverage-percent">—%</strong><small>actual captures among interface evidence</small></div>
+          <div><span>ACTUAL CAPTURE</span><strong id="coverage-runtime">—</strong><small>runtime/project output images</small></div>
+          <div><span>SOURCE-DERIVED</span><strong id="coverage-source">—</strong><small>verified against visible source structure</small></div>
+          <div><span>CAPTURE / SOURCE GAPS</span><strong id="coverage-gaps">—</strong><small>source-derived screens + known source gaps</small></div>
+          <button type="button" id="show-capture-gaps">SHOW CAPTURE GAPS</button>
         </div>
 
         <div class="visual-evidence-registry" aria-label="Visual evidence registry">
@@ -664,6 +705,19 @@
       </div>
     </section>
 
+    <section class="section build-lineage" id="build-lineage">
+      <div class="section-head">
+        <p class="eyebrow">05A // DPN BUILD LINEAGE</p>
+        <h2>Versions leave a trail.<br><span>Public history should be inspectable.</span></h2>
+        <p>Lineage combines public release records, public repository push timestamps and matching visual evidence. A push is source activity—not proof of production deployment.</p>
+      </div>
+      <div class="lineage-toolbar">
+        <label><span>PROJECT</span><select id="lineage-project"><option value="all">ALL PUBLIC PROJECTS</option></select></label>
+        <span id="lineage-state">AWAITING PUBLIC SIGNAL</span>
+      </div>
+      <div id="lineage-board" class="lineage-board"><p class="feed-empty">Building public version lineage…</p></div>
+    </section>
+
     <section class="section build-journal" id="build-journal">
       <div class="section-head">
         <p class="eyebrow">05B // PUBLIC BUILD JOURNAL</p>
@@ -690,11 +744,54 @@
     </section>
   </main>
 
+  <nav class="mobile-command-dock" aria-label="Mobile command navigation">
+    <a href="#top"><span>⌂</span><b>CORE</b></a>
+    <a href="#projects"><span>◫</span><b>WORK</b></a>
+    <a href="#inside-builds"><span>▣</span><b>EVIDENCE</b></a>
+    <a href="#fusion-mesh"><span>◎</span><b>MESH</b></a>
+    <button type="button" id="mobile-command-launcher"><span>⌕</span><b>COMMAND</b></button>
+  </nav>
+
   <footer>
     <div class="footer-brand"><span class="brand-orb official-logo"><img src="./assets/dpn-logo.webp" alt=""></span><div><strong>DPN TECHNOLOGY</strong><small>DEVELOP • PIONEER • NAVIGATE</small></div></div>
     <p>This public command center intentionally exposes public engineering information only. Private project names, internal infrastructure and sensitive operational information are not enumerated here.</p>
     <div class="footer-links"><a href="https://github.com/DPN-Technology">GitHub Organization</a><a href="https://github.com/DPN-Technology/.github">Engineering Hub</a><a href="#top">Return to top</a></div>
   </footer>
+
+  <dialog id="evidence-inspector" class="evidence-inspector">
+    <div class="inspector-shell">
+      <header><div><span id="evidence-inspector-type">VISUAL EVIDENCE</span><h2 id="evidence-inspector-title">Evidence</h2></div><button type="button" id="evidence-inspector-close" aria-label="Close evidence inspector">CLOSE ×</button></header>
+      <div class="inspector-stage">
+        <button type="button" id="evidence-prev" aria-label="Previous evidence">‹</button>
+        <div class="inspector-image-wrap"><img id="evidence-inspector-image" alt=""><span id="evidence-inspector-stamp"></span></div>
+        <button type="button" id="evidence-next" aria-label="Next evidence">›</button>
+      </div>
+      <div id="evidence-compare" class="evidence-compare" hidden></div>
+      <footer class="inspector-meta">
+        <div><p id="evidence-inspector-description"></p><dl id="evidence-inspector-details"></dl></div>
+        <div class="inspector-actions">
+          <button type="button" id="evidence-pin">PIN FOR COMPARE</button>
+          <button type="button" id="evidence-compare-toggle">COMPARE</button>
+          <button type="button" id="evidence-share">COPY DEEP LINK</button>
+          <a id="evidence-repo-link" href="https://github.com/DPN-Technology" target="_blank" rel="noreferrer">OPEN PUBLIC SOURCE ↗</a>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <dialog id="project-dossier" class="project-dossier">
+    <div class="dossier-shell">
+      <header><div><span>PUBLIC PROJECT DOSSIER</span><h2 id="dossier-title">DPN Project</h2></div><button type="button" id="dossier-close">CLOSE ×</button></header>
+      <div id="dossier-body" class="dossier-body"></div>
+    </div>
+  </dialog>
+
+  <dialog id="release-inspector" class="release-inspector">
+    <div class="dossier-shell">
+      <header><div><span>PUBLIC RELEASE EVIDENCE</span><h2 id="release-inspector-title">Release</h2></div><button type="button" id="release-inspector-close">CLOSE ×</button></header>
+      <div id="release-inspector-body" class="dossier-body"></div>
+    </div>
+  </dialog>
 
   <dialog id="command-palette" class="command-palette">
     <form method="dialog" class="command-shell">
@@ -707,17 +804,20 @@
         <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
         <button type="button" data-target="fusion-mesh"><span>02</span><strong>Public Fusion Mesh</strong><small>Registry topology, event bus and node drawer</small></button>
         <button type="button" data-target="architecture"><span>03</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
-        <button type="button" data-target="projects"><span>04</span><strong>Public Work</strong><small>Live repository discovery and filters</small></button>
-        <button type="button" data-target="release-explorer"><span>05</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
-        <button type="button" data-target="evidence-matrix"><span>06</span><strong>Evidence Matrix</strong><small>README, security, license, architecture and release evidence</small></button>
-        <button type="button" data-target="trust"><span>07</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
-        <button type="button" data-target="standards"><span>08</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
-        <button type="button" data-target="build-journal"><span>09</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
-        <button type="button" data-target="roadmap"><span>10</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
+        <button type="button" data-target="product-families"><span>04</span><strong>Product Constellations</strong><small>Browse the DPN ecosystem by operating domain</small></button>
+        <button type="button" data-target="projects"><span>05</span><strong>Public Work</strong><small>Live repository discovery and project dossiers</small></button>
+        <button type="button" data-target="inside-builds"><span>06</span><strong>Visual Evidence Museum</strong><small>25+ captures and source-backed interface views</small></button>
+        <button type="button" data-target="release-explorer"><span>07</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
+        <button type="button" data-target="evidence-matrix"><span>08</span><strong>Evidence Matrix</strong><small>README, security, license, architecture and release evidence</small></button>
+        <button type="button" data-target="trust"><span>09</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
+        <button type="button" data-target="standards"><span>10</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
+        <button type="button" data-target="build-lineage"><span>11</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
+        <button type="button" data-target="build-journal"><span>12</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
+        <button type="button" data-target="roadmap"><span>13</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
       </div>
     </form>
   </dialog>
 
-    <script src="./app.v2.7.js" defer></script>
+    <script src="./app.v2.8.js" defer></script>
 </body>
 </html>
