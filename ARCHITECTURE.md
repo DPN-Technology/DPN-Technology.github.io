@@ -169,3 +169,73 @@ Discovered artifact paths and tree-result metadata may be retained in a 10-minut
 A telemetry refresh resets the in-memory evidence map and rebuilds it from current public repository metadata. Unchanged repositories can reuse valid cached evidence; changed or expired entries require a fresh public tree request.
 
 Cached and truncated-tree states are surfaced in the evidence matrix rather than hidden.
+
+
+## v2.8 interaction architecture
+
+v2.8 keeps the static browser-only runtime while adding richer client-side navigation and inspection.
+
+```text
+Browser
+  ├─ index.html
+  ├─ styles.v2.8.css
+  ├─ app.v2.8.js
+  ├─ service-worker.js
+  ├─ same-origin static evidence assets
+  └─ GitHub public API
+       ├─ public repository metadata
+       ├─ public release records
+       └─ public repository trees (bounded evidence scan)
+```
+
+### Project dossiers
+
+A project dossier is assembled client-side from public data already available to the Command Center:
+
+- public repository metadata;
+- current public push timestamp;
+- public release records;
+- repository evidence discovered by the bounded public tree scanner;
+- visual evidence explicitly mapped to that public repository.
+
+A dossier is not a maturity score and does not establish production deployment or runtime health.
+
+### Visual evidence inspector
+
+The evidence inspector uses local same-origin visual assets and the existing typed evidence vocabulary:
+
+- actual capture;
+- source-derived interface;
+- project artwork.
+
+The compare mode does not claim that two visuals represent the same runtime version unless that relationship is explicitly present in the underlying evidence.
+
+### Deep links
+
+The public UI supports query parameters for:
+
+- `evidence=<public visual slug>`;
+- `project=<public repository name>`;
+- `release=<public repository>::<public tag>`.
+
+These values reference public-safe identifiers only.
+
+### Product constellations
+
+Constellations are navigation groupings inferred from visible product purpose and repository naming. They are not runtime dependency maps.
+
+### Build lineage
+
+Build lineage combines public push timestamps, public GitHub release records and mapped visual evidence. A push remains a source-control signal, not a production deployment event.
+
+### Performance modes
+
+- **Full** — complete visual storm.
+- **Balanced** — reduced render cadence/effect intensity.
+- **Low** — binary rain/lightning render work is skipped.
+
+Reduced-motion preference defaults the visitor toward Low mode.
+
+### PWA / offline behavior
+
+The service worker caches same-origin static presentation resources. It does not cache or fabricate authenticated/private data. GitHub API calls remain network requests; when unavailable, existing static fallback behavior applies.
