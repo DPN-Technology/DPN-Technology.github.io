@@ -840,16 +840,35 @@
     });
     if(els.projectCount)els.projectCount.textContent=`${repos.length} public repositor${repos.length===1?"y":"ies"} shown`;
     if(!repos.length){els.projectGrid.innerHTML='<article class="project-skeleton">No public repositories match the current search/filter/constellation.</article>';return;}
-    els.projectGrid.innerHTML=repos.map(repo=>`
-      <article class="project-card dossier-project-card" data-project="${escapeHtml(repo.name)}">
-        <div class="project-meta"><span>PUBLIC</span><span>${escapeHtml(languageLabel(repo))}</span><span>${escapeHtml(FAMILY_LABELS[familyForRepo(repo.name)]||"DPN PRODUCT")}</span><span class="repo-state ${releaseRepos.has(repo.name)?"has-release":(isRecent(repo)?"recent":"")}">${releaseRepos.has(repo.name)?"PUBLIC RELEASE RECORD":(isRecent(repo)?"RECENT PUBLIC PUSH":"PUBLIC SOURCE")}</span></div>
-        <h3>${escapeHtml(repo.name)}</h3>
-        <p>${escapeHtml(repo.description||"Public DPN Technology source repository. Inspect the dossier for repository-specific public evidence.")}</p>
-        <div class="project-meta"><span>PUSH ${escapeHtml(fmtDate(repo.pushed_at))}</span><span>ISSUES ${repo.open_issues_count||0}</span><span>SIZE ${Math.max(1,Math.round((repo.size||0)/1024))} MB</span></div>
-        <div class="project-stats"><span class="repo-stars">★ ${repo.stargazers_count||0} STARS</span><span class="repo-forks">⑂ ${repo.forks_count||0} FORKS</span><span>BRANCH ${escapeHtml(repo.default_branch||"main")}</span></div>
-        <div class="project-footer project-actions"><button type="button" data-open-dossier="${escapeHtml(repo.name)}">INSPECT DOSSIER</button><a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div>
-      </article>`).join("");
+    els.projectGrid.innerHTML=repos.map(repo=>{
+      const family=familyForRepo(repo.name);
+      const visuals=evidenceForRepo(repo.name);
+      const visual=visuals.find(item=>item.type==="runtime")||visuals.find(item=>item.type==="source")||visuals[0]||null;
+      const visualLabel=visual?(visual.type==="runtime"?"ACTUAL CAPTURE":visual.type==="source"?"SOURCE-VERIFIED UI":"PROJECT VISUAL"):"NO MAPPED VISUAL";
+      return `
+      <article class="project-card dossier-project-card family-${escapeHtml(family)} ${visual?"has-card-visual":"no-card-visual"}" data-project="${escapeHtml(repo.name)}">
+        ${visual?`<button class="project-card-visual" type="button" data-project-visual="${escapeHtml(visual.slug)}" aria-label="Open ${escapeHtml(visual.title)}">
+          <img src="${escapeHtml(visual.src)}" alt="${escapeHtml(visual.alt||visual.title)}" loading="lazy" decoding="async">
+          <span class="project-visual-badge ${escapeHtml(visual.type)}">${escapeHtml(visualLabel)}</span>
+          <i>OPEN VISUAL ↗</i>
+        </button>`:`<div class="project-card-no-visual"><span>DPN://PUBLIC_SOURCE</span><b>${escapeHtml(repo.name.replaceAll("-"," "))}</b><small>Visual evidence not mapped yet</small></div>`}
+        <div class="project-card-body">
+          <div class="project-meta"><span>PUBLIC</span><span>${escapeHtml(languageLabel(repo))}</span><span>${escapeHtml(FAMILY_LABELS[family]||"DPN PRODUCT")}</span></div>
+          <h3>${escapeHtml(repo.name)}</h3>
+          <p>${escapeHtml(repo.description||"Public DPN Technology source repository. Inspect the dossier for repository-specific public evidence.")}</p>
+          <div class="project-card-signal">
+            <span><b>${escapeHtml(fmtDate(repo.pushed_at))}</b><small>LAST PUSH</small></span>
+            <span><b>${repo.open_issues_count||0}</b><small>ISSUES</small></span>
+            <span><b>${releaseRepos.has(repo.name)?"YES":"NO"}</b><small>RELEASE</small></span>
+            <span><b>${visuals.length}</b><small>VISUALS</small></span>
+          </div>
+          <div class="project-stats"><span class="repo-stars">★ ${repo.stargazers_count||0}</span><span class="repo-forks">⑂ ${repo.forks_count||0}</span><span>BRANCH ${escapeHtml(repo.default_branch||"main")}</span></div>
+          <div class="project-footer project-actions"><button type="button" data-open-dossier="${escapeHtml(repo.name)}">INSPECT DOSSIER</button><a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div>
+        </div>
+      </article>`;
+    }).join("");
     els.projectGrid.querySelectorAll("[data-open-dossier]").forEach(button=>button.addEventListener("click",()=>openProjectDossier(button.dataset.openDossier)));
+    els.projectGrid.querySelectorAll("[data-project-visual]").forEach(button=>button.addEventListener("click",()=>openEvidenceBySlug(button.dataset.projectVisual)));
   }
   function renderActivity() {
     if (!els.activity) return;
