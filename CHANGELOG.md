@@ -1,3 +1,16 @@
+## v3.0 — Evidence Uplift
+
+- Added an actual Death the Developer browser-smoke verification capture from the public repository evidence folder.
+- Increased the visual evidence museum from 25 to 26 items.
+- Added the Product Verification Board with per-project visual proof state, exact provenance count, public release records and bounded repository evidence.
+- Added verification-board search and proof-state filters.
+- Added factual next-proof guidance such as capture runtime UI, replace source-derived views or add a public release artifact.
+- Credited existing MemeSpace captures to the public MemeSpace repository for dossier/verification aggregation.
+- Expanded exact provenance counting to include mapped runtime evidence.
+- Added the verification board to the command palette and client presentation flow.
+- Updated the service-worker cache namespace and core files to v3.0.
+- Preserved the no-score rule: verification data is descriptive and does not rank product quality, security or readiness.
+
 ## v2.9 — Provenance + Presentation
 
 - Added exact public source-file provenance for verified source-derived UI evidence.
