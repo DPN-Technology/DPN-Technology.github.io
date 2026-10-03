@@ -278,3 +278,14 @@ Each world combines product-specific visual styling, a project interface, public
 The world navigation rail tracks the currently visible subsystem, and the interface windows use local pointer depth/glow effects on capable devices.
 
 Evidence wording remains explicit. Service Desk and Network Mapper use existing actual project captures. Operational Control, Aqua Labs, Death the Developer and DPN One use source-verified interface views and are labeled accordingly rather than being presented as runtime screenshots.
+
+
+## v3.8 immersive systems
+
+v3.8 deepens the visual command experience rather than adding another text-heavy engineering surface.
+
+The Command Center now includes a short first-session DPN boot sequence, an ecosystem navigation router, full-screen Product Focus mode, and evidence galleries embedded inside the major Product Worlds.
+
+Product Focus reuses the existing public repository and evidence model. Visitors can inspect multiple mapped visuals for a product, see the evidence type, review bounded public repository metadata, open the public source repository, or jump into the existing public dossier.
+
+The boot animation stores only a session-level “seen” flag in the browser. It does not authenticate the visitor or imply access beyond the public Command Center.
