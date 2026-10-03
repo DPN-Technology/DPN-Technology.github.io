@@ -1,5 +1,25 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.1 — DPN Binary Storm
+
+- Replaced the lighter Command Center background effect with the DPN Website storm architecture.
+- Added a dedicated full-screen binary canvas.
+- Added dense seven-character 1/0 trails with glowing leading digits.
+- Added randomized per-column fall speed and phase.
+- Added a dedicated procedural lightning canvas.
+- Added branching red lightning bolts generated across the viewport.
+- Added multi-pass glow rendering using the DPN Website red `#ff1738`.
+- Added randomized lightning timing and impact position.
+- Added brief red page flashes synchronized with lightning.
+- Matched the DPN Website visual stacking model:
+  - grid at base;
+  - binary rain above the grid;
+  - lightning above the rain;
+  - flash above lightning;
+  - command interface above the storm;
+  - scanline layer above the interface.
+- Preserved reduced-motion behavior.
+
 ## v2 — Interactive Public Engineering Surface
 
 ### Added
