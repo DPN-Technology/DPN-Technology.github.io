@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<defs><radialGradient id="g"><stop stop-color="#2b080d"/><stop offset=".62" stop-color="#08090d"/><stop offset="1" stop-color="#010203"/></radialGradient></defs>
+<rect width="128" height="128" rx="24" fill="#010203"/>
+<circle cx="64" cy="64" r="46" fill="url(#g)" stroke="#e50914" stroke-width="3"/>
+<circle cx="64" cy="64" r="34" fill="none" stroke="#e50914" stroke-opacity=".45" stroke-dasharray="5 5"/>
+<path d="M18 64h92M64 18v92" stroke="#e50914" stroke-opacity=".20"/>
+<path d="M91 18L76 43l8 5-15 18 8 5-20 30" fill="none" stroke="#ff2637" stroke-width="4"/>
+<text x="64" y="69" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="21" fill="#fff">DPN</text>
+</svg>
