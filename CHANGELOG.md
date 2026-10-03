@@ -1,5 +1,22 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.7 — Visual Evidence Wall Expansion
+
+- Expanded **Inside the Builds** into a typed visual evidence wall.
+- Added three DPN Aqua Labs desktop interface views derived from the current PySide6 source:
+  - Store Command Center;
+  - Register;
+  - Terminal Command Center / Store Network.
+- Kept source-derived views visibly labeled **not runtime capture**.
+- Preserved existing actual Service Desk, Network Mapper, MemeSpace and Aqua mobile visual evidence.
+- Added an evidence legend separating:
+  - actual captures;
+  - source-derived interface views;
+  - project artwork.
+- Added evidence-context copy so demo values in source-derived views are not confused with production data.
+- Added a repo-native Aqua Labs desktop capture harness and workflow for eventual runtime screenshot replacement.
+- Runtime capture automation is currently blocked by unavailable private GitHub Actions runner capacity; the public Command Center does not hide that limitation.
+
 ## v2.7 — Public Engineering Evidence Matrix
 
 - Added a live evidence matrix for currently public project repositories.
