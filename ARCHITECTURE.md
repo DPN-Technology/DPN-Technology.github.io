@@ -267,3 +267,34 @@ Presentation mode is a client-side guided navigation state. It changes navigatio
 ### Network state
 
 The browser reports its own online/offline state. This is not DPN infrastructure health. Public GitHub telemetry remains separately sourced from the GitHub public API.
+
+
+## v3.0 verification-board model
+
+The Product Verification Board is computed in the browser from the same public-safe inputs already used by the Command Center:
+
+- mapped visual evidence;
+- exact visual provenance mappings;
+- current public repository metadata;
+- bounded public repository evidence scans;
+- current public GitHub release records.
+
+For each public repository, the board derives one visual-proof state:
+
+- **actual capture present** — one or more mapped captured project/output images;
+- **source visual only** — one or more source-derived visuals but no mapped captured image;
+- **no mapped visual** — no Command Center visual currently mapped to that public repository.
+
+These states are descriptive only. They are not maturity rankings.
+
+### Next-proof field
+
+The board may display a next public proof action based on missing evidence categories, for example:
+
+- add a verified product visual;
+- capture real runtime/output UI;
+- replace remaining source-derived views;
+- add a public release artifact;
+- retry an unavailable repository evidence scan.
+
+This field describes the next evidence gap. It is not an assessment of product quality or readiness.
