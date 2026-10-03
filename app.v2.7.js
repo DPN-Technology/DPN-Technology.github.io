@@ -1048,6 +1048,7 @@
 
     const figures = [...wall.querySelectorAll("figure")];
     const buttons = [...registry.querySelectorAll("[data-evidence-filter]")];
+    const search = $("visual-evidence-search");
     const counters = {
       all: $("visual-count-all"),
       runtime: $("visual-count-runtime"),
@@ -1075,10 +1076,15 @@
       if (counters[key]) counters[key].textContent = String(totals[key]);
     }
 
-    const apply = (filter) => {
+    let activeFilter = "all";
+    const apply = (filter = activeFilter) => {
+      activeFilter = filter;
+      const query = String(search?.value || "").trim().toLowerCase();
       let visible = 0;
       figures.forEach(figure => {
-        const show = filter === "all" || typeOf(figure) === filter;
+        const typeMatch = filter === "all" || typeOf(figure) === filter;
+        const searchMatch = !query || String(figure.textContent || "").toLowerCase().includes(query) || [...figure.querySelectorAll("img")].some(img => String(img.alt || "").toLowerCase().includes(query));
+        const show = typeMatch && searchMatch;
         figure.hidden = !show;
         if (show) visible++;
       });
@@ -1093,6 +1099,7 @@
     };
 
     buttons.forEach(button => button.addEventListener("click", () => apply(button.dataset.evidenceFilter || "all")));
+    search?.addEventListener("input", () => apply());
     apply("all");
   }
 
