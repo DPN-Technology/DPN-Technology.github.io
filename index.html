@@ -19,7 +19,7 @@
   <meta name="description" content="DPN Technology GitHub Command Center — public engineering, architecture, trust, releases and systems doctrine.">
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v2.5.css">
+  <link rel="stylesheet" href="./styles.v2.6.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,7 +42,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <span class="storm-status-chip">STORM // HIGH</span><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -225,6 +225,64 @@
 
     <section class="storm-divider" aria-hidden="true"><span>01000100 01000101 01010110</span><b>DPN // BINARY STORM</b><span>01010000 01001001 01001111 01001110 01000101 01000101 01010010</span></section>
 
+    <section class="section fusion-mesh" id="fusion-mesh">
+      <div class="section-head">
+        <p class="eyebrow">01B // PUBLIC FUSION MESH</p>
+        <h2>Registered public surfaces.<br><span>Mapped without pretending they are live integrations.</span></h2>
+        <p>The mesh is built from public GitHub discovery. Connections represent organization and repository relationships—not production network paths, application uptime, or verified runtime integration.</p>
+      </div>
+
+      <div class="fusion-signal">
+        <span class="pulse"></span><b>PUBLIC FUSION MESH</b>
+        <span id="mesh-state">ACQUIRING REGISTRY</span>
+        <span id="mesh-refresh">SYNC // ON LOAD + MANUAL</span>
+        <span>MODE // PUBLIC SAFE</span>
+      </div>
+
+      <div class="fusion-stats">
+        <article><span>REGISTRY NODES</span><strong id="mesh-nodes">—</strong><small>public project repositories + public surfaces</small></article>
+        <article><span>RELEASE SOURCES</span><strong id="mesh-release-sources">—</strong><small>public repos with release records</small></article>
+        <article><span>RECENTLY PUSHED</span><strong id="mesh-recent">—</strong><small>public repos pushed within 30 days</small></article>
+        <article><span>EVENT RECORDS</span><strong id="mesh-events">—</strong><small>public push + release signals</small></article>
+      </div>
+
+      <div class="fusion-grid">
+        <article class="panel topology-panel">
+          <div class="panel-head"><span>DPN PUBLIC RELAY TOPOLOGY</span><span>REGISTRY RELATIONSHIPS</span></div>
+          <div class="topology-wrap">
+            <svg id="public-topology" viewBox="0 0 1100 620" role="img" aria-label="DPN public GitHub registry relationship map"></svg>
+            <div class="topology-legend">
+              <span><i class="legend-core"></i>DPN PUBLIC CORE</span>
+              <span><i class="legend-repo"></i>PUBLIC PROJECT REPO</span>
+              <span><i class="legend-surface"></i>PUBLIC ORG SURFACE</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel fusion-command-panel">
+          <div class="panel-head"><span>COMMAND DECK</span><span>PUBLIC SAFE</span></div>
+          <div class="fusion-command-grid">
+            <div class="fusion-radar">
+              <div class="fusion-radar-sweep"></div>
+              <div class="fusion-radar-core"><img src="./assets/dpn-logo.webp" alt=""><span>PUBLIC FUSION</span></div>
+              <i class="fusion-orbit fo1"></i><i class="fusion-orbit fo2"></i><i class="fusion-orbit fo3"></i>
+            </div>
+            <div class="fusion-events">
+              <div class="fusion-events-head"><span>PUBLIC EVENT BUS</span><i id="mesh-event-state">CONNECTING</i></div>
+              <div id="mesh-event-console"><p>ACQUIRING PUBLIC GITHUB SIGNAL…</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside id="mesh-drawer" class="mesh-drawer" aria-hidden="true">
+        <button id="mesh-drawer-close" type="button">CLOSE ×</button>
+        <small>PUBLIC REGISTRY NODE</small>
+        <h3 id="mesh-drawer-title">DPN</h3>
+        <div id="mesh-drawer-body"></div>
+      </aside>
+    </section>
+
     <section class="section architecture" id="architecture">
       <div class="section-head">
         <p class="eyebrow">02 // ARCHITECTURE ATLAS</p>
@@ -287,9 +345,20 @@
         <h2>Public work.<br><span>Live repository evidence.</span></h2>
         <p>This surface discovers public DPN Technology repositories from GitHub at runtime. Private repositories are intentionally neither listed nor inferred.</p>
       </div>
-      <div class="project-toolbar">
+      <div class="project-toolbar project-intelligence-toolbar">
         <input id="project-search" type="search" placeholder="Search public repositories…" aria-label="Search public repositories">
-        <button id="refresh-telemetry" type="button">REFRESH TELEMETRY</button>
+        <select id="project-state-filter" aria-label="Filter public repositories">
+          <option value="all">ALL PUBLIC REPOS</option>
+          <option value="recent">PUSHED IN 30 DAYS</option>
+          <option value="releases">HAS RELEASE RECORDS</option>
+          <option value="issues">HAS OPEN ISSUES</option>
+          <option value="stars">HAS PUBLIC STARS</option>
+        </select>
+        <button id="refresh-telemetry" type="button">REFRESH SIGNAL</button>
+      </div>
+      <div class="project-results-bar">
+        <span id="project-result-count">— public repositories</span>
+        <button id="reset-project-filters" type="button">RESET FILTERS ↻</button>
       </div>
       <div id="project-grid" class="project-grid" aria-live="polite">
         <article class="project-skeleton">Loading public repositories…</article>
@@ -423,6 +492,15 @@
       </div>
     </section>
 
+    <section class="section build-journal" id="build-journal">
+      <div class="section-head">
+        <p class="eyebrow">05B // PUBLIC BUILD JOURNAL</p>
+        <h2>Progress,<br><span>with public context.</span></h2>
+        <p>A runtime-generated journal built from public repository pushes and release records. These entries describe public GitHub activity—not private project activity or production launch events.</p>
+      </div>
+      <div class="journal-list" id="journal-list"><p class="feed-empty">Building public engineering journal…</p></div>
+    </section>
+
     <section class="section roadmap" id="roadmap">
       <div class="section-head">
         <p class="eyebrow">06 // PUBLIC DIRECTION</p>
@@ -455,16 +533,18 @@
       <label class="command-search"><span>⌕</span><input id="command-search" autocomplete="off" placeholder="Navigate the public command center…"></label>
       <div class="command-results" id="command-results">
         <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
-        <button type="button" data-target="architecture"><span>02</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
-        <button type="button" data-target="projects"><span>03</span><strong>Public Work</strong><small>Live repository discovery</small></button>
-        <button type="button" data-target="release-explorer"><span>04</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
-        <button type="button" data-target="trust"><span>05</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
-        <button type="button" data-target="standards"><span>06</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
-        <button type="button" data-target="roadmap"><span>07</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
+        <button type="button" data-target="fusion-mesh"><span>02</span><strong>Public Fusion Mesh</strong><small>Registry topology, event bus and node drawer</small></button>
+        <button type="button" data-target="architecture"><span>03</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
+        <button type="button" data-target="projects"><span>04</span><strong>Public Work</strong><small>Live repository discovery and filters</small></button>
+        <button type="button" data-target="release-explorer"><span>05</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
+        <button type="button" data-target="trust"><span>06</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
+        <button type="button" data-target="standards"><span>07</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
+        <button type="button" data-target="build-journal"><span>08</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
+        <button type="button" data-target="roadmap"><span>09</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
       </div>
     </form>
   </dialog>
 
-    <script src="./app.v2.5.js" defer></script>
+    <script src="./app.v2.6.js" defer></script>
 </body>
 </html>
