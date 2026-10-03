@@ -15,6 +15,12 @@
 - Workforce uses generated ephemeral admin/encryption credentials and an isolated local database.
 - No factory is treated as runtime proof until an actual artifact/manifest exists.
 - Updated the service-worker cache namespace and core files to v3.1.
+- Capture factory wave two added DPN Executive Control System, DPN Human Resources Software and DPN AI.
+- ECS captures the real secure-entry frontend from an isolated blank runtime with ephemeral secrets.
+- HRIS follows the generated first-run login and forced password-change flow before capturing authenticated dashboard views.
+- DPN AI starts with external/model/browser/desktop/voice capabilities disabled and captures the actual interface/degraded-state behavior.
+- Standardized capture-factory coverage now spans 10 public product repositories.
+- Verification after installation found no committed runtime manifests or standard runtime PNGs yet; runtime proof remains pending manual workflow execution.
 
 ## v3.0 — Evidence Uplift
 
