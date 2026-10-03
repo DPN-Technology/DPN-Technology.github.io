@@ -1,3 +1,18 @@
+## v4.1 — Live Product Shells
+
+- Added source-structured application shells to all six major Product Worlds.
+- Added product-specific navigation rails derived from the public subsystem model.
+- Added three-monitor evidence layouts with one primary and two secondary public-evidence monitors.
+- Added previous/next screen controls and direct secondary-monitor selection.
+- Added a product module context panel with source-scope descriptions and public metadata.
+- Added animated architecture-path mode inside each product shell.
+- Added runtime-promotion state: validated runtime-manifest captures automatically become lead monitor evidence on the next public evidence scan.
+- Kept simulated shell navigation explicitly separated from runtime evidence classification.
+- Added shell-level evidence boundary labels and runtime/source/artwork counts.
+- Preserved Product Runtime Theater boot, architecture drawer and Full Focus controls.
+- Promoted Command Center assets to `app.v4.1.js` and `styles.v4.1.css`.
+- Bumped evidence/run caches and service-worker namespace to v4.1.
+
 ## v4.0 — Product Runtime Theater
 
 - Turned each major Product World into a mini public demo surface.
