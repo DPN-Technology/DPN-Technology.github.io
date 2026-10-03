@@ -11,7 +11,8 @@
     lastFetch: null,
     languageCounts: new Map(),
     evidence: new Map(),
-    evidenceScanned: false
+    evidenceScanned: false,
+    evidenceCacheHits: 0
   };
 
   const $ = (id) => document.getElementById(id);
@@ -246,22 +247,61 @@
     return age >= 0 && age <= 30 * 24 * 60 * 60 * 1000;
   }
 
+  const EVIDENCE_CACHE_KEY = "dpn-command-center-evidence-v2.7";
+  const EVIDENCE_CACHE_TTL = 10 * 60 * 1000;
+
+  function readEvidenceCache(repo) {
+    try {
+      const cache = JSON.parse(localStorage.getItem(EVIDENCE_CACHE_KEY) || "{}");
+      const entry = cache[repo.name];
+      const signature = `${repo.default_branch || "main"}:${repo.pushed_at || ""}`;
+      if (!entry || entry.signature !== signature || Date.now() - entry.savedAt > EVIDENCE_CACHE_TTL) return null;
+      return entry.evidence || null;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeEvidenceCache(repo, evidence) {
+    try {
+      const cache = JSON.parse(localStorage.getItem(EVIDENCE_CACHE_KEY) || "{}");
+      cache[repo.name] = {
+        signature: `${repo.default_branch || "main"}:${repo.pushed_at || ""}`,
+        savedAt: Date.now(),
+        evidence
+      };
+      localStorage.setItem(EVIDENCE_CACHE_KEY, JSON.stringify(cache));
+    } catch {
+      // Storage can be unavailable in privacy modes; live scanning still works.
+    }
+  }
+
   function detectEvidence(paths) {
-    const normalized=paths.map(path=>path.toLowerCase());
-    const has=(predicate)=>normalized.some(predicate);
+    const entries=paths.map(path=>({raw:path,normalized:path.toLowerCase()}));
+    const locate=(predicate)=>entries.find(entry=>predicate(entry.normalized))?.raw || null;
+    const readmePath=locate(path => /^readme(?:\.|$)/.test(path));
+    const securityPath=locate(path => /(^|\/)security\.md$/.test(path));
+    const licensePath=locate(path =>
+      /(^|\/)(license|copying)(\.[^/]+)?$/.test(path) ||
+      /(^|\/)(third_party_licenses|third-party-licenses|third_party_notices|third-party-notices)(\.[^/]+)?$/.test(path)
+    );
+    const architecturePath=locate(path =>
+      /(^|\/)architecture\.md$/.test(path) ||
+      /(^|\/)docs\/architecture(\.md)?$/.test(path) ||
+      /(^|\/)architecture\//.test(path)
+    );
 
     return {
-      readme: has(path => /^readme(?:\.|$)/.test(path)),
-      security: has(path => /(^|\/)security\.md$/.test(path)),
-      license: has(path =>
-        /(^|\/)(license|copying)(\.[^/]+)?$/.test(path) ||
-        /(^|\/)(third_party_licenses|third-party-licenses|third_party_notices|third-party-notices)(\.[^/]+)?$/.test(path)
-      ),
-      architecture: has(path =>
-        /(^|\/)architecture\.md$/.test(path) ||
-        /(^|\/)docs\/architecture(\.md)?$/.test(path) ||
-        /(^|\/)architecture\//.test(path)
-      )
+      readme: Boolean(readmePath),
+      security: Boolean(securityPath),
+      license: Boolean(licensePath),
+      architecture: Boolean(architecturePath),
+      paths: {
+        readme: readmePath,
+        security: securityPath,
+        license: licensePath,
+        architecture: architecturePath
+      }
     };
   }
 
@@ -277,13 +317,21 @@
     }
 
     const repos=state.repos.slice(0,20);
+    state.evidenceCacheHits=0;
     const scans=await Promise.all(repos.map(async repo => {
+      const cached=readEvidenceCache(repo);
+      if(cached){
+        state.evidenceCacheHits++;
+        return [repo.name,{...cached,error:false,cached:true}];
+      }
       try {
         const tree=await api(`/repos/${ORG}/${encodeURIComponent(repo.name)}/git/trees/${encodeURIComponent(repo.default_branch || "main")}?recursive=1`);
         const paths=(tree.tree || []).filter(item=>item.type==="blob").map(item=>item.path);
-        return [repo.name,{...detectEvidence(paths),error:false,treeTruncated:Boolean(tree.truncated)}];
+        const evidence={...detectEvidence(paths),error:false,treeTruncated:Boolean(tree.truncated),cached:false};
+        writeEvidenceCache(repo,evidence);
+        return [repo.name,evidence];
       } catch (error) {
-        return [repo.name,{readme:false,security:false,license:false,architecture:false,error:true,treeTruncated:false}];
+        return [repo.name,{readme:false,security:false,license:false,architecture:false,paths:{},error:true,treeTruncated:false,cached:false}];
       }
     }));
 
@@ -310,6 +358,8 @@
       const all = await api(`/orgs/${ORG}/repos?type=public&sort=pushed&per_page=100`);
       state.repos = all.filter(repo => !EXCLUDED.has(repo.name) && !repo.archived);
       state.lastFetch = new Date();
+      state.evidenceScanned = false;
+      state.evidence.clear();
 
       const publicIssues = state.repos.reduce((sum, repo) => sum + (repo.open_issues_count || 0), 0);
       const totalStars = state.repos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
@@ -651,8 +701,20 @@
     if(els.journal)els.journal.innerHTML='<p class="feed-empty">Public build journal unavailable while GitHub API access is unavailable.</p>';
   }
 
-  function evidenceMark(value,label,kind="") {
-    return `<span class="evidence-mark ${value ? (kind || "present") : "absent"}">${value ? "● " + label : "○ NOT FOUND"}</span>`;
+  function artifactUrl(repo,path) {
+    if(!repo || !path)return "";
+    const branch=encodeURIComponent(repo.default_branch || "main");
+    const encodedPath=String(path).split("/").map(encodeURIComponent).join("/");
+    return `${repo.html_url}/blob/${branch}/${encodedPath}`;
+  }
+
+  function evidenceMark(value,label,kind="",url="") {
+    const className=`evidence-mark ${value ? (kind || "present") : "absent"}`;
+    const text=value ? "● " + label : "○ NOT FOUND";
+    if(value && url){
+      return `<a class="${className} evidence-artifact" href="${escapeHtml(url)}" target="_blank" rel="noreferrer" title="Open discovered public artifact">${text}</a>`;
+    }
+    return `<span class="${className}">${text}</span>`;
   }
 
   function renderEvidenceMatrix() {
@@ -675,20 +737,23 @@
       if(releaseRepos.has(name))counts.release++;
 
       const repoUrl=repo.html_url;
+      const paths=evidence.paths || {};
+      const release=state.releases.find(item=>item.repo===name);
       const evidenceStatus=evidence.error
         ? '<span class="evidence-mark absent">API UNAVAILABLE</span>'
-        : evidenceMark(evidence.readme,"FOUND");
+        : evidenceMark(evidence.readme,"FOUND","present",artifactUrl(repo,paths.readme));
+      const repoFlags=[evidence.treeTruncated ? "PARTIAL TREE" : "",evidence.cached ? "CACHE" : ""].filter(Boolean).join(" // ");
 
       return `<tr>
         <td class="evidence-repo">
           <strong>${escapeHtml(name)}</strong>
-          <span>${escapeHtml(repo.language || "Language unspecified")} // ${escapeHtml(fmtDate(repo.pushed_at))}</span>
+          <span>${escapeHtml(repo.language || "Language unspecified")} // ${escapeHtml(fmtDate(repo.pushed_at))}${repoFlags ? " // " + escapeHtml(repoFlags) : ""}</span>
         </td>
         <td class="evidence-cell">${evidenceStatus}</td>
-        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.security,"FOUND")}</td>
-        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.license,"FOUND")}</td>
-        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.architecture,"FOUND")}</td>
-        <td class="evidence-cell">${evidenceMark(releaseRepos.has(name),"DISCOVERED","release")}</td>
+        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.security,"FOUND","present",artifactUrl(repo,paths.security))}</td>
+        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.license,"FOUND","present",artifactUrl(repo,paths.license))}</td>
+        <td class="evidence-cell">${evidence.error ? '<span class="evidence-mark absent">UNKNOWN</span>' : evidenceMark(evidence.architecture,"FOUND","present",artifactUrl(repo,paths.architecture))}</td>
+        <td class="evidence-cell">${evidenceMark(releaseRepos.has(name),"DISCOVERED","release",release?.url || "")}</td>
         <td class="evidence-cell">${evidenceMark(isRecent(repo),"30D","recent")}</td>
         <td><a class="evidence-inspect" href="${escapeHtml(repoUrl)}" target="_blank" rel="noreferrer">OPEN REPO ↗</a></td>
       </tr>`;
@@ -705,7 +770,9 @@
 
     const failed=scanned.filter(([,value])=>value.error).length;
     if(els.evidenceState){
-      els.evidenceState.textContent=failed ? `PARTIAL // ${failed} API ERROR${failed===1?"":"S"}` : `SCANNED // ${scanned.length} REPOS`;
+      els.evidenceState.textContent=failed
+        ? `PARTIAL // ${failed} API ERROR${failed===1?"":"S"} // ${state.evidenceCacheHits} CACHED`
+        : `SCANNED // ${scanned.length} REPOS // ${state.evidenceCacheHits} CACHED`;
       els.evidenceState.className=failed?"partial":"online";
     }
   }
