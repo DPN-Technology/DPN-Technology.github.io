@@ -132,7 +132,7 @@ The standard factory consists of:
 
 The Command Center scans public repository trees for these exact artifacts. A factory being installed does **not** mean the workflow has run. A runtime manifest is displayed separately.
 
-The standardized capture-factory coverage now spans 10 public products: DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce, Aqua Labs, Executive Control System, Human Resources Software and DPN AI.
+The standardized capture-factory coverage now spans 12 public products: DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce, Aqua Labs, Executive Control System, Human Resources Software, DPN AI, DPN OS and Death the Developer.
 
 The new Node-based factories are manual-dispatch only. They use isolated runner-local state and generate evidence manifests that document capture route, viewport, source commit and data-boundary caveats.
 
@@ -146,3 +146,14 @@ The second factory wave adds:
 - **DPN AI** — isolated FastAPI desktop surface with model, web, browser, desktop, voice and external capabilities intentionally disabled so degraded/waiting states are captured honestly.
 
 At the time these factories were installed, none of the 10 standardized repositories had a committed `docs/evidence/runtime/manifest.json`. Factory installation remains automation evidence, not runtime-capture proof.
+
+
+### v3.1 native desktop capture wave
+
+The Capture Factory now includes native desktop applications in addition to browser-served products.
+
+- **DPN OS** — runs the repository's real PySide6/QML Control Center, Command Deck and First Boot surfaces under Xvfb. Repository-native `/etc/dpn-os` defaults are staged into the isolated runner so the backend reports coherent local state.
+- **Death the Developer** — instantiates the real Tk studio in an isolated profile and captures Editor, Neural Forge and Browser Studio tabs without API credentials, a configured workspace or remote browser session.
+- **DPN Executive Control System** — the capture factory now generates all required CEO/COO/agent/master secrets, authenticates against the fresh runner-local CEO account and captures the Command Center, Servers & Systems, Integrations and Clearance Matrix in addition to the secure entry screen.
+
+These workflows remain manual-dispatch only. Their installation is not runtime proof until a committed runtime manifest/capture exists.
