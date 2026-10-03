@@ -496,3 +496,38 @@ valid public manifest + referenced image
 ```
 
 GitHub API failure or rate limiting is represented as unknown. It must not be translated into a failed workflow claim.
+
+
+## v3.6 visual presentation layer
+
+The Visual Command Deck is a presentation layer over the existing browser-only Command Center architecture.
+
+It uses existing local public assets plus the same already-loaded public GitHub repository metadata. No new private API, server, database or credential boundary is introduced.
+
+Pointer tilt, glow tracking, reveal motion and scroll progress are local browser effects. Reduced-motion preferences disable continuous decorative motion where appropriate.
+
+The command-deck product surfaces preserve evidence vocabulary:
+
+- actual capture = existing project/output capture;
+- source-verified = interface presentation derived from inspected public source;
+- neither label implies production deployment or live operational state.
+
+The live activity panel is populated from the existing public repository metadata already acquired by the Command Center.
+
+
+## v3.7 product-world presentation architecture
+
+Product Worlds are static presentation surfaces backed by the Command Center's existing public repository and evidence state.
+
+Each world is associated with one public repository identifier. After the existing telemetry/evidence scan completes, the browser fills bounded fields such as:
+
+- latest public push age;
+- public release-record count;
+- mapped visual-evidence count;
+- primary repository language.
+
+World selection and pointer effects are local browser state only.
+
+The Product Worlds layer introduces no authenticated APIs, private repository discovery, production telemetry or server-side state.
+
+A world's visual proof label remains independent from its repository activity. Repository activity does not convert a source-verified interface into an actual runtime capture.
