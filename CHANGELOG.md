@@ -21,6 +21,11 @@
 - DPN AI starts with external/model/browser/desktop/voice capabilities disabled and captures the actual interface/degraded-state behavior.
 - Standardized capture-factory coverage now spans 10 public product repositories.
 - Verification after installation found no committed runtime manifests or standard runtime PNGs yet; runtime proof remains pending manual workflow execution.
+- Native desktop capture wave added DPN OS and Death the Developer, bringing standardized factory coverage to 12 public products.
+- DPN OS uses real PySide6/QML windows under Xvfb and stages repository-native DPN OS configuration into the isolated runner.
+- Death the Developer uses the real Tk desktop studio and captures Editor, Neural Forge and Browser Studio without API keys or production workspace data.
+- ECS capture was hardened to generate the required COO boot secret and now authenticates to the runner-local CEO account for Command Center, Servers & Systems, Integrations and Clearance Matrix captures.
+- ECS authenticated screenshots are explicitly bounded to repository seed records and runner-local state, not production infrastructure or live telemetry.
 
 ## v3.0 — Evidence Uplift
 
