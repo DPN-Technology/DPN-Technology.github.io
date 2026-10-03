@@ -3,6 +3,10 @@
 ## v2.7 — Visual Evidence Wall Expansion
 
 - Expanded **Inside the Builds** into a typed visual evidence wall.
+- Added three additional source-backed DPN application views:
+  - DPN Operational Control Command Nexus source-derived interface view;
+  - DPN One unified control-plane overview with explicit demo/placeholder-data warning;
+  - Death the Developer desktop IDE/agent studio view.
 - Added three DPN Aqua Labs desktop interface views derived from the current PySide6 source:
   - Store Command Center;
   - Register;
