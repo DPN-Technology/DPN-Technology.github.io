@@ -1,0 +1,17 @@
+{
+  "name": "DPN Technology GitHub Command Center",
+  "short_name": "DPN Command",
+  "description": "Public engineering, architecture, trust, releases and systems doctrine for DPN Technology.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020304",
+  "theme_color": "#050608",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
