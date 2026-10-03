@@ -44,8 +44,10 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
+      <button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
+      <time id="command-clock" datetime="">--:--:--</time>
     </div>
   </header>
 
@@ -103,8 +105,28 @@
         <article><span>LATEST PUBLIC PUSH</span><strong id="metric-push">—</strong><small id="metric-push-repo">GitHub API</small></article>
         <article><span>OPEN PUBLIC ISSUES</span><strong id="metric-issues">—</strong><small>current public repositories</small></article>
         <article><span>PUBLIC RELEASES</span><strong id="metric-releases">—</strong><small>discoverable release records</small></article>
+        <article><span>PUBLIC STARS</span><strong id="metric-stars">—</strong><small>aggregate public repository stars</small></article>
+        <article><span>PUBLIC FORKS</span><strong id="metric-forks">—</strong><small>aggregate public repository forks</small></article>
+        <article><span>PRIMARY LANGUAGES</span><strong id="metric-languages">—</strong><small id="metric-language-list">public repository metadata</small></article>
       </div>
       <p class="truth-note">Telemetry is derived from GitHub’s public API and covers public repositories only. It is not an organization-wide production-health indicator.</p>
+    </section>
+
+    <section class="operations-console" id="operations-console" aria-label="Public operations console">
+      <div class="ops-head">
+        <div><p class="eyebrow">DPN://PUBLIC_OPERATIONS_FEED</p><h2>Live engineering activity.<br><span>Public evidence only.</span></h2></div>
+        <div class="ops-state"><span class="live-dot"></span><strong>GITHUB PUBLIC API</strong><small id="ops-last-sync">awaiting first sync</small></div>
+      </div>
+      <div class="ops-grid">
+        <article class="panel activity-panel">
+          <div class="panel-head"><span>RECENT PUBLIC REPOSITORY ACTIVITY</span><span>OPS://FEED</span></div>
+          <div id="activity-feed" class="activity-feed"><p class="feed-empty">Synchronizing public repository activity…</p></div>
+        </article>
+        <article class="panel language-panel">
+          <div class="panel-head"><span>PUBLIC LANGUAGE SIGNAL</span><span>OPS://LANG</span></div>
+          <div id="language-bars" class="language-bars"><p class="feed-empty">Building language distribution…</p></div>
+        </article>
+      </div>
     </section>
 
     <section class="section company" id="company">
@@ -172,6 +194,40 @@
         <article class="plane recovery"><span>PLANE 04</span><h3>RECOVERY</h3><p>Backup, checkpoint, rollback, restoration, degraded operation and continuity.</p><b>HOW CONTROL RETURNS</b></article>
       </div>
 
+      <div class="system-fabric panel" id="system-fabric">
+        <div class="panel-head"><span>INTERACTIVE DPN SYSTEM FABRIC</span><span>ARCH://LIVE MODEL</span></div>
+        <div class="fabric-workbench">
+          <div class="fabric-map" aria-label="Interactive DPN architecture domains">
+            <svg class="fabric-lines" viewBox="0 0 1000 520" aria-hidden="true">
+              <defs>
+                <filter id="lineGlow"><feGaussianBlur stdDeviation="3"/></filter>
+              </defs>
+              <g class="fabric-glow-lines" filter="url(#lineGlow)">
+                <path d="M500 260L190 120"/><path d="M500 260L500 82"/><path d="M500 260L810 120"/>
+                <path d="M500 260L180 405"/><path d="M500 260L500 445"/><path d="M500 260L820 405"/>
+              </g>
+              <g class="fabric-core-lines">
+                <path d="M500 260L190 120"/><path d="M500 260L500 82"/><path d="M500 260L810 120"/>
+                <path d="M500 260L180 405"/><path d="M500 260L500 445"/><path d="M500 260L820 405"/>
+              </g>
+            </svg>
+            <button class="fabric-node fn-core" data-arch="core" type="button"><strong>DPN</strong><span>CORE</span></button>
+            <button class="fabric-node fn-identity" data-arch="identity" type="button"><strong>IDENTITY</strong><span>TRUST + POLICY</span></button>
+            <button class="fabric-node fn-observe" data-arch="observability" type="button"><strong>OBSERVE</strong><span>HEALTH + EVIDENCE</span></button>
+            <button class="fabric-node fn-automation" data-arch="automation" type="button"><strong>AUTOMATE</strong><span>WORKFLOWS</span></button>
+            <button class="fabric-node fn-integration" data-arch="integration" type="button"><strong>INTEGRATE</strong><span>API + EVENTS</span></button>
+            <button class="fabric-node fn-ai" data-arch="intelligence" type="button"><strong>AI / AGENTS</strong><span>TOOLS + MEMORY</span></button>
+            <button class="fabric-node fn-recovery" data-arch="recovery" type="button"><strong>RECOVER</strong><span>ROLLBACK + RESTORE</span></button>
+          </div>
+          <aside class="fabric-detail" id="fabric-detail">
+            <p class="eyebrow">ARCH://CORE</p>
+            <h3>DPN Technology Core</h3>
+            <p>Select any architecture node to inspect its purpose, trust boundary, evidence expectations and recovery behavior.</p>
+            <dl><div><dt>CONTROL</dt><dd>Explicit authority</dd></div><div><dt>EVIDENCE</dt><dd>Inspectable state</dd></div><div><dt>RECOVERY</dt><dd>Known path back</dd></div></dl>
+          </aside>
+        </div>
+      </div>
+
       <div class="atlas-grid">
         <article class="panel atlas-card"><div class="panel-head"><span>COMMAND FABRIC</span><span>ARCH://01</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-command-fabric.svg" alt="DPN command fabric"></article>
         <article class="panel atlas-card"><div class="panel-head"><span>TRUST + RECOVERY</span><span>ARCH://02</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-trust-stack.svg" alt="DPN trust and recovery stack"></article>
@@ -192,6 +248,28 @@
       </div>
       <div id="project-grid" class="project-grid" aria-live="polite">
         <article class="project-skeleton">Loading public repositories…</article>
+      </div>
+    </section>
+
+    <section class="section release-explorer" id="release-explorer">
+      <div class="section-head">
+        <p class="eyebrow">03B // RELEASE + EVIDENCE EXPLORER</p>
+        <h2>Version numbers are not proof.<br><span>Evidence travels with the release.</span></h2>
+        <p>Public GitHub releases are discovered at runtime and shown alongside the DPN verification vocabulary so source, build, runtime and release evidence are not confused with one another.</p>
+      </div>
+      <div class="release-layout">
+        <article class="panel">
+          <div class="panel-head"><span>LATEST PUBLIC RELEASE RECORDS</span><span>REL://DISCOVERY</span></div>
+          <div id="release-feed" class="release-feed"><p class="feed-empty">Discovering public release records…</p></div>
+        </article>
+        <article class="panel evidence-vocab">
+          <div class="panel-head"><span>DPN VERIFICATION VOCABULARY</span><span>EVID://LEVELS</span></div>
+          <div class="evidence-level"><b>01</b><div><strong>SOURCE VERIFIED</strong><span>Source inspection or static verification occurred.</span></div></div>
+          <div class="evidence-level"><b>02</b><div><strong>BUILD VERIFIED</strong><span>Software successfully built in the stated environment.</span></div></div>
+          <div class="evidence-level"><b>03</b><div><strong>RUNTIME VERIFIED</strong><span>Relevant runtime behavior was exercised.</span></div></div>
+          <div class="evidence-level"><b>04</b><div><strong>RELEASE VERIFIED</strong><span>The distributed release artifact itself was validated.</span></div></div>
+          <p class="evidence-note">One level does not automatically imply the others.</p>
+        </article>
       </div>
     </section>
 
@@ -286,6 +364,25 @@
     <div class="footer-links"><a href="https://github.com/DPN-Technology">GitHub Organization</a><a href="https://github.com/DPN-Technology/.github">Engineering Hub</a><a href="#top">Return to top</a></div>
   </footer>
 
-  <script src="./app.js" defer></script>
+  <dialog id="command-palette" class="command-palette">
+    <form method="dialog" class="command-shell">
+      <div class="command-head">
+        <span>DPN://COMMAND_PALETTE</span>
+        <button value="cancel" aria-label="Close command palette">ESC</button>
+      </div>
+      <label class="command-search"><span>⌕</span><input id="command-search" autocomplete="off" placeholder="Navigate the public command center…"></label>
+      <div class="command-results" id="command-results">
+        <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
+        <button type="button" data-target="architecture"><span>02</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
+        <button type="button" data-target="projects"><span>03</span><strong>Public Work</strong><small>Live repository discovery</small></button>
+        <button type="button" data-target="release-explorer"><span>04</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
+        <button type="button" data-target="trust"><span>05</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
+        <button type="button" data-target="standards"><span>06</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
+        <button type="button" data-target="roadmap"><span>07</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
+      </div>
+    </form>
+  </dialog>
+
+    <script src="./app.js" defer></script>
 </body>
 </html>
