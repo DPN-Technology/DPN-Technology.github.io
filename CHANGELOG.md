@@ -1,3 +1,17 @@
+## v3.9 — Command Bridge
+
+- Added a persistent Command Bridge HUD for rapid navigation across major DPN systems.
+- Added animated route-transition overlays when moving between Product Worlds and command targets.
+- Added a new Founder Command section using the approved Aaron “Diesel” Sherk portrait and public DPN history.
+- Added public founder timeline markers for technical roots (2007), DPN founding (2018), and current connected-systems direction.
+- Added richer Product Focus navigation with previous/next controls and keyboard arrow support.
+- Added a multi-screen Product Focus mosaic and expanded gallery capacity.
+- Updated Product Focus to prioritize validated runtime evidence before static/source-derived visuals when available.
+- Added live repository and visual counts to the persistent Command Bridge.
+- Added Founder Command to Presentation Mode and the command palette.
+- Promoted Command Center assets to `app.v3.9.js` and `styles.v3.9.css`.
+- Bumped evidence/run caches and service-worker namespace to v3.9.
+
 ## v3.8 — Immersive Systems
 
 - Added a cinematic first-session DPN boot sequence with replay and skip controls.
