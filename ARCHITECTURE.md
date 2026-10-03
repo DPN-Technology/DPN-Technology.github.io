@@ -340,3 +340,21 @@ Each capture job is expected to:
 ### Safety boundaries
 
 Network Mapper disables autopilot scanning during capture. Authenticated applications use runner-local credentials/state. Synthetic data must be labeled in the manifest and must not be presented as production data.
+
+
+### Current standardized coverage
+
+The public Capture Factory standard is currently installed in 10 product repositories:
+
+- DPN One
+- DPN Service Desk
+- DPN Network Mapper
+- DPN Operational Control
+- DPN WatchTower
+- DPN Workforce Time Management System
+- DPN Aqua Labs Point of Sale System
+- DPN Executive Control System
+- DPN Human Resources Software
+- DPN AI
+
+Factory implementations differ where application architecture requires it, but all retain the same evidence boundary: isolated runner state, manual dispatch, explicit manifest caveats, and no promotion to runtime proof until capture artifacts exist.
