@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v2.9.css">
+  <link rel="stylesheet" href="./styles.v3.0.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -138,7 +138,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v2.9 PROVENANCE</span>
+      <span>BUILD // v3.0 EVIDENCE UPLIFT</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -504,6 +504,11 @@
             <div class="gallery-frame source-derived"><img src="./assets/projects/death-the-developer-studio.svg" alt="Source-derived Death the Developer desktop studio interface"><span>SOURCE-DERIVED DESKTOP IDE</span></div>
             <figcaption><b>Death the Developer // Desktop Studio</b><span>Current Tk desktop layout: project explorer, multi-file editor, Preview, Terminal, Research, Project Spec, Autonomous Build, GitHub, Neural Forge, Automations, Memory, Audit, Browser and Death agent channel.</span></figcaption>
           </figure>
+
+          <figure class="evidence-runtime">
+            <div class="gallery-frame"><img src="./assets/projects/dtd-browser-smoke-evidence.svg" alt="Actual Death the Developer mobile browser smoke verification capture"><span>ACTUAL TEST CAPTURE</span></div>
+            <figcaption><b>Death the Developer // Browser Smoke Verification</b><span>Actual repository evidence captured from the browser verification fixture. This proves that specific browser-smoke interface artifact exists; it is not presented as the full Death the Developer studio UI.</span></figcaption>
+          </figure>
           <figure class="evidence-source">
             <div class="gallery-frame source-derived"><img src="./assets/projects/dpn-ai-command-center.svg" alt="Source-derived DPN AI Desktop Command Center interface"><span>SOURCE-DERIVED AI DESKTOP</span></div>
             <figcaption><b>DPN AI // Desktop Command Center</b><span>Current v10 desktop source: local intelligence hub, missions, autonomous job queue, knowledge graph, Capability Forge, tool servers, approvals, projects, automations, audit trail, memory, connectors, diagnostics, voice and evidence-first readiness states.</span></figcaption>
@@ -650,6 +655,46 @@
           <span>Presence indicates discoverability only. It is not a quality score.</span>
         </div>
       </article>
+    </section>
+
+    <section class="section verification-board" id="verification-board">
+      <div class="section-head">
+        <p class="eyebrow">03D // PRODUCT VERIFICATION BOARD</p>
+        <h2>Proof maturity,<br><span>without pretending it is a score.</span></h2>
+        <p>This board combines mapped visual evidence, exact source provenance, repository evidence and public GitHub release records. It describes what is publicly inspectable now—not production readiness, security quality or deployment status.</p>
+      </div>
+
+      <div class="verification-summary">
+        <article><span>PRODUCTS WITH VISUALS</span><strong id="verify-products-visual">—</strong><small>public repos mapped to Command Center visuals</small></article>
+        <article><span>WITH ACTUAL CAPTURE</span><strong id="verify-products-runtime">—</strong><small>at least one project/output capture</small></article>
+        <article><span>SOURCE-ONLY VISUAL</span><strong id="verify-products-source-only">—</strong><small>source-derived visual but no mapped actual capture</small></article>
+        <article><span>EXACT PROVENANCE</span><strong id="verify-products-provenance">—</strong><small>at least one exact public source-file mapping</small></article>
+        <article><span>PUBLIC RELEASE RECORD</span><strong id="verify-products-release">—</strong><small>at least one GitHub release in current discovery window</small></article>
+      </div>
+
+      <div class="verification-toolbar">
+        <label><span>FIND PRODUCT</span><input id="verification-search" type="search" placeholder="Aqua, AI, Service Desk…" autocomplete="off"></label>
+        <label><span>VISUAL PROOF STATE</span>
+          <select id="verification-filter">
+            <option value="all">ALL PUBLIC PRODUCTS</option>
+            <option value="runtime">HAS ACTUAL CAPTURE</option>
+            <option value="source-only">SOURCE VISUAL ONLY</option>
+            <option value="visual">HAS ANY VISUAL EVIDENCE</option>
+            <option value="none">NO MAPPED VISUAL</option>
+          </select>
+        </label>
+        <span id="verification-state">AWAITING PUBLIC SIGNAL</span>
+      </div>
+
+      <div id="verification-grid" class="verification-grid" aria-live="polite">
+        <article class="verification-loading">Building product verification records…</article>
+      </div>
+
+      <div class="verification-footnote">
+        <span>ACTUAL CAPTURE = captured project/output image, not production-health proof.</span>
+        <span>SOURCE-DERIVED = verified interface structure, not runtime execution.</span>
+        <span>NOT DISCOVERED = absent from the current bounded public scan, not proof that it does not exist elsewhere.</span>
+      </div>
     </section>
 
     <section class="section trust" id="trust">
@@ -826,18 +871,19 @@
         <button type="button" data-target="architecture"><span>03</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
         <button type="button" data-target="product-families"><span>04</span><strong>Product Constellations</strong><small>Browse the DPN ecosystem by operating domain</small></button>
         <button type="button" data-target="projects"><span>05</span><strong>Public Work</strong><small>Live repository discovery and project dossiers</small></button>
-        <button type="button" data-target="inside-builds"><span>06</span><strong>Visual Evidence Museum</strong><small>25+ captures and source-backed interface views</small></button>
+        <button type="button" data-target="inside-builds"><span>06</span><strong>Visual Evidence Museum</strong><small>26+ captures and source-backed interface views</small></button>
         <button type="button" data-target="release-explorer"><span>07</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
         <button type="button" data-target="evidence-matrix"><span>08</span><strong>Evidence Matrix</strong><small>README, security, license, architecture and release evidence</small></button>
-        <button type="button" data-target="trust"><span>09</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
-        <button type="button" data-target="standards"><span>10</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
-        <button type="button" data-target="build-lineage"><span>11</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
-        <button type="button" data-target="build-journal"><span>12</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
-        <button type="button" data-target="roadmap"><span>13</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
+        <button type="button" data-target="verification-board"><span>09</span><strong>Product Verification Board</strong><small>Actual captures, source visuals, provenance, releases and repo evidence</small></button>
+        <button type="button" data-target="trust"><span>10</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
+        <button type="button" data-target="standards"><span>11</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
+        <button type="button" data-target="build-lineage"><span>12</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
+        <button type="button" data-target="build-journal"><span>13</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
+        <button type="button" data-target="roadmap"><span>14</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
       </div>
     </form>
   </dialog>
 
-    <script src="./app.v2.9.js" defer></script>
+    <script src="./app.v3.0.js" defer></script>
 </body>
 </html>
