@@ -15,7 +15,10 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-org-hero.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DPN Technology // GitHub Command Center">
-  <meta name="twitter:description" content="Develop. Pioneer. Navigate. Public engineering, architecture and trust.">
+  <meta name="twitter:description" content="Develop. Pioneer. Navigate. Public engineering, product evidence, architecture and trust.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-org-hero.svg">
+  <meta name="twitter:image:alt" content="DPN Technology public engineering command center">
+  <meta property="og:image:alt" content="DPN Technology public engineering command center">
   <meta name="description" content="DPN Technology Command Center — inspect public products, engineering evidence, releases, architecture, build lineage and trust controls.">
   <meta name="application-name" content="DPN Command Center">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v2.8.css">
+  <link rel="stylesheet" href="./styles.v2.9.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -58,7 +61,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -135,7 +138,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v2.8 COMMAND</span>
+      <span>BUILD // v2.9 PROVENANCE</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -416,6 +419,7 @@
           <div><span>RUNTIME CAPTURE SHARE</span><strong id="coverage-percent">—%</strong><small>actual captures among interface evidence</small></div>
           <div><span>ACTUAL CAPTURE</span><strong id="coverage-runtime">—</strong><small>runtime/project output images</small></div>
           <div><span>SOURCE-DERIVED</span><strong id="coverage-source">—</strong><small>verified against visible source structure</small></div>
+          <div><span>PROVENANCE MAPPED</span><strong id="coverage-provenance">—</strong><small>exact public source-file mappings</small></div>
           <div><span>CAPTURE / SOURCE GAPS</span><strong id="coverage-gaps">—</strong><small>source-derived screens + known source gaps</small></div>
           <button type="button" id="show-capture-gaps">SHOW CAPTURE GAPS</button>
         </div>
@@ -434,6 +438,15 @@
             <button type="button" data-evidence-filter="runtime">ACTUAL CAPTURES</button>
             <button type="button" data-evidence-filter="source">SOURCE-DERIVED</button>
             <button type="button" data-evidence-filter="artwork">ARTWORK</button>
+          </div>
+          <div class="visual-platform-filters" role="group" aria-label="Filter visual evidence by platform">
+            <span>PLATFORM</span>
+            <button type="button" class="active" data-platform-filter="all">ALL</button>
+            <button type="button" data-platform-filter="desktop">DESKTOP</button>
+            <button type="button" data-platform-filter="web">WEB</button>
+            <button type="button" data-platform-filter="mobile">MOBILE</button>
+            <button type="button" data-platform-filter="game">GAME</button>
+            <button type="button" data-platform-filter="artwork">ARTWORK</button>
           </div>
         </div>
 
@@ -744,6 +757,13 @@
     </section>
   </main>
 
+  <aside id="presentation-dock" class="presentation-dock" aria-hidden="true">
+    <div><span>CLIENT PRESENTATION MODE</span><b id="presentation-step-title">DPN COMMAND CENTER</b></div>
+    <div class="presentation-controls"><button type="button" id="presentation-prev">← PREV</button><span id="presentation-progress">1 / 10</span><button type="button" id="presentation-next">NEXT →</button><button type="button" id="presentation-exit">EXIT</button></div>
+  </aside>
+
+  <div id="offline-banner" class="offline-banner" hidden>OFFLINE MODE // STATIC DPN CONTENT AVAILABLE // PUBLIC GITHUB TELEMETRY REQUIRES NETWORK</div>
+
   <nav class="mobile-command-dock" aria-label="Mobile command navigation">
     <a href="#top"><span>⌂</span><b>CORE</b></a>
     <a href="#projects"><span>◫</span><b>WORK</b></a>
@@ -758,7 +778,7 @@
     <div class="footer-links"><a href="https://github.com/DPN-Technology">GitHub Organization</a><a href="https://github.com/DPN-Technology/.github">Engineering Hub</a><a href="#top">Return to top</a></div>
   </footer>
 
-  <dialog id="evidence-inspector" class="evidence-inspector">
+  <dialog id="evidence-inspector" class="evidence-inspector" aria-labelledby="evidence-inspector-title">
     <div class="inspector-shell">
       <header><div><span id="evidence-inspector-type">VISUAL EVIDENCE</span><h2 id="evidence-inspector-title">Evidence</h2></div><button type="button" id="evidence-inspector-close" aria-label="Close evidence inspector">CLOSE ×</button></header>
       <div class="inspector-stage">
@@ -768,7 +788,7 @@
       </div>
       <div id="evidence-compare" class="evidence-compare" hidden></div>
       <footer class="inspector-meta">
-        <div><p id="evidence-inspector-description"></p><dl id="evidence-inspector-details"></dl></div>
+        <div><p id="evidence-inspector-description"></p><dl id="evidence-inspector-details"></dl><div id="evidence-provenance" class="evidence-provenance"></div></div>
         <div class="inspector-actions">
           <button type="button" id="evidence-pin">PIN FOR COMPARE</button>
           <button type="button" id="evidence-compare-toggle">COMPARE</button>
@@ -779,14 +799,14 @@
     </div>
   </dialog>
 
-  <dialog id="project-dossier" class="project-dossier">
+  <dialog id="project-dossier" class="project-dossier" aria-labelledby="dossier-title">
     <div class="dossier-shell">
       <header><div><span>PUBLIC PROJECT DOSSIER</span><h2 id="dossier-title">DPN Project</h2></div><button type="button" id="dossier-close">CLOSE ×</button></header>
       <div id="dossier-body" class="dossier-body"></div>
     </div>
   </dialog>
 
-  <dialog id="release-inspector" class="release-inspector">
+  <dialog id="release-inspector" class="release-inspector" aria-labelledby="release-inspector-title">
     <div class="dossier-shell">
       <header><div><span>PUBLIC RELEASE EVIDENCE</span><h2 id="release-inspector-title">Release</h2></div><button type="button" id="release-inspector-close">CLOSE ×</button></header>
       <div id="release-inspector-body" class="dossier-body"></div>
@@ -818,6 +838,6 @@
     </form>
   </dialog>
 
-    <script src="./app.v2.8.js" defer></script>
+    <script src="./app.v2.9.js" defer></script>
 </body>
 </html>
