@@ -1,3 +1,17 @@
+## v3.5 — Capture Run Intelligence
+
+- Added an on-demand public GitHub Actions run-history scan for standardized runtime capture factories.
+- Added latest-run states: SUCCEEDED, FAILED, RUNNING/QUEUED, NO RUN DISCOVERED and RUN STATUS UNKNOWN.
+- Added a five-minute browser cache for public capture-run lookups to reduce GitHub API pressure.
+- Added bounded four-at-a-time workflow-run requests instead of spending Actions API budget on every normal page load.
+- Added latest capture-run state to Capture Factory cards and Product Verification Board records.
+- Added direct links to the latest discovered public workflow run.
+- Added next-proof guidance that distinguishes a failed run, active run, successful run without committed evidence, and validated runtime evidence.
+- Preserved the manual-dispatch policy: the Command Center observes public workflow history but does not start capture jobs automatically.
+- Preserved the evidence boundary: a successful workflow run is execution evidence, not runtime proof, until a valid public runtime manifest and image artifacts are committed.
+- Promoted Command Center assets to `app.v3.5.js` and `styles.v3.5.css`.
+- Bumped the service-worker cache namespace to `dpn-command-center-v3.5`.
+
 ## v3.4 — Runtime Evidence Auto-Ingest
 
 - Added automatic discovery and display of validated `docs/evidence/runtime/manifest.json` files.
