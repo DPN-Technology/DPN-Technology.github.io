@@ -49,3 +49,19 @@ Public GitHub activity is **repository activity**, not proof of:
 - operational readiness.
 
 The interface should preserve that distinction.
+
+
+### Public repository evidence
+
+The Command Center may request the public Git tree for a discovered public repository in order to identify whether common engineering artifacts are present.
+
+The scanner looks only at public file paths and does not read private repository content.
+
+Discoverable artifact categories include:
+
+- README;
+- security policy;
+- license / third-party notice;
+- architecture documentation.
+
+Artifact presence is presented as repository evidence, not a quality score.
