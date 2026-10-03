@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.2.css">
+  <link rel="stylesheet" href="./styles.v3.3.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -138,7 +138,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.2 CAPTURE EXPANSION</span>
+      <span>BUILD // v3.3 CAPTURE OPS</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -666,15 +666,17 @@
 
       <div class="capture-summary">
         <article><span>FACTORIES INSTALLED</span><strong id="capture-installed">—</strong><small>workflow + repo-native capture harness discovered</small></article>
+        <article><span>READY ON HOSTED RUNNER</span><strong id="capture-ready">—</strong><small>manual factory can run on GitHub-hosted infrastructure</small></article>
         <article><span>RUNTIME MANIFESTS</span><strong id="capture-manifests">—</strong><small>committed evidence manifests discovered</small></article>
         <article><span>PRODUCTS WITH ACTUAL VISUALS</span><strong id="capture-runtime-products">—</strong><small>mapped actual capture/output evidence</small></article>
+        <article><span>SELF-HOSTED REQUIRED</span><strong id="capture-self-hosted">—</strong><small>requires matching private runner capability</small></article>
         <article><span>NOT YET AUTOMATED</span><strong id="capture-not-installed">—</strong><small>public repos without the standard factory</small></article>
       </div>
 
-      <div class="capture-factory-note">
+      <div class="capture-factory-note" id="capture-ops-help">
         <span>EXECUTION POLICY</span>
         <b>MANUAL DISPATCH ONLY</b>
-        <p>Capture workflows are intentionally not triggered on every push. They run only when explicitly dispatched, use isolated local state, and commit only evidence artifacts/manifest files when configured to do so.</p>
+        <p>Capture workflows are intentionally not triggered on every push. Use each card’s RUN FACTORY link to open the exact GitHub Actions workflow, choose <b>Run workflow</b>, and keep <b>commit_results=true</b> when you want successful captures committed as public evidence.</p>
       </div>
 
       <div id="capture-factory-grid" class="capture-factory-grid" aria-live="polite">
@@ -910,6 +912,6 @@
     </form>
   </dialog>
 
-    <script src="./app.v3.2.js" defer></script>
+    <script src="./app.v3.3.js" defer></script>
 </body>
 </html>
