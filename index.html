@@ -379,6 +379,22 @@
           <span class="legend-art">PROJECT ARTWORK</span><small>identity/art asset; not application evidence</small>
         </div>
 
+        <div class="visual-evidence-registry" aria-label="Visual evidence registry">
+          <div class="visual-evidence-counts">
+            <span><b id="visual-count-all">—</b><small>TOTAL VISUALS</small></span>
+            <span class="runtime"><b id="visual-count-runtime">—</b><small>ACTUAL CAPTURES</small></span>
+            <span class="source"><b id="visual-count-source">—</b><small>SOURCE-DERIVED</small></span>
+            <span class="art"><b id="visual-count-art">—</b><small>ARTWORK</small></span>
+            <span><b id="visual-count-visible">—</b><small>CURRENT VIEW</small></span>
+          </div>
+          <div class="visual-evidence-filters" role="group" aria-label="Filter visual evidence">
+            <button type="button" class="active" data-evidence-filter="all">ALL EVIDENCE</button>
+            <button type="button" data-evidence-filter="runtime">ACTUAL CAPTURES</button>
+            <button type="button" data-evidence-filter="source">SOURCE-DERIVED</button>
+            <button type="button" data-evidence-filter="artwork">ARTWORK</button>
+          </div>
+        </div>
+
         <div class="cinematic-gallery evidence-wall">
           <figure class="gallery-feature evidence-source">
             <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-desktop-dashboard.svg" alt="Source-derived DPN Aqua Labs desktop Store Command Center view"><span>SOURCE-DERIVED DESKTOP UI</span></div>
