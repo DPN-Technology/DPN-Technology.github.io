@@ -61,3 +61,27 @@ The visual evidence wall now also covers DPN OS, ECS, Workforce, HR and WatchTow
 The v2.7 gallery now carries 25 visual evidence items across actual captures, source-derived interfaces and project artwork. It includes deeper multi-screen coverage for Aqua Labs plus source-backed DPN AI, Network Mapper and Service Desk administration views. The registry includes both evidence-type filters and a project/screen search.
 
 DPN Secure Chat and DPN Editor are intentionally not reconstructed without source: no accessible repository is currently available to verify those interfaces.
+
+
+## v2.8 command experience
+
+v2.8 turns the static public engineering surface into a deeper public command experience while keeping the same public-only trust boundary.
+
+Major additions:
+
+- full-screen visual evidence inspector with keyboard navigation;
+- evidence pin/compare mode and shareable evidence deep links;
+- public project dossiers assembled from current GitHub metadata, repository evidence and mapped visuals;
+- inspectable public release records and shareable release links;
+- product constellations for browsing the ecosystem by operating domain;
+- public build lineage combining push signals, release records and mapped visual evidence;
+- architecture drill-downs that point into related public product dossiers;
+- Fusion Mesh node drill-downs with dossier/evidence access;
+- expanded command palette indexing public projects and visual evidence;
+- runtime-capture-share / capture-gap transparency controls;
+- Full, Balanced and Low visual performance modes;
+- mobile bottom command navigation;
+- installable PWA behavior and offline caching of same-origin static presentation assets;
+- structured organization metadata for search/social surfaces.
+
+Deep-link query parameters reference public-safe identifiers only: `evidence`, `project`, and `release`.
