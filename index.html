@@ -369,35 +369,61 @@
       <div class="section inside-builds-inner">
         <div class="section-head">
           <p class="eyebrow">03A // INSIDE THE BUILDS</p>
-          <h2>Less stock imagery.<br><span>More actual DPN work.</span></h2>
-          <p>Project captures and original artwork copied from the DPN Website source, with context preserved so a visual never implies more maturity than the underlying project evidence supports.</p>
+          <h2>Show the software.<br><span>Show what kind of evidence it is.</span></h2>
+          <p>DPN project visuals are now separated by evidence type. Runtime captures stay labeled as captures; source-derived interface views are built from current application layout code and are never presented as live screenshots.</p>
         </div>
 
-        <div class="cinematic-gallery">
-          <figure class="gallery-feature">
+        <div class="evidence-legend" aria-label="Visual evidence types">
+          <span class="legend-runtime">ACTUAL CAPTURE</span><small>image captured from project output or interface</small>
+          <span class="legend-source">SOURCE-DERIVED VIEW</span><small>visual reconstruction from current UI source; not runtime</small>
+          <span class="legend-art">PROJECT ARTWORK</span><small>identity/art asset; not application evidence</small>
+        </div>
+
+        <div class="cinematic-gallery evidence-wall">
+          <figure class="gallery-feature evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-desktop-dashboard.svg" alt="Source-derived DPN Aqua Labs desktop Store Command Center view"><span>SOURCE-DERIVED DESKTOP UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Store Command Center</b><span>Desktop dashboard reconstructed from the current PySide6 layout: real navigation, KPI names, quick actions, transaction/inventory panels and aquarium-facility structure. Demo values are synthetic; this is not a runtime screenshot.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-desktop-register.svg" alt="Source-derived DPN Aqua Labs desktop POS Register view"><span>SOURCE-DERIVED REGISTER UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Register</b><span>Current barcode-first register structure from source: scanner/search workflow, held-sale controls, product table, walk-in customer state, totals and payment choices.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-desktop-store-network.svg" alt="Source-derived DPN Aqua Labs Terminal Command Center view"><span>SOURCE-DERIVED NETWORK UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Terminal Command Center</b><span>Source-backed view of the Store Hub terminal registry, stable rows, connectivity/state/version-health concepts and explicit terminal-management controls.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-runtime">
             <div class="gallery-frame"><img src="./assets/projects/service-desk.webp" alt="DPN Service Desk request interface"><span>ACTUAL INTERFACE CAPTURE</span></div>
             <figcaption><b>DPN Service Desk</b><span>Employee request interface from the development source. Presentation does not imply a connected production server.</span></figcaption>
           </figure>
 
-          <figure>
+          <figure class="evidence-runtime">
             <div class="gallery-frame"><img src="./assets/projects/network-mapper.webp" alt="DPN Network Mapper sample topology"><span>SAMPLE TOPOLOGY</span></div>
-            <figcaption><b>DPN Network Mapper</b><span>Sample device topology. It is project evidence, not a live infrastructure view.</span></figcaption>
+            <figcaption><b>DPN Network Mapper</b><span>Project topology capture. It is visual project evidence, not a live infrastructure or health view.</span></figcaption>
           </figure>
 
-          <figure>
+          <figure class="evidence-runtime">
             <div class="gallery-frame"><img src="./assets/projects/memespace-pool.webp" alt="MemeSpace pool game capture"><span>ACTUAL GAME OUTPUT</span></div>
             <figcaption><b>MemeSpace</b><span>After Hours Pool rendered from actual game code in the development project.</span></figcaption>
           </figure>
 
-          <figure>
+          <figure class="evidence-runtime">
             <div class="gallery-frame"><img src="./assets/projects/aqua-mobile.webp" alt="DPN Aqua Labs mobile interface"><span>ACTUAL MOBILE UI</span></div>
-            <figcaption><b>DPN Aqua Labs</b><span>Unpaired-device mobile screen. No store connection is implied by the capture.</span></figcaption>
+            <figcaption><b>DPN Aqua Labs // Mobile</b><span>Actual unpaired-device mobile screen. No Store Hub connection or production deployment is implied by the capture.</span></figcaption>
           </figure>
 
-          <figure>
-            <div class="gallery-frame"><img src="./assets/projects/dtd-brand.webp" alt="Death the Developer project artwork"><span>PROJECT ARTWORK</span></div>
-            <figcaption><b>Death the Developer</b><span>DPN project brand artwork used to identify the developer-agent workspace.</span></figcaption>
+          <figure class="evidence-artwork">
+            <div class="gallery-frame artwork"><img src="./assets/projects/dtd-brand.webp" alt="Death the Developer project artwork"><span>PROJECT ARTWORK</span></div>
+            <figcaption><b>Death the Developer</b><span>DPN project brand artwork used to identify the developer-agent workspace; intentionally separated from runtime/interface evidence.</span></figcaption>
           </figure>
+        </div>
+
+        <div class="evidence-gap-note">
+          <b>CAPTURE PIPELINE STATUS</b>
+          <span>A repo-native Aqua Labs desktop screenshot harness is now present. Automated runtime capture is blocked while private GitHub Actions runners are unavailable; source-derived views remain explicitly labeled until a real runtime capture can replace them.</span>
         </div>
       </div>
     </section>
