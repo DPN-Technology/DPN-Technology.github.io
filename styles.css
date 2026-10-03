@@ -272,3 +272,55 @@ body:after{content:"";position:fixed;inset:0;z-index:150;pointer-events:none;bac
 @media (prefers-reduced-motion:reduce){
   .fabric-core-lines path{animation:none}
 }
+
+
+/* === DPN WEBSITE-MATCHED BINARY STORM LAYER === */
+#binary-rain,#lightning-canvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none
+}
+#binary-rain{
+  z-index:0;
+  opacity:.52;
+  mix-blend-mode:screen
+}
+#lightning-canvas{
+  z-index:2;
+  mix-blend-mode:screen
+}
+.page-flash{
+  position:fixed;
+  inset:0;
+  z-index:3;
+  background:rgba(255,20,45,.16);
+  opacity:0;
+  pointer-events:none
+}
+.ambient-grid{
+  z-index:0;
+  background-image:
+    linear-gradient(rgba(255,30,50,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,30,50,.035) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(circle at 50% 40%,black,transparent 82%)
+}
+.scan-overlay{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  pointer-events:none;
+  background:repeating-linear-gradient(to bottom,transparent 0,transparent 4px,rgba(255,255,255,.008) 5px)
+}
+.topbar,main,footer{position:relative}
+main,footer{z-index:5}
+.topbar{z-index:100}
+body:after{display:none}
+.lightning-field{display:none!important}
+
+@media(prefers-reduced-motion:reduce){
+  #binary-rain,#lightning-canvas{display:none}
+  .page-flash{display:none}
+}
