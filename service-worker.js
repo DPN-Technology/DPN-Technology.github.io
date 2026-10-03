@@ -1,4 +1,4 @@
-const CACHE_NAME = "dpn-command-center-v3.7";
+const CACHE_NAME = "dpn-command-center-v3.7-r2";
 const CORE = [
   "./",
   "./index.html",
