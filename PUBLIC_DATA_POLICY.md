@@ -114,3 +114,21 @@ They do not intentionally expose private repositories, internal infrastructure i
 The online/offline indicator represents the visitor browser's network state only. It must not be interpreted as DPN service health.
 
 Presentation mode is local UI state and does not grant additional data access.
+
+
+## v3.0 verification-board boundaries
+
+The Product Verification Board uses only intentionally public repository metadata and Command Center evidence mappings.
+
+An actual capture means that a captured project/output image is present. It does not establish:
+
+- production deployment;
+- application uptime;
+- security posture;
+- customer use;
+- release readiness;
+- full runtime verification.
+
+A source-derived visual means that the interface structure was derived from inspected public source. It does not establish execution.
+
+A missing visual or repository artifact means it was not discovered in the current bounded public view. It does not prove that no such artifact exists elsewhere.
