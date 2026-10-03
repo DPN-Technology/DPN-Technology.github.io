@@ -1,3 +1,16 @@
+## v3.8 — Immersive Systems
+
+- Added a cinematic first-session DPN boot sequence with replay and skip controls.
+- Added a new interactive ecosystem router above Product Worlds.
+- Added full-screen Product Focus mode for major DPN systems.
+- Added per-product evidence galleries and larger evidence inspection inside Product Focus.
+- Added evidence thumbnail strips directly inside each Product World.
+- Added product focus live public metadata for push age, release records, visual evidence and primary language.
+- Added active-world visual transitions and product-specific focus states.
+- Preserved all evidence boundaries between actual captures, source-verified interfaces and artwork.
+- Promoted Command Center assets to `app.v3.8.js` and `styles.v3.8.css`.
+- Bumped browser evidence/run caches and service-worker namespace to v3.8.
+
 ## v3.7 — Product Worlds
 
 - Added a new full-width Product Worlds experience beneath the Visual Command Deck.
