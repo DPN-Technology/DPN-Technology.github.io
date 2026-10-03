@@ -385,3 +385,40 @@ Capture automation follows the real application runtime instead of forcing every
 - Unreal products require an Unreal-capable Windows runner. The Tool & Die factory is labeled for a self-hosted `Windows` / `X64` / `unreal-5.8` runner and does not fall back to synthetic screenshots.
 
 A factory requiring unavailable infrastructure remains automation evidence only. The public site must wait for the committed runtime manifest before treating the run as completed evidence.
+
+
+## v3.3 capture operations model
+
+The Capture Factory card derives execution state from public repository-tree evidence plus the known runner requirement for the product.
+
+### States
+
+- **READY TO RUN** — the standard capture workflow and harness are public and the job is designed for GitHub-hosted infrastructure.
+- **SELF-HOSTED RUNNER REQUIRED** — the factory is installed but requires a matching self-hosted execution environment. Tool & Die currently uses this state.
+- **RUNTIME MANIFEST PRESENT** — the standard committed runtime manifest has been discovered.
+- **NOT AUTOMATED** — the standard workflow/harness pair is not currently discovered.
+- **PUBLIC TREE UNKNOWN** — the bounded public repository scan was unavailable.
+
+The RUN FACTORY link points to:
+
+`https://github.com/DPN-Technology/<repository>/actions/workflows/ui-evidence-capture.yml`
+
+It opens GitHub's workflow UI. The operator must still explicitly choose **Run workflow**.
+
+### Evidence transition
+
+```text
+factory discovered
+    ↓
+ready / self-hosted requirement
+    ↓ explicit manual workflow dispatch
+workflow executes isolated runtime
+    ↓
+PNG(s) + docs/evidence/runtime/manifest.json
+    ↓
+public tree scanner discovers manifest
+    ↓
+Command Center may promote reviewed runtime evidence
+```
+
+The workflow page link is an operations affordance, not an execution claim.
