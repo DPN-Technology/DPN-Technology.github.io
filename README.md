@@ -117,3 +117,21 @@ v3.0 adds a product-by-product verification layer on top of the existing evidenc
 - exact provenance coverage includes both source-derived and runtime items when an exact public source path is mapped.
 
 The verification board does not claim production readiness, security quality, deployment status or runtime health.
+
+
+## v3.1 runtime capture factory
+
+v3.1 adds public discovery of repo-native UI capture automation.
+
+The standard factory consists of:
+
+- `.github/workflows/ui-evidence-capture.yml`;
+- `tools/capture_ui_evidence.mjs` or `tools/capture_ui_evidence.py`;
+- optional committed `docs/evidence/runtime/manifest.json`;
+- generated runtime PNG evidence under `docs/evidence/runtime/`.
+
+The Command Center scans public repository trees for these exact artifacts. A factory being installed does **not** mean the workflow has run. A runtime manifest is displayed separately.
+
+The first standardized wave currently covers DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce and Aqua Labs.
+
+The new Node-based factories are manual-dispatch only. They use isolated runner-local state and generate evidence manifests that document capture route, viewport, source commit and data-boundary caveats.
