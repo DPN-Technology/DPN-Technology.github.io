@@ -622,8 +622,9 @@ body:after{display:none}
 .legend-runtime{color:#77e5a1;border-color:rgba(89,217,142,.24)!important}
 .legend-source{color:#c4a7ff;border-color:rgba(139,92,246,.35)!important}
 .legend-art{color:#f6c66f;border-color:rgba(240,178,75,.24)!important}
-.visual-evidence-registry{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;margin:-.4rem 0 1rem;padding:.65rem .75rem;border:1px solid rgba(255,255,255,.07);background:linear-gradient(90deg,rgba(11,11,15,.9),rgba(18,7,12,.74))}
+.visual-evidence-registry{display:grid;grid-template-columns:1fr minmax(240px,360px) auto;gap:1rem;align-items:center;margin:-.4rem 0 1rem;padding:.65rem .75rem;border:1px solid rgba(255,255,255,.07);background:linear-gradient(90deg,rgba(11,11,15,.9),rgba(18,7,12,.74))}
 .visual-evidence-counts{display:flex;gap:.5rem;flex-wrap:wrap}.visual-evidence-counts>span{min-width:92px;padding:.5rem .6rem;border-left:2px solid #ff334b;background:rgba(7,7,10,.7)}.visual-evidence-counts>span.runtime{border-color:#59d98e}.visual-evidence-counts>span.source{border-color:#9b5cff}.visual-evidence-counts>span.art{border-color:#f0b24b}.visual-evidence-counts b{display:block;font:900 1.05rem Consolas,monospace}.visual-evidence-counts small{display:block;margin-top:.15rem;color:#6d6d78;font:800 .43rem Consolas,monospace;letter-spacing:.07em}
+.visual-evidence-search{display:grid;gap:.2rem;min-width:240px}.visual-evidence-search span{font:800 .42rem Consolas,monospace;letter-spacing:.07em;color:#6d6d78}.visual-evidence-search input{width:100%;padding:.54rem .62rem;border:1px solid rgba(255,51,75,.18);background:#08080b;color:#ececf2;font:700 .56rem Consolas,monospace;outline:none}.visual-evidence-search input:focus{border-color:rgba(255,51,75,.55);box-shadow:0 0 18px rgba(229,9,20,.08)}
 .visual-evidence-filters{display:flex;gap:.35rem;flex-wrap:wrap;justify-content:flex-end}.visual-evidence-filters button{padding:.5rem .62rem;border:1px solid rgba(255,51,75,.16);background:#09090c;color:#74747f;font:900 .46rem Consolas,monospace;letter-spacing:.06em;cursor:pointer}.visual-evidence-filters button:hover,.visual-evidence-filters button:focus-visible{border-color:rgba(255,51,75,.48);color:#fff}.visual-evidence-filters button.active{background:#2b080e;border-color:#ff334b;color:#ff7182;box-shadow:0 0 18px rgba(229,9,20,.08)}
 .evidence-wall figure[hidden]{display:none!important}
 .evidence-wall{grid-template-columns:1.2fr .9fr .9fr}
@@ -634,7 +635,7 @@ body:after{display:none}
 .evidence-source figcaption b{color:#c4a7ff}.evidence-runtime figcaption b{color:#d8d8df}.evidence-artwork figcaption b{color:#f6c66f}
 .evidence-gap-note{display:grid;grid-template-columns:190px 1fr;gap:1rem;align-items:start;margin-top:.8rem;padding:.85rem 1rem;border-left:3px solid #8b5cf6;background:linear-gradient(90deg,rgba(36,20,58,.34),rgba(7,7,10,.55));color:#7f7c89}
 .evidence-gap-note b{font:900 .55rem Consolas,monospace;letter-spacing:.09em;color:#c4a7ff}.evidence-gap-note span{font-size:.62rem;line-height:1.65}
-@media(max-width:1100px){.visual-evidence-registry{grid-template-columns:1fr}.visual-evidence-filters{justify-content:flex-start}.evidence-wall{grid-template-columns:1fr 1fr}.evidence-legend{grid-template-columns:auto 1fr auto 1fr}.evidence-gap-note{grid-template-columns:1fr}}
+@media(max-width:1100px){.visual-evidence-registry{grid-template-columns:1fr}.visual-evidence-search{min-width:0}.visual-evidence-filters{justify-content:flex-start}.evidence-wall{grid-template-columns:1fr 1fr}.evidence-legend{grid-template-columns:auto 1fr auto 1fr}.evidence-gap-note{grid-template-columns:1fr}}
 @media(max-width:720px){.visual-evidence-counts>span{flex:1 1 90px}.visual-evidence-filters{display:grid;grid-template-columns:1fr 1fr}.evidence-wall{grid-template-columns:1fr}.evidence-legend{grid-template-columns:1fr}.evidence-legend small{margin-bottom:.35rem}}
 
 /* === DPN PUBLIC FUSION MESH v2.6 === */
