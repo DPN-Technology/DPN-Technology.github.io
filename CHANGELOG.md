@@ -1,5 +1,22 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.3 — DPN Website Identity
+
+- Imported the official `assets/dpn-logo.webp` from the DPN Website repository as a real public binary asset.
+- Replaced text-only DPN brand orbs with the official logo in the top bar, radar core and footer.
+- Added a logo-led hero brandline.
+- Added a DPN Website-inspired discipline strip.
+- Added a large company visual core with orbit rings, rotating sweep and official logo.
+- Brought over the Website visual language:
+  - black / deep charcoal surfaces;
+  - `#ff1738` / `#ff334b` red accents;
+  - orbit/radar framing;
+  - command-surface depth;
+  - company band hierarchy;
+  - Develop / Pioneer / Navigate identity.
+- Changed the site favicon and PWA icon to the official DPN logo.
+- Preserved the v2.2 high-intensity binary storm and lightning engine.
+
 ## v2.1 — DPN Binary Storm
 
 - Replaced the lighter Command Center background effect with the DPN Website storm architecture.
