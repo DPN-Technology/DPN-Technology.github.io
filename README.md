@@ -197,3 +197,24 @@ v3.3 turns the public Capture Factory from a discovery surface into an operation
 - opening a RUN FACTORY link does not itself prove execution; runtime proof still requires a committed evidence manifest/artifact.
 
 The GitHub connection used to maintain the site can inspect workflow runs and artifacts but cannot create a brand-new `workflow_dispatch` run. v3.3 therefore exposes the exact workflow page so a human operator can explicitly launch the manual evidence job without changing the workflow's no-push execution policy.
+
+
+## v3.4 runtime evidence auto-ingest
+
+v3.4 closes the gap between capture execution and public presentation.
+
+When a public product repository commits the standard `docs/evidence/runtime/manifest.json`, the Command Center can fetch, validate and display the repo-hosted runtime images automatically.
+
+Accepted manifests must:
+
+- use schema version 1;
+- name the same repository that supplied the manifest;
+- declare `evidenceType: "actual-rendered-ui"`;
+- contain 1–12 artifacts;
+- reference only image basenames ending in PNG, JPG/JPEG or WEBP;
+- keep those images inside `docs/evidence/runtime/`;
+- provide bounded metadata that can be safely rendered publicly.
+
+The site does not copy auto-ingested images into the Command Center repository. It renders them from the originating public repository and preserves links to both the image source and manifest.
+
+Invalid, unreadable or mismatched manifests are rejected and surfaced as rejected/unreadable instead of silently becoming runtime evidence.
