@@ -205,3 +205,23 @@ A valid runtime manifest proves that a repository published a capture record and
 The manifest's `dataBoundary` disclosure must remain visible with the rendered artifact.
 
 Auto-ingest must not fetch private repositories, credentials, private runner logs or non-public artifacts.
+
+
+## v3.5 capture-run history boundaries
+
+Capture-run history is requested only from public GitHub Actions endpoints and only after an explicit visitor action.
+
+The Command Center may display public workflow metadata such as run status, conclusion, run number, public run URL, timestamp and source commit SHA.
+
+It does not fetch or expose private runner credentials, secrets, private logs or private artifacts.
+
+A public workflow conclusion of `success` proves only that GitHub reported that workflow run as successful. It does not by itself prove that:
+
+- runtime images were committed;
+- the images passed manifest validation;
+- production infrastructure was exercised;
+- production data was used;
+- the application is continuously healthy;
+- the product is release-ready.
+
+Runtime screenshot proof still requires the existing validated public manifest and image-artifact path.
