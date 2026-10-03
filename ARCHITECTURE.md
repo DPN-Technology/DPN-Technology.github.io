@@ -548,3 +548,21 @@ It adds:
 Product Focus draws from the same already-public visual evidence registry and public GitHub metadata used elsewhere in the Command Center.
 
 No new server, credential, private API or production telemetry boundary is introduced. A larger presentation of a source-derived interface does not change its evidence classification.
+
+
+## v3.9 command-bridge interaction model
+
+The Command Bridge is a browser-only navigation and presentation layer.
+
+It observes major public sections and Product Worlds, displays bounded public counts, and routes the visitor between existing DOM targets. Route transitions are decorative and do not represent network activity or privileged system access.
+
+The Product Focus evidence priority is:
+
+1. validated runtime-manifest capture;
+2. mapped static actual capture;
+3. source-derived interface;
+4. project artwork/fallback.
+
+This ordering changes presentation priority only. It does not change the evidence classification of any item.
+
+Founder Command is static public company content using approved public assets and company-history facts.
