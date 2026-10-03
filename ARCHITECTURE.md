@@ -614,3 +614,14 @@ A browser-local interface scale is applied at the document root. The default is 
 The setting changes typography and selected layout dimensions only. It does not alter evidence classification, GitHub telemetry, runtime-manifest validation, application behavior or public/private data boundaries.
 
 Targeted minimum sizes are applied to the densest UI surfaces rather than relying only on global zoom, which preserves the command-center composition while improving legibility.
+
+
+## v4.3 guided-demo presentation layer
+
+Guided Demo Mode is a browser-only presentation layer over the existing public product and evidence model.
+
+It does not introduce new evidence sources. Product visuals come from the same runtime-first evidence registry used by Product Focus and Live Product Shells.
+
+Autoplay changes only the currently displayed product/visual in the client. It does not dispatch workflows, start applications, create telemetry or alter repository state.
+
+The demo's subsystem summaries come from the public Product Theater configuration and retain the same non-runtime topology boundary.
