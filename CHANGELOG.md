@@ -17,6 +17,10 @@
 - Limited tree scanning to public repositories discovered through the public organization API.
 - Excluded `.github` and the Command Center repository from the project evidence matrix.
 - Confirmed the first public project evidence row against `DPN-QB-FiveM-Scripts`.
+- Retained exact discovered artifact paths and made README, security, license/notice, architecture and release evidence directly inspectable.
+- Added a 10-minute browser evidence cache keyed to repository default branch and public push timestamp.
+- Telemetry refresh now resets in-memory evidence before rescanning, while unchanged repositories can reuse valid cached public evidence.
+- Added visible CACHE and PARTIAL TREE context so reused or truncated public tree results are not presented ambiguously.
 
 ## v2.6 — Public Fusion Mesh
 
