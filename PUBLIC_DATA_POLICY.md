@@ -155,3 +155,14 @@ A discovered capture workflow/harness is automation evidence only. The Command C
 Native desktop capture must use a temporary display/profile and must not import the operator's real desktop, home directory or application secrets.
 
 Authenticated evidence may use generated first-run/bootstrap credentials only when those credentials exist solely inside the isolated capture runtime. Seed records rendered after authentication must be described as repository-defined seed/demo state rather than production records.
+
+
+## Engine-specific capture requirements
+
+A public capture pipeline must use the project's real presentation/runtime layer.
+
+For projects whose engine is not available on GitHub-hosted runners, installing a self-hosted/manual workflow is acceptable, but the workflow's existence must not be converted into a runtime-capture claim.
+
+Tool & Die Simulator requires a Windows Unreal Engine 5.8 environment. Any future public image promoted as an actual Tool & Die capture must originate from a successful Unreal run, not from reconstructed source art.
+
+Simulation/game captures describe rendered game state only. They do not establish training validity, real-world operational accuracy, military telemetry or workplace safety compliance.
