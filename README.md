@@ -302,3 +302,20 @@ Product-to-product routing now uses a short command transition rather than an ab
 When validated runtime evidence is available through the existing public runtime-manifest intake, Product Focus prioritizes those actual captures ahead of source-derived fallback visuals.
 
 Founder Command uses the approved public leadership portrait and public DPN history. It does not expose private identity, infrastructure or higher-clearance information.
+
+
+## v4.0 product runtime theater
+
+v4.0 turns each major Product World into a mini public product experience rather than a static showcase.
+
+Each theater derives its screen bank from the public visual-evidence registry for that repository. When validated runtime evidence is available through the existing runtime-manifest intake, those actual captures are presented before source-derived fallback interfaces.
+
+Each Product World now supports:
+
+- Boot Public Demo — a short public presentation sequence that reports discovered repository/evidence state;
+- Screen Bank — switch between mapped public product visuals in place;
+- Architecture — inspect a product-specific public subsystem model;
+- Full Focus — enter the deeper v3.9 evidence viewer;
+- Evidence telemetry — actual captures, source-derived UI, artwork, release count and latest public push age.
+
+The boot sequence is explicitly presentation-only and does not imply a real product process or production service was started.
