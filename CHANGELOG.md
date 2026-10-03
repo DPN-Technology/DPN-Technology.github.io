@@ -1,3 +1,18 @@
+## v4.3 — Guided Demo Mode
+
+- Added a full-screen, client-ready Guided Demo Mode accessible from the top command bar.
+- Added six-product demo navigation for Operational Control, Aqua Labs, Death the Developer, DPN One, Service Desk and Network Mapper.
+- Added runtime-first visual carousels using the existing public evidence priority model.
+- Added previous/next controls, keyboard arrow navigation and thumbnail selection.
+- Added optional autoplay across product screens and product boundaries.
+- Added public repository statistics, release counts, language and visual-evidence counts inside the demo.
+- Added product subsystem summaries drawn from the existing public product model.
+- Added one-click handoff into the selected Live Product Shell or Full Focus viewer.
+- Kept evidence classifications and proof-boundary text visible throughout the tour.
+- Added responsive layouts for desktop, tablet and mobile demo presentation.
+- Promoted Command Center assets to `app.v4.3.js` and `styles.v4.3.css`.
+- Bumped evidence/run caches and service-worker namespace to v4.3.
+
 ## v4.2 — Readability Pass
 
 - Increased the default Command Center interface scale.
