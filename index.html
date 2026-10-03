@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050608">
+  <link rel="canonical" href="https://dpn-technology.github.io/">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DPN Technology">
+  <meta property="og:title" content="DPN Technology // GitHub Command Center">
+  <meta property="og:description" content="Public engineering, architecture, trust, reliability and systems doctrine for DPN Technology.">
+  <meta property="og:url" content="https://dpn-technology.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-org-hero.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DPN Technology // GitHub Command Center">
+  <meta name="twitter:description" content="Develop. Pioneer. Navigate. Public engineering, architecture and trust.">
+  <meta name="description" content="DPN Technology GitHub Command Center — public engineering, architecture, trust, releases and systems doctrine.">
+  <title>DPN Technology // GitHub Command Center</title>
+  <link rel="preconnect" href="https://api.github.com">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="binary-rain" aria-hidden="true"></canvas>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="lightning-field" aria-hidden="true">
+    <span class="bolt bolt-a"></span>
+    <span class="bolt bolt-b"></span>
+    <span class="bolt bolt-c"></span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand-lockup" href="#top" aria-label="DPN Technology Command Center home">
+      <span class="brand-orb"><span>DPN</span></span>
+      <span><strong>DPN TECHNOLOGY</strong><small>GITHUB COMMAND CENTER</small></span>
+    </a>
+    <nav class="topnav" aria-label="Primary navigation">
+      <a href="#company">Company</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#projects">Public Work</a>
+      <a href="#trust">Trust Center</a>
+      <a href="#standards">Standards</a>
+    </nav>
+    <div class="top-status">
+      <span class="pulse"></span>
+      <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p>
+        <h1>Develop.<br><span>Pioneer.</span><br>Navigate.</h1>
+        <p class="hero-slogan">We Develop what doesn’t exist. We Pioneer what comes next. We Navigate the future.</p>
+        <p class="hero-intro">A public engineering command surface for DPN Technology: company direction, public source, systems architecture, engineering standards, release evidence, reliability and trust.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#architecture">Enter Architecture Atlas</a>
+          <a class="button ghost" href="#projects">Inspect Public Work</a>
+        </div>
+        <div class="hero-tags" aria-label="DPN engineering traits">
+          <span>EVIDENCE-DRIVEN</span><span>SECURE BY DESIGN</span><span>RECOVERABLE</span><span>LOCAL-FIRST</span>
+        </div>
+      </div>
+
+      <div class="hero-command">
+        <div class="panel command-panel">
+          <div class="panel-head"><span>DPN // COMMAND FABRIC</span><span class="panel-state">PUBLIC VIEW</span></div>
+          <div class="radar-shell">
+            <div class="radar">
+              <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+              <span class="radar-axis x"></span><span class="radar-axis y"></span>
+              <span class="sweep"></span>
+              <span class="node n1" title="Identity & Trust"></span>
+              <span class="node n2" title="Observability"></span>
+              <span class="node n3" title="Automation"></span>
+              <span class="node n4" title="Recovery"></span>
+              <span class="radar-core">DPN<small>CORE</small></span>
+            </div>
+          </div>
+          <div class="fabric-grid">
+            <div><strong>IDENTITY</strong><span>WHO MAY ACT</span></div>
+            <div><strong>OBSERVE</strong><span>WHAT IS TRUE</span></div>
+            <div><strong>AUTOMATE</strong><span>WHAT HAPPENS NEXT</span></div>
+            <div><strong>RECOVER</strong><span>PATH BACK</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <div><span>PLATFORM</span><strong>SOFTWARE + SYSTEMS + AI</strong></div>
+        <div><span>POSTURE</span><strong>BUILD WITH EVIDENCE</strong></div>
+        <div><span>VISUAL LANGUAGE</span><strong>BLACK // RED // BINARY STORM</strong></div>
+      </div>
+    </section>
+
+    <section class="telemetry-strip" aria-label="Public GitHub telemetry">
+      <div class="telemetry-label"><span class="live-dot"></span> LIVE PUBLIC GITHUB TELEMETRY</div>
+      <div class="telemetry-grid">
+        <article><span>PUBLIC REPOSITORIES</span><strong id="metric-repos">—</strong><small>excluding organization config</small></article>
+        <article><span>LATEST PUBLIC PUSH</span><strong id="metric-push">—</strong><small id="metric-push-repo">GitHub API</small></article>
+        <article><span>OPEN PUBLIC ISSUES</span><strong id="metric-issues">—</strong><small>current public repositories</small></article>
+        <article><span>PUBLIC RELEASES</span><strong id="metric-releases">—</strong><small>discoverable release records</small></article>
+      </div>
+      <p class="truth-note">Telemetry is derived from GitHub’s public API and covers public repositories only. It is not an organization-wide production-health indicator.</p>
+    </section>
+
+    <section class="section company" id="company">
+      <div class="section-head">
+        <p class="eyebrow">01 // COMPANY CORE</p>
+        <h2>Technology built around<br><span>real operating problems.</span></h2>
+        <p>DPN Technology is a hands-on technology company led by Aaron “Diesel” Sherk, Chief Executive Officer. The company combines custom software, infrastructure, AI, automation, operational systems and interactive development under the broader Develop Pioneer Navigate identity.</p>
+      </div>
+
+      <div class="company-layout">
+        <article class="panel profile-card">
+          <div class="panel-head"><span>LEADERSHIP // EXECUTIVE</span><span>L0 / PUBLIC</span></div>
+          <div class="profile-mark">AS</div>
+          <h3>Aaron “Diesel” Sherk</h3>
+          <p class="role">Chief Executive Officer // DPN Technology</p>
+          <p>Company direction, technical priorities, product development and hands-on engineering. DPN’s public company information describes leadership as remaining close to the applications, systems and ideas being developed.</p>
+          <div class="mini-matrix">
+            <div><span>MODE</span><strong>HANDS-ON</strong></div>
+            <div><span>FOCUS</span><strong>SYSTEMS</strong></div>
+            <div><span>METHOD</span><strong>BUILD + VERIFY</strong></div>
+          </div>
+        </article>
+
+        <div class="company-copy">
+          <article class="info-card">
+            <span class="index">A1</span><h3>Why DPN exists</h3>
+            <p>Many technology problems come from disconnected systems, repetitive work, unclear state, poor recovery or tools that do not fit the real process. DPN builds the missing layer between people, software, infrastructure and automation.</p>
+          </article>
+          <article class="info-card">
+            <span class="index">A2</span><h3>What DPN builds</h3>
+            <p>Business software, infrastructure and control systems, AI/developer tools, web and interactive systems, simulations, automation and integration layers.</p>
+          </article>
+          <article class="info-card">
+            <span class="index">A3</span><h3>What DPN is building toward</h3>
+            <p>A connected ecosystem with reusable foundations for identity, trust, observability, automation, integration and recovery—without pretending every project has reached the same maturity.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="dna-grid">
+        <article><strong>PRACTICAL</strong><span>Solve a real problem first.</span></article>
+        <article><strong>OBSERVABLE</strong><span>Important state should be inspectable.</span></article>
+        <article><strong>RECOVERABLE</strong><span>Plan the path back.</span></article>
+        <article><strong>SECURE</strong><span>Bound authority deliberately.</span></article>
+        <article><strong>AUTOMATABLE</strong><span>Reduce repetitive work safely.</span></article>
+        <article><strong>INTEGRATED</strong><span>Connect through visible contracts.</span></article>
+        <article><strong>EXPERIMENTAL</strong><span>Try ambitious ideas visibly.</span></article>
+        <article><strong>EVIDENCE-DRIVEN</strong><span>Prove the important claims.</span></article>
+      </div>
+    </section>
+
+    <section class="storm-divider" aria-hidden="true"><span>01000100 01000101 01010110</span><b>DPN // BINARY STORM</b><span>01010000 01001001 01001111 01001110 01000101 01000101 01010010</span></section>
+
+    <section class="section architecture" id="architecture">
+      <div class="section-head">
+        <p class="eyebrow">02 // ARCHITECTURE ATLAS</p>
+        <h2>Four planes.<br><span>One operating model.</span></h2>
+        <p>DPN separates product delivery from control, evidence and recovery so systems can be ambitious without hiding authority, state or failure behavior.</p>
+      </div>
+
+      <div class="plane-stack">
+        <article class="plane product"><span>PLANE 01</span><h3>PRODUCT</h3><p>User experience, business logic, AI interaction, simulation and operational workflows.</p><b>WHAT THE SYSTEM DOES</b></article>
+        <article class="plane control"><span>PLANE 02</span><h3>CONTROL</h3><p>Identity, policy, authorization, orchestration and integration contracts.</p><b>WHO / WHAT MAY ACT</b></article>
+        <article class="plane evidence"><span>PLANE 03</span><h3>EVIDENCE</h3><p>Telemetry, logs, tests, audit, provenance, artifacts and release evidence.</p><b>WHAT CAN BE PROVEN</b></article>
+        <article class="plane recovery"><span>PLANE 04</span><h3>RECOVERY</h3><p>Backup, checkpoint, rollback, restoration, degraded operation and continuity.</p><b>HOW CONTROL RETURNS</b></article>
+      </div>
+
+      <div class="atlas-grid">
+        <article class="panel atlas-card"><div class="panel-head"><span>COMMAND FABRIC</span><span>ARCH://01</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-command-fabric.svg" alt="DPN command fabric"></article>
+        <article class="panel atlas-card"><div class="panel-head"><span>TRUST + RECOVERY</span><span>ARCH://02</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-trust-stack.svg" alt="DPN trust and recovery stack"></article>
+        <article class="panel atlas-card"><div class="panel-head"><span>QUALITY GATES</span><span>ARCH://03</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-quality-gates.svg" alt="DPN quality gates"></article>
+        <article class="panel atlas-card"><div class="panel-head"><span>RESILIENCE</span><span>ARCH://04</span></div><img src="https://raw.githubusercontent.com/DPN-Technology/.github/main/assets/dpn-resilience-model.svg" alt="DPN resilience model"></article>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-head">
+        <p class="eyebrow">03 // PUBLIC PROJECT DISCOVERY</p>
+        <h2>Public work.<br><span>Live repository evidence.</span></h2>
+        <p>This surface discovers public DPN Technology repositories from GitHub at runtime. Private repositories are intentionally neither listed nor inferred.</p>
+      </div>
+      <div class="project-toolbar">
+        <input id="project-search" type="search" placeholder="Search public repositories…" aria-label="Search public repositories">
+        <button id="refresh-telemetry" type="button">REFRESH TELEMETRY</button>
+      </div>
+      <div id="project-grid" class="project-grid" aria-live="polite">
+        <article class="project-skeleton">Loading public repositories…</article>
+      </div>
+    </section>
+
+    <section class="storm-divider" aria-hidden="true"><span>00110100 01000100 01010000 01001110</span><b>TRUST // EVIDENCE // RECOVERY</b><span>01010010 01000101 01010011 01010100 01001111 01010010 01000101</span></section>
+
+    <section class="section trust" id="trust">
+      <div class="section-head">
+        <p class="eyebrow">04 // PUBLIC TRUST CENTER</p>
+        <h2>Security is not a scanner.<br><span>Reliability is not a green badge.</span></h2>
+        <p>DPN’s public standards describe how trust, evidence, dependencies, releases, incidents, data handling and recovery should be approached. Repository-specific policy can be stricter.</p>
+      </div>
+
+      <div class="trust-grid">
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/SECURITY.md"><span>SEC://01</span><h3>Security Policy</h3><p>Vulnerability reporting, sensitive-data guidance and security principles.</p></a>
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/SUPPLY_CHAIN_SECURITY.md"><span>SEC://02</span><h3>Supply-Chain Security</h3><p>Source, dependency, build, artifact and verification trust.</p></a>
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/RELEASE_EVIDENCE.md"><span>REL://01</span><h3>Release Evidence</h3><p>Source, build, runtime and release verification are kept distinct.</p></a>
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/INCIDENT_RESPONSE.md"><span>OPS://01</span><h3>Incident Response</h3><p>Observe, detect, contain, investigate, recover, verify and learn.</p></a>
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/RELIABILITY_STANDARD.md"><span>SRE://01</span><h3>Reliability</h3><p>Service objectives, health signals, degradation and recovery.</p></a>
+        <a class="trust-card" href="https://github.com/DPN-Technology/.github/blob/main/DATA_HANDLING_STANDARD.md"><span>DATA://01</span><h3>Data Handling</h3><p>Public, internal, restricted and sensitive data-control expectations.</p></a>
+      </div>
+
+      <div class="maturity panel">
+        <div class="panel-head"><span>MATURITY / EVIDENCE MODEL</span><span>TRUST://PUBLIC</span></div>
+        <div class="maturity-line">
+          <div><b>01</b><strong>CONCEPT</strong><span>Intent + scope</span></div>
+          <div><b>02</b><strong>PROTOTYPE</strong><span>Core idea demonstrated</span></div>
+          <div><b>03</b><strong>DEVELOPMENT</strong><span>System being hardened</span></div>
+          <div><b>04</b><strong>PREVIEW</strong><span>Externally evaluable</span></div>
+          <div><b>05</b><strong>RELEASE</strong><span>Versioned + supported evidence</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section standards" id="standards">
+      <div class="section-head">
+        <p class="eyebrow">05 // ENGINEERING STANDARDS HUB</p>
+        <h2>Doctrine that can<br><span>turn into repeatable work.</span></h2>
+        <p>The public standards hub contains reusable rules and templates for architecture, threat modeling, releases, data flows, integration contracts, reliability and operational recovery.</p>
+      </div>
+
+      <div class="standards-layout">
+        <div class="standards-list">
+          <a href="https://github.com/DPN-Technology/.github/blob/main/ENGINEERING_STANDARD.md"><span>01</span><strong>Engineering Standard</strong><small>Maturity, trust, observability, integration, recovery</small></a>
+          <a href="https://github.com/DPN-Technology/.github/blob/main/GOVERNANCE.md"><span>02</span><strong>Engineering Governance</strong><small>Change classes, decisions, risk ownership</small></a>
+          <a href="https://github.com/DPN-Technology/.github/blob/main/QUALITY_GATES.md"><span>03</span><strong>Quality Gates</strong><small>Architecture through operate</small></a>
+          <a href="https://github.com/DPN-Technology/.github/blob/main/DEPENDENCY_POLICY.md"><span>04</span><strong>Dependency Policy</strong><small>Commercial-use hygiene and licensing</small></a>
+          <a href="https://github.com/DPN-Technology/.github/blob/main/INTEGRATION_CONTRACT_STANDARD.md"><span>05</span><strong>Integration Contracts</strong><small>Version, validate, observe, evolve, retire</small></a>
+          <a href="https://github.com/DPN-Technology/.github/blob/main/BRAND_SYSTEM.md"><span>06</span><strong>DPN Brand System</strong><small>Black/red, binary rain, lightning, radar, truthful visuals</small></a>
+        </div>
+
+        <div class="panel terminal">
+          <div class="panel-head"><span>DPN // PUBLIC ENGINEERING CONSOLE</span><span>READ ONLY</span></div>
+          <div class="terminal-body" id="terminal-body" aria-live="off">
+            <p><i>11:23:00</i> <b>[BOOT]</b> DPN public engineering interface</p>
+            <p><i>11:23:01</i> <b>[TRUST]</b> Private repository inventory suppressed</p>
+            <p><i>11:23:02</i> <b>[EVIDENCE]</b> Public GitHub telemetry requested</p>
+            <p><i>11:23:03</i> <b>[POLICY]</b> Truthful maturity labels enforced</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="template-grid">
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/ADR_TEMPLATE.md">ADR TEMPLATE<span>ARCHITECTURE DECISIONS</span></a>
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/THREAT_MODEL_TEMPLATE.md">THREAT MODEL<span>TRUST BOUNDARIES</span></a>
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/RELEASE_CHECKLIST.md">RELEASE CHECK<span>EVIDENCE + ROLLBACK</span></a>
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/RUNBOOK_TEMPLATE.md">RUNBOOK<span>OPERATE + RECOVER</span></a>
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/SLO_TEMPLATE.md">SLO TEMPLATE<span>RELIABILITY TARGETS</span></a>
+        <a href="https://github.com/DPN-Technology/.github/blob/main/templates/DATA_FLOW_REVIEW.md">DATA FLOW<span>CLASSIFY + CONTROL</span></a>
+      </div>
+    </section>
+
+    <section class="section roadmap" id="roadmap">
+      <div class="section-head">
+        <p class="eyebrow">06 // PUBLIC DIRECTION</p>
+        <h2>Build the foundations.<br><span>Then make them work together.</span></h2>
+        <p>This is a directional engineering map, not a promise of delivery dates or a list of private projects.</p>
+      </div>
+      <div class="roadmap-grid">
+        <article><span>FOUNDATION</span><h3>Identity + Trust</h3><p>Explicit actors, devices, sessions, authorization and audit.</p></article>
+        <article><span>VISIBILITY</span><h3>Observability</h3><p>Health, topology, events, logs and operational evidence.</p></article>
+        <article><span>EXECUTION</span><h3>Automation</h3><p>Workflows, approvals and bounded orchestration.</p></article>
+        <article><span>CONNECTION</span><h3>Integration Fabric</h3><p>Versioned APIs, events, SDKs and visible contracts.</p></article>
+        <article><span>INTELLIGENCE</span><h3>AI + Agents</h3><p>Research, coding, memory, tools and assisted operations.</p></article>
+        <article><span>CONTINUITY</span><h3>Recovery</h3><p>Rollback, restore, checkpoints, resilience and incident learning.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-orb"><span>DPN</span></span><div><strong>DPN TECHNOLOGY</strong><small>DEVELOP • PIONEER • NAVIGATE</small></div></div>
+    <p>This public command center intentionally exposes public engineering information only. Private project names, internal infrastructure and sensitive operational information are not enumerated here.</p>
+    <div class="footer-links"><a href="https://github.com/DPN-Technology">GitHub Organization</a><a href="https://github.com/DPN-Technology/.github">Engineering Hub</a><a href="#top">Return to top</a></div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
