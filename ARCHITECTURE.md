@@ -566,3 +566,20 @@ The Product Focus evidence priority is:
 This ordering changes presentation priority only. It does not change the evidence classification of any item.
 
 Founder Command is static public company content using approved public assets and company-history facts.
+
+
+## v4.0 product runtime theater model
+
+The Product Runtime Theater is a client-side presentation layer built on existing public evidence and repository telemetry.
+
+For each supported public product repository, the browser:
+
+1. builds a screen bank from the mapped evidence registry;
+2. places validated runtime-manifest captures first when present;
+3. retains the existing evidence type on every screen;
+4. exposes a product-specific architecture description based on public source/product scope;
+5. derives theater counts from public repository/evidence state.
+
+The “Boot Public Demo” control is intentionally a presentation sequence. It reports public repository/evidence discovery and never starts a product process, workflow, service, runner or deployment.
+
+Architecture drawers describe subsystem concepts, not verified runtime service connections.
