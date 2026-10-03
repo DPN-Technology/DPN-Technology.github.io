@@ -216,7 +216,9 @@ The public UI supports query parameters for:
 
 - `evidence=<public visual slug>`;
 - `project=<public repository name>`;
-- `release=<public repository>::<public tag>`.
+- `release=<public repository>::<public tag>`;
+- `arch=<public architecture domain>`;
+- `mesh=<public registry node>`.
 
 These values reference public-safe identifiers only.
 
