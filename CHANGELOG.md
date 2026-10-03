@@ -1,3 +1,33 @@
+## v3.7 — Product Worlds
+
+- Added a new full-width Product Worlds experience beneath the Visual Command Deck.
+- Added six cinematic product environments for Operational Control, Aqua Labs, Death the Developer, DPN One, Service Desk and Network Mapper.
+- Added a sticky subsystem selector that follows the currently visible product world.
+- Added per-world live public repository metadata for push age, release count, mapped visual evidence and primary language.
+- Added direct product dossier and public source actions from each world.
+- Added pointer-driven 3D product-window tilt, glow tracking and animated scan lines.
+- Added product-specific visual accents instead of reusing one generic card style.
+- Preserved evidence boundaries inside every world: actual project captures remain distinct from source-verified UI views.
+- Added Product Worlds to Presentation Mode.
+- Promoted Command Center assets to `app.v3.7.js` and `styles.v3.7.css`.
+- Bumped browser evidence/run caches and service-worker namespace to v3.7.
+
+## v3.6 — Visual Overdrive
+
+- Rebuilt the opening experience around a new cinematic DPN Visual Command Deck.
+- Added six immediately visible product windows using actual captures and clearly labeled source-verified interfaces.
+- Added a central animated DPN System Core with orbit rings, scanning sweep and command-fabric link lines.
+- Added 3D pointer tilt, glow tracking and depth motion to command-deck product surfaces.
+- Added live public GitHub activity directly beneath the visual command deck.
+- Added live hero metrics for public repositories, release records, visual evidence and public signal state.
+- Added a third floating Aqua Labs product window to the hero.
+- Increased hero scale, DPN watermark depth, red energy/glow treatment and perspective.
+- Added a global scroll progress energy rail and section reveal transitions.
+- Added responsive command-deck layouts for tablet and mobile.
+- Preserved evidence labels so source-derived interfaces are not misrepresented as runtime captures.
+- Promoted Command Center assets to `app.v3.6.js` and `styles.v3.6.css`.
+- Bumped browser evidence/run caches and the service-worker namespace to v3.6.
+
 ## v3.5 — Capture Run Intelligence
 
 - Added an on-demand public GitHub Actions run-history scan for standardized runtime capture factories.
