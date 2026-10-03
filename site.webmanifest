@@ -4,14 +4,14 @@
   "description": "Public engineering, architecture, trust, releases and systems doctrine for DPN Technology.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020304",
-  "theme_color": "#050608",
+  "background_color": "#030305",
+  "theme_color": "#ff1738",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/assets/dpn-logo.webp",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "type": "image/webp",
+      "purpose": "any maskable"
     }
   ]
 }
