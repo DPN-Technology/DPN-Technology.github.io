@@ -49,3 +49,8 @@ No GitHub Actions build is required by the site source itself.
 ## Visual evidence
 
 The Command Center includes a typed visual evidence wall. Runtime/interface captures, source-derived UI views and project artwork are labeled separately so presentation does not overstate what has actually been executed or captured. Aqua Labs desktop views are currently source-derived from the current PySide6 UI code and are explicitly marked as non-runtime until real desktop screenshots can replace them.
+
+
+### Ecosystem visual coverage
+
+The visual evidence wall now also covers DPN OS, ECS, Workforce, HR and WatchTower. These additional views are derived from the applications' current UI source and remain explicitly labeled as non-runtime evidence wherever a genuine execution capture is not available.
