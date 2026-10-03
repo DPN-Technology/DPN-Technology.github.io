@@ -166,3 +166,21 @@ For projects whose engine is not available on GitHub-hosted runners, installing 
 Tool & Die Simulator requires a Windows Unreal Engine 5.8 environment. Any future public image promoted as an actual Tool & Die capture must originate from a successful Unreal run, not from reconstructed source art.
 
 Simulation/game captures describe rendered game state only. They do not establish training validity, real-world operational accuracy, military telemetry or workplace safety compliance.
+
+
+## v3.3 workflow-launch boundaries
+
+A public link to a GitHub Actions workflow proves only that the public workflow page exists.
+
+The Command Center must not infer that:
+
+- the workflow was dispatched;
+- a runner accepted the job;
+- the application started;
+- a screenshot was produced;
+- the result was valid;
+- runtime evidence was committed.
+
+Those facts require corresponding GitHub run/artifact or repository evidence.
+
+The capture workflows remain explicitly manual to avoid background CI consumption and unintended public evidence generation. Self-hosted requirements must remain visible when a project cannot truthfully execute on hosted infrastructure.
