@@ -132,6 +132,17 @@ The standard factory consists of:
 
 The Command Center scans public repository trees for these exact artifacts. A factory being installed does **not** mean the workflow has run. A runtime manifest is displayed separately.
 
-The first standardized wave currently covers DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce and Aqua Labs.
+The standardized capture-factory coverage now spans 10 public products: DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce, Aqua Labs, Executive Control System, Human Resources Software and DPN AI.
 
 The new Node-based factories are manual-dispatch only. They use isolated runner-local state and generate evidence manifests that document capture route, viewport, source commit and data-boundary caveats.
+
+
+### v3.1 capture wave two
+
+The second factory wave adds:
+
+- **DPN Executive Control System** — isolated secure-entry render using ephemeral ECS secrets; it does not claim authenticated command-plane state.
+- **DPN Human Resources Software** — real first-run login and forced-password-change flow against a fresh isolated encrypted HR database, then dashboard/Employees/Documents captures.
+- **DPN AI** — isolated FastAPI desktop surface with model, web, browser, desktop, voice and external capabilities intentionally disabled so degraded/waiting states are captured honestly.
+
+At the time these factories were installed, none of the 10 standardized repositories had a committed `docs/evidence/runtime/manifest.json`. Factory installation remains automation evidence, not runtime-capture proof.
