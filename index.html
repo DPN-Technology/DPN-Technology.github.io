@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v4.2.css">
+  <link rel="stylesheet" href="./styles.v4.3.css">
 </head>
 <body>
   <div id="dpn-boot" class="dpn-boot" aria-hidden="true">
@@ -81,7 +81,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="guided-demo-toggle" class="storm-status-chip guided-demo-toggle" type="button">DEMO</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -111,7 +111,7 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v4.2 READABILITY PASS</div>
+        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v4.3 GUIDED DEMO MODE</div>
         <div class="hero-brandline">
           <span class="hero-brandmark"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></span>
           <div><p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p><strong>DEVELOP PIONEER NAVIGATE</strong></div>
@@ -487,7 +487,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v4.2 READABILITY PASS</span>
+      <span>BUILD // v4.3 GUIDED DEMO MODE</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -1398,7 +1398,79 @@
     </form>
   </dialog>
 
+  <dialog id="guided-demo" class="guided-demo">
+    <div class="guided-demo-shell">
+      <header class="guided-demo-head">
+        <div>
+          <span>DPN://GUIDED_DEMO_MODE</span>
+          <h2>PUBLIC PRODUCT TOUR</h2>
+          <p>Client-ready walkthrough using mapped public evidence only.</p>
+        </div>
+        <div class="guided-demo-head-actions">
+          <button id="guided-demo-autoplay" type="button" aria-pressed="false">AUTO // OFF</button>
+          <button id="guided-demo-close" type="button">CLOSE ×</button>
+        </div>
+      </header>
 
-    <script src="./app.v4.2.js" defer></script>
+      <nav id="guided-demo-products" class="guided-demo-products" aria-label="Product demo selector"></nav>
+
+      <div class="guided-demo-body">
+        <section class="guided-demo-stage">
+          <div class="guided-demo-screen">
+            <img id="guided-demo-image" src="./assets/dpn-logo.webp" alt="">
+            <span id="guided-demo-evidence" class="guided-demo-evidence">PUBLIC EVIDENCE</span>
+            <div class="guided-demo-scan"></div>
+            <button id="guided-demo-prev" class="guided-demo-nav prev" type="button" aria-label="Previous demo screen">‹</button>
+            <button id="guided-demo-next" class="guided-demo-nav next" type="button" aria-label="Next demo screen">›</button>
+          </div>
+          <div class="guided-demo-screen-meta">
+            <span id="guided-demo-position">01 / 01</span>
+            <div><strong id="guided-demo-screen-title">DPN PUBLIC PRODUCT</strong><small id="guided-demo-screen-proof">PUBLIC SOURCE PRESENTATION</small></div>
+          </div>
+          <div id="guided-demo-thumbnails" class="guided-demo-thumbnails" aria-label="Demo evidence thumbnails"></div>
+        </section>
+
+        <aside class="guided-demo-intel">
+          <div class="guided-demo-brand">
+            <span class="guided-demo-logo"><img src="./assets/dpn-logo.webp" alt=""></span>
+            <div><small>ACTIVE PRODUCT</small><h3 id="guided-demo-product-title">DPN TECHNOLOGY</h3></div>
+          </div>
+          <p id="guided-demo-product-description">Select a product to begin the public evidence tour.</p>
+
+          <div class="guided-demo-stats">
+            <span><small>LAST PUBLIC PUSH</small><b id="guided-demo-push">—</b></span>
+            <span><small>RELEASE RECORDS</small><b id="guided-demo-releases">—</b></span>
+            <span><small>VISUAL EVIDENCE</small><b id="guided-demo-visuals">—</b></span>
+            <span><small>PRIMARY LANGUAGE</small><b id="guided-demo-language">—</b></span>
+          </div>
+
+          <div class="guided-demo-module">
+            <span>PUBLIC PRODUCT MODULES</span>
+            <div id="guided-demo-modules"></div>
+          </div>
+
+          <div class="guided-demo-boundary">
+            <span>EVIDENCE BOUNDARY</span>
+            <b id="guided-demo-boundary-text">PUBLIC SOURCE PRESENTATION</b>
+          </div>
+
+          <div class="guided-demo-actions">
+            <button id="guided-demo-enter-shell" type="button">ENTER LIVE PRODUCT SHELL</button>
+            <button id="guided-demo-open-focus" type="button">OPEN FULL FOCUS</button>
+            <a id="guided-demo-source" href="https://github.com/DPN-Technology" target="_blank" rel="noreferrer">OPEN PUBLIC SOURCE ↗</a>
+          </div>
+
+          <div class="guided-demo-progress">
+            <span>TOUR PROGRESS</span>
+            <div><i id="guided-demo-progress-bar"></i></div>
+            <small id="guided-demo-progress-label">PRODUCT 1 / 6</small>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+
+    <script src="./app.v4.3.js" defer></script>
 </body>
 </html>
