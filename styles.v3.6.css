@@ -1843,3 +1843,54 @@ html.offline #github-api-state{color:#f0b24b}
   .od-links path,.od-ring,.od-sweep{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+
+/* v3.6 wave two // visual-first product dossiers */
+.project-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.project-card{
+  padding:0;min-height:390px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.075);
+  background:linear-gradient(145deg,#0b0b0f,#050507);box-shadow:0 20px 45px rgba(0,0,0,.28);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
+}
+.project-card:before{width:2px;z-index:4;background:#ff2637}
+.project-card:hover{transform:translateY(-7px);border-color:rgba(255,45,63,.32);box-shadow:0 30px 65px rgba(0,0,0,.42),0 0 30px rgba(229,9,20,.07)}
+.project-card.family-ai:before{background:#a77cff}.project-card.family-retail:before{background:#b05cff}.project-card.family-control:before{background:#ff2637}
+.project-card.family-workforce:before{background:#6ab5ff}.project-card.family-platform:before{background:#f0b24b}.project-card.family-interactive:before{background:#ff725c}
+.project-card-visual{
+  position:relative;width:100%;padding:0;border:0;border-bottom:1px solid rgba(255,255,255,.055);background:#040406;cursor:pointer;overflow:hidden;text-align:left
+}
+.project-card-visual img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#050507;transition:transform .35s ease,filter .35s ease}
+.project-card-visual .source+img,.project-card-visual img[src$=".svg"]{object-fit:contain}
+.project-card:hover .project-card-visual img{transform:scale(1.025);filter:brightness(1.08)}
+.project-card-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.66));pointer-events:none}
+.project-visual-badge{
+  position:absolute;z-index:2;left:.55rem;top:.55rem;padding:.3rem .38rem;border:1px solid rgba(89,217,142,.28);background:rgba(5,18,10,.9);
+  color:#79e7a4;font:900 .36rem Consolas,monospace;letter-spacing:.05em
+}
+.project-visual-badge.source{border-color:rgba(167,124,255,.3);background:rgba(17,9,25,.92);color:#c4a5ff}
+.project-card-visual i{position:absolute;z-index:2;right:.55rem;bottom:.48rem;color:#ded9e2;font:900 .36rem Consolas,monospace;font-style:normal;letter-spacing:.05em}
+.project-card-no-visual{
+  min-height:177px;display:grid;place-content:center;padding:1.2rem;text-align:center;
+  background:radial-gradient(circle at center,rgba(229,9,20,.09),transparent 56%),repeating-linear-gradient(90deg,transparent 0 31px,rgba(255,255,255,.012) 32px);
+  border-bottom:1px solid rgba(255,255,255,.05)
+}
+.project-card-no-visual span{color:#ff5365;font:900 .38rem Consolas,monospace;letter-spacing:.08em}.project-card-no-visual b{margin:.35rem 0;font-size:.82rem}.project-card-no-visual small{color:#625d67}
+.project-card-body{display:flex;flex:1;flex-direction:column;padding:.9rem}
+.project-card-body h3{font-size:1.05rem;line-height:1.12}.project-card-body>p{min-height:auto}
+.project-card-signal{display:grid;grid-template-columns:repeat(4,1fr);gap:.3rem;margin:.55rem 0}
+.project-card-signal span{padding:.42rem;border:1px solid rgba(255,255,255,.045);background:#07070a}
+.project-card-signal b,.project-card-signal small{display:block}.project-card-signal b{font:900 .58rem Consolas,monospace;color:#e9e5ed}.project-card-signal small{margin-top:.1rem;color:#5e5962;font:800 .32rem Consolas,monospace;letter-spacing:.04em}
+.project-card-body .project-footer{margin-top:auto}
+
+.section:not(.inside-builds-inner):before{
+  content:"";position:absolute;left:0;top:0;width:clamp(60px,14vw,210px);height:1px;
+  background:linear-gradient(90deg,#ff2637,transparent);box-shadow:0 0 10px rgba(229,9,20,.28)
+}
+.section-head h2{position:relative}
+.section-head h2:after{
+  content:"";display:block;width:72px;height:3px;margin-top:.55rem;background:linear-gradient(90deg,#e50914,#ff5365,transparent);box-shadow:0 0 18px rgba(229,9,20,.22)
+}
+.panel{box-shadow:0 16px 35px rgba(0,0,0,.18)}
+.panel:hover{border-color:rgba(229,9,20,.22)}
+@media(max-width:1050px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.project-grid{grid-template-columns:1fr}.project-card-signal{grid-template-columns:1fr 1fr}}
