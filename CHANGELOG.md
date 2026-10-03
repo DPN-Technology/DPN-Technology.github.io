@@ -9,6 +9,7 @@
   - Terminal Command Center / Store Network.
 - Kept source-derived views visibly labeled **not runtime capture**.
 - Preserved existing actual Service Desk, Network Mapper, MemeSpace and Aqua mobile visual evidence.
+- Added the MemeSpace Pinball actual game-output image already carried by the DPN Website source.
 - Added an evidence legend separating:
   - actual captures;
   - source-derived interface views;
