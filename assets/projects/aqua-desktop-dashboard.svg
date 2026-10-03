@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">DPN Aqua Labs desktop Store Command Center source-derived UI view</title>
+<desc id="d">Source-derived visual based on the current PySide6 desktop layout. Not a runtime screenshot.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07070b"/><stop offset=".55" stop-color="#0d0a14"/><stop offset="1" stop-color="#09090d"/></linearGradient>
+  <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#25143f"/><stop offset="1" stop-color="#111018"/></linearGradient>
+  <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#8b5cf6" stroke-opacity=".045"/></pattern>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .ui{font-family:'Segoe UI',Arial,sans-serif;fill:#f5f3ff}.mono{font-family:Consolas,monospace}
+    .muted{fill:#9693a6}.dim{fill:#686575}.purple{fill:#a78bfa}.green{fill:#86efac}.amber{fill:#fbbf24}
+    .label{font-size:15px;font-weight:700}.tiny{font-size:11px;font-weight:700;letter-spacing:1.1px}.body{font-size:14px}
+    .title{font-size:28px;font-weight:800}.kpi{font-size:29px;font-weight:850}.section{font-size:16px;font-weight:800}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+<rect x="0" y="0" width="270" height="900" fill="#09090d"/><rect x="269" width="1" height="900" fill="#30283d"/>
+<rect x="0" y="0" width="1600" height="4" fill="#8b5cf6" filter="url(#glow)"/>
+
+<!-- Sidebar -->
+<circle cx="42" cy="46" r="25" fill="#17111f" stroke="#8b5cf6" stroke-width="2"/><circle cx="42" cy="46" r="13" fill="#8b5cf6" opacity=".85"/>
+<text x="78" y="42" class="ui label">DPN AQUA LABS</text><text x="78" y="61" class="ui tiny muted">RETAIL • LIVESTOCK • SYSTEMS</text>
+<rect x="16" y="86" width="238" height="56" rx="10" fill="#121217" stroke="#292934"/><circle cx="43" cy="114" r="17" fill="#6d28d9"/>
+<text x="38" y="119" class="ui label">D</text><text x="70" y="108" class="ui label">DPN UI Evidence</text><text x="70" y="128" class="ui body muted">Owner / Executive</text>
+
+<text x="20" y="176" class="ui tiny dim">WORKSPACE</text>
+<g class="ui body"><rect x="14" y="188" width="242" height="38" rx="8" fill="#251b3c"/><rect x="14" y="188" width="3" height="38" fill="#8b5cf6"/><text x="31" y="213">Dashboard</text>
+<text x="31" y="250" class="muted">POS Register</text><text x="31" y="281" class="muted">Customers</text><text x="31" y="312" class="muted">Orders &amp; Deposits</text><text x="31" y="343" class="muted">Loyalty &amp; Credit</text><text x="31" y="374" class="muted">Inventory</text><text x="31" y="405" class="muted">Livestock</text></g>
+<text x="20" y="444" class="ui tiny dim">STORE OPERATIONS</text>
+<g class="ui body muted"><text x="31" y="478">Tanks</text><text x="31" y="509">Purchasing</text><text x="31" y="540">Suppliers</text><text x="31" y="571">Cash Drawer</text><text x="31" y="602">Returns</text><text x="31" y="633">Time Clock</text><text x="31" y="664">End of Day</text><text x="31" y="695">Reports &amp; Analytics</text></g>
+<text x="20" y="735" class="ui tiny dim">AQUARIUM CONTROL</text>
+<g class="ui body muted"><text x="31" y="768">Tank Control</text><text x="31" y="799">Emergency Center</text><text x="31" y="830">Maintenance</text></g>
+
+<!-- Top bar -->
+<rect x="270" y="4" width="1330" height="66" fill="#0e0e14" stroke="#252530"/>
+<text x="300" y="44" class="ui label">DPN Aqua Labs / Retail Operations</text>
+<rect x="1110" y="19" width="330" height="36" rx="8" fill="#0a0a0f" stroke="#32323d"/><text x="1130" y="43" class="ui body muted">Search products, customers, sales…</text>
+<text x="1470" y="42" class="ui tiny muted">SOURCE UI</text>
+
+<!-- Main -->
+<text x="310" y="118" class="ui tiny purple">STORE COMMAND CENTER</text>
+<text x="310" y="150" class="ui title">Operate the store from one screen</text>
+<text x="310" y="174" class="ui body muted">Checkout, inventory, staff, purchasing and aquarium health</text>
+
+<rect x="310" y="202" width="1240" height="126" rx="16" fill="url(#hero)" stroke="#3a2b50"/>
+<text x="340" y="238" class="ui tiny purple">DPN AQUA LABS • LIVE STORE OPERATIONS</text><text x="340" y="274" class="ui title">Ready for business</text>
+<text x="340" y="301" class="ui body muted">Use the quick actions to handle the most common front-counter and management tasks.</text>
+<g class="ui label"><rect x="1150" y="238" width="116" height="48" rx="9" fill="#8b5cf6"/><text x="1178" y="268">New Sale</text>
+<rect x="1278" y="238" width="118" height="48" rx="9" fill="#17171f" stroke="#353340"/><text x="1303" y="268">Add Product</text>
+<rect x="1408" y="238" width="118" height="48" rx="9" fill="#17171f" stroke="#353340"/><text x="1428" y="268">Receive Stock</text></g>
+
+<!-- KPI cards -->
+<g class="ui">
+<rect x="310" y="350" width="290" height="112" rx="14" fill="#121217" stroke="#292934"/><text x="332" y="382" class="tiny purple">TODAY'S SALES</text><text x="332" y="422" class="kpi">$0.00</text><text x="332" y="446" class="body muted">Completed revenue</text>
+<rect x="618" y="350" width="290" height="112" rx="14" fill="#121217" stroke="#292934"/><text x="640" y="382" class="tiny muted">UNITS ON HAND</text><text x="640" y="422" class="kpi">54</text><text x="640" y="446" class="body muted">Sellable product units</text>
+<rect x="926" y="350" width="290" height="112" rx="14" fill="#121217" stroke="#292934"/><text x="948" y="382" class="tiny muted">LOW STOCK</text><text x="948" y="422" class="kpi amber">2</text><text x="948" y="446" class="body muted">Need replenishment</text>
+<rect x="1234" y="350" width="316" height="112" rx="14" fill="#121217" stroke="#292934"/><text x="1256" y="382" class="tiny muted">OPEN ALERTS</text><text x="1256" y="422" class="kpi green">0</text><text x="1256" y="446" class="body muted">Facility + aquarium</text></g>
+
+<!-- Data panels -->
+<rect x="310" y="486" width="600" height="188" rx="14" fill="#101016" stroke="#292934"/><text x="334" y="520" class="ui section">Recent Transactions</text><text x="334" y="544" class="ui body muted">Double-click a sale from Returns to inspect or refund it.</text>
+<g class="ui tiny muted"><text x="334" y="583">SALE</text><text x="478" y="583">TIME</text><text x="621" y="583">PAYMENT</text><text x="790" y="583">TOTAL</text></g>
+<line x1="332" y1="596" x2="888" y2="596" stroke="#282832"/><text x="334" y="628" class="ui body">#DEMO-001</text><text x="478" y="628" class="ui body muted">12:34</text><text x="621" y="628" class="ui body muted">Card</text><text x="790" y="628" class="ui body">$97.98</text>
+
+<rect x="928" y="486" width="622" height="188" rx="14" fill="#101016" stroke="#292934"/><text x="952" y="520" class="ui section">Inventory Attention</text><text x="952" y="544" class="ui body muted">Products at or below their reorder point.</text>
+<g class="ui tiny muted"><text x="952" y="583">ITEM</text><text x="1286" y="583">QTY</text><text x="1410" y="583">REORDER</text></g>
+<line x1="950" y1="596" x2="1528" y2="596" stroke="#282832"/><text x="952" y="628" class="ui body">Marine Water Test Kit</text><text x="1286" y="628" class="ui body amber">4</text><text x="1410" y="628" class="ui body">5</text>
+
+<rect x="310" y="696" width="1240" height="150" rx="14" fill="#101016" stroke="#292934"/><text x="334" y="730" class="ui section">Aquarium Facility</text><text x="334" y="754" class="ui body muted">Retail operations and life-support monitoring stay visible without cluttering the register.</text>
+<text x="1278" y="730" class="ui tiny green">FACILITY STATUS: NOMINAL</text>
+<g class="ui tiny muted"><text x="334" y="792">TANK</text><text x="574" y="792">STATE</text><text x="690" y="792">TEMP</text><text x="790" y="792">pH</text><text x="862" y="792">SALINITY</text><text x="990" y="792">LEVEL</text><text x="1090" y="792">FLOW</text><text x="1210" y="792">LAST UPDATE</text></g>
+<line x1="332" y1="806" x2="1528" y2="806" stroke="#282832"/><text x="334" y="835" class="ui body">Display Reef 01</text><text x="574" y="835" class="ui body green">NOMINAL</text><text x="690" y="835" class="ui body">78.2°</text><text x="790" y="835" class="ui body">8.15</text><text x="862" y="835" class="ui body">1.025</text><text x="990" y="835" class="ui body">98%</text><text x="1090" y="835" class="ui body">1420 GPH</text><text x="1210" y="835" class="ui body muted">DEMO DATA</text>
+
+<rect x="1010" y="858" width="540" height="28" rx="6" fill="#191322" stroke="#684a8d"/><text x="1028" y="877" class="ui tiny purple">SOURCE-DERIVED UI VIEW • CURRENT PYSIDE6 LAYOUT • NOT RUNTIME CAPTURE</text>
+</svg>
