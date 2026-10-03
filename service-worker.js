@@ -1,9 +1,9 @@
-const CACHE_NAME = "dpn-command-center-v3.0";
+const CACHE_NAME = "dpn-command-center-v3.1";
 const CORE = [
   "./",
   "./index.html",
-  "./styles.v3.0.css",
-  "./app.v3.0.js",
+  "./styles.v3.1.css",
+  "./app.v3.1.js",
   "./site.webmanifest",
   "./assets/dpn-logo.webp",
   "./assets/aaron-sherk-portrait.jpg"
