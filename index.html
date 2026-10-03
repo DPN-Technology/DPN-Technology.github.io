@@ -387,6 +387,7 @@
             <span class="art"><b id="visual-count-art">—</b><small>ARTWORK</small></span>
             <span><b id="visual-count-visible">—</b><small>CURRENT VIEW</small></span>
           </div>
+          <label class="visual-evidence-search"><span>FIND PROJECT / SCREEN</span><input id="visual-evidence-search" type="search" placeholder="Aqua, AI, Service Desk, Network…" autocomplete="off"></label>
           <div class="visual-evidence-filters" role="group" aria-label="Filter visual evidence">
             <button type="button" class="active" data-evidence-filter="all">ALL EVIDENCE</button>
             <button type="button" data-evidence-filter="runtime">ACTUAL CAPTURES</button>
@@ -410,6 +411,30 @@
             <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-desktop-store-network.svg" alt="Source-derived DPN Aqua Labs Terminal Command Center view"><span>SOURCE-DERIVED NETWORK UI</span></div>
             <figcaption><b>DPN Aqua Labs // Terminal Command Center</b><span>Source-backed view of the Store Hub terminal registry, stable rows, connectivity/state/version-health concepts and explicit terminal-management controls.</span></figcaption>
           </figure>
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-inventory-command.svg" alt="Source-derived DPN Aqua Labs Inventory interface"><span>SOURCE-DERIVED INVENTORY UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Inventory</b><span>Catalog, pricing, stock, reorder, margin and inventory-correction workflow from the current PySide6 inventory page. Live product counts and values are intentionally omitted.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-purchasing-command.svg" alt="Source-derived DPN Aqua Labs Purchasing Command Center"><span>SOURCE-DERIVED PURCHASING UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Purchasing Command Center</b><span>Demand planning, reorder queue, purchase orders, receiving, backorders and purchase-history concepts from the current purchasing source.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-maintenance-center.svg" alt="Source-derived DPN Aqua Labs Maintenance Work Order Center"><span>SOURCE-DERIVED MAINTENANCE UI</span></div>
+            <figcaption><b>DPN Aqua Labs // Maintenance Work Order Center</b><span>Recurring tank schedules, one-time work orders, assignment, due/overdue status, completion history and PDF service-record workflow from the current maintenance source.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-end-of-day-control.svg" alt="Source-derived DPN Aqua Labs End of Day Control Center"><span>SOURCE-DERIVED CLOSEOUT UI</span></div>
+            <figcaption><b>DPN Aqua Labs // End of Day Control Center</b><span>Hard-gated store closeout structure covering drawer reconciliation, shift/break closure, card approvals, exceptions, tender/drawer variance and final closeout reporting.</span></figcaption>
+          </figure>
+
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/aqua-aquanode-command.svg" alt="Source-derived DPN Aqua Labs AquaNode Tank Sensor Command Center"><span>SOURCE-DERIVED AQUANODE UI</span></div>
+            <figcaption><b>DPN Aqua Labs // AquaNode Tank Sensor Command Center</b><span>Tank chemistry, environmental, hydraulic and controller-health interface derived from the current AquaNode telemetry source. No synthetic controller IDs or sensor readings are shown.</span></figcaption>
+          </figure>
 
           <figure class="evidence-source">
             <div class="gallery-frame source-derived"><img src="./assets/projects/operational-control-command-nexus.svg" alt="Source-derived DPN Operational Control Command Nexus interface"><span>SOURCE-DERIVED CONTROL UI</span></div>
@@ -424,6 +449,10 @@
           <figure class="evidence-source">
             <div class="gallery-frame source-derived"><img src="./assets/projects/death-the-developer-studio.svg" alt="Source-derived Death the Developer desktop studio interface"><span>SOURCE-DERIVED DESKTOP IDE</span></div>
             <figcaption><b>Death the Developer // Desktop Studio</b><span>Current Tk desktop layout: project explorer, multi-file editor, Preview, Terminal, Research, Project Spec, Autonomous Build, GitHub, Neural Forge, Automations, Memory, Audit, Browser and Death agent channel.</span></figcaption>
+          </figure>
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/dpn-ai-command-center.svg" alt="Source-derived DPN AI Desktop Command Center interface"><span>SOURCE-DERIVED AI DESKTOP</span></div>
+            <figcaption><b>DPN AI // Desktop Command Center</b><span>Current v10 desktop source: local intelligence hub, missions, autonomous job queue, knowledge graph, Capability Forge, tool servers, approvals, projects, automations, audit trail, memory, connectors, diagnostics, voice and evidence-first readiness states.</span></figcaption>
           </figure>
 
           <figure class="evidence-source">
@@ -455,10 +484,18 @@
             <div class="gallery-frame"><img src="./assets/projects/service-desk.webp" alt="DPN Service Desk request interface"><span>ACTUAL INTERFACE CAPTURE</span></div>
             <figcaption><b>DPN Service Desk</b><span>Employee request interface from the development source. Presentation does not imply a connected production server.</span></figcaption>
           </figure>
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/service-desk-admin-queue.svg" alt="Source-derived DPN Service Desk I.T. Ticket Queue"><span>SOURCE-DERIVED ADMIN UI</span></div>
+            <figcaption><b>DPN Service Desk // I.T. Ticket Queue</b><span>Technician queue from the current React admin component: search, open/resolved/closed filters, priority sorting, desktop alerts, ticket assignment, start/close workflow, technician notes, resolution summary and PDF record path.</span></figcaption>
+          </figure>
 
           <figure class="evidence-runtime">
             <div class="gallery-frame"><img src="./assets/projects/network-mapper.webp" alt="DPN Network Mapper sample topology"><span>SAMPLE TOPOLOGY</span></div>
             <figcaption><b>DPN Network Mapper</b><span>Project topology capture. It is visual project evidence, not a live infrastructure or health view.</span></figcaption>
+          </figure>
+          <figure class="evidence-source">
+            <div class="gallery-frame source-derived"><img src="./assets/projects/network-mapper-topology-workbench.svg" alt="Source-derived DPN Network Mapper topology workbench"><span>SOURCE-DERIVED TOPOLOGY UI</span></div>
+            <figcaption><b>DPN Network Mapper // Topology Workbench</b><span>Current evidence model visualized as a workbench: manual mapping, LLDP/CDP, bridge FDB, observed traffic, route inference and subnet adjacency remain distinguishable instead of being collapsed into a fabricated physical path.</span></figcaption>
           </figure>
 
           <figure class="evidence-runtime">
@@ -484,7 +521,7 @@
 
         <div class="evidence-gap-note">
           <b>CAPTURE PIPELINE STATUS</b>
-          <span>A repo-native Aqua Labs desktop screenshot harness is now present. Automated runtime capture is blocked while private GitHub Actions runners are unavailable; source-derived views remain explicitly labeled until a real runtime capture can replace them.</span>
+          <span>A repo-native Aqua Labs desktop screenshot harness is present. Automated runtime capture is blocked while private GitHub Actions runners are unavailable; source-derived views remain explicitly labeled until real runtime captures can replace them. DPN Secure Chat and DPN Editor are also held as evidence gaps because no accessible source repository is currently available to verify their interfaces.</span>
         </div>
       </div>
     </section>
