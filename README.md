@@ -1,46 +1,80 @@
 # DPN Technology GitHub Command Center
 
-Static, dependency-free source for the planned `DPN-Technology.github.io` organization site.
+> **Develop. Pioneer. Navigate.**
 
-## Design goals
+This repository is the source for the public **DPN Technology GitHub Command Center** organization site.
 
-- unmistakable DPN black/red visual identity;
-- animated binary rain and red lightning;
-- radar/topology command-surface visuals;
-- live **public-only** GitHub telemetry;
+**Site:** https://dpn-technology.github.io/
+
+## What this is
+
+A dependency-free public engineering interface for DPN Technology featuring:
+
+- animated DPN binary rain;
+- red lightning and command-grid visuals;
+- radar/topology command surfaces;
+- live public GitHub telemetry;
+- public repository discovery;
 - company and leadership information;
 - Architecture Atlas;
-- public project discovery;
 - Trust Center;
-- engineering standards and templates;
-- reliability, maturity, recovery and evidence models;
-- responsive and accessible behavior;
-- no framework, npm install or GitHub Actions build requirement.
+- engineering standards;
+- maturity and evidence models;
+- reliability and recovery doctrine;
+- public engineering direction.
 
-## Runtime model
+## Architecture
 
-This is a static site:
+The site intentionally has **no framework and no application build step**.
 
 ```text
 index.html
 styles.css
 app.js
+favicon.svg
+site.webmanifest
+robots.txt
+sitemap.xml
+404.html
+.nojekyll
 ```
 
-It fetches public repository metadata directly from GitHub's unauthenticated public API. If GitHub rate limits or blocks the request, the page remains usable and labels telemetry as unavailable.
+The browser fetches public GitHub repository metadata directly from GitHub's public API. If API access is unavailable or rate-limited, static company, architecture, trust and standards content remains available.
 
 ## Privacy boundary
 
-The site does **not** enumerate private repository names or infer private organization activity.
+This site is intentionally public-only.
 
-## Publish target
+It does **not** enumerate:
 
-Create a public repository named:
+- private DPN repository names;
+- internal infrastructure;
+- credentials or secrets;
+- private endpoints;
+- internal customer/employee information;
+- private operational telemetry.
 
-```text
-DPN-Technology/DPN-Technology.github.io
-```
+Public GitHub telemetry is not presented as organization-wide production health.
 
-Copy the contents of this `command-center/` directory into the repository root. GitHub Pages organization sites use that repository name as the public site source.
+## Engineering source
 
-No GitHub Actions build is required by the site source itself.
+Organization engineering standards, governance, security policy and reusable templates live in:
+
+https://github.com/DPN-Technology/.github
+
+## Deployment
+
+This is an organization GitHub Pages repository. Publish from:
+
+- **Branch:** `main`
+- **Folder:** `/(root)`
+
+The included `.nojekyll` file tells GitHub Pages to serve the static source directly.
+
+## Visual system
+
+The site follows the DPN Technology visual language:
+
+**deep black surfaces · DPN red · raining 1s/0s · red lightning · radar/topology · command-console depth**
+
+The visual layer should never imply runtime state, maturity, security certification or deployment status that the underlying evidence does not support.
