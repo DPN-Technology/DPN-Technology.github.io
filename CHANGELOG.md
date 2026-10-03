@@ -1,3 +1,14 @@
+## v3.3 — Capture Operations
+
+- Added direct RUN FACTORY links for every discovered standard capture workflow.
+- Added execution-readiness states: READY TO RUN, SELF-HOSTED RUNNER REQUIRED, RUNTIME MANIFEST PRESENT, NOT AUTOMATED and PUBLIC TREE UNKNOWN.
+- Added hosted-ready and self-hosted-required counts to the Capture Factory summary.
+- Kept Tool & Die Simulator explicitly separated as a Windows/Unreal self-hosted workflow.
+- Added Capture Operations to the command palette.
+- Promoted Command Center assets to `app.v3.3.js` and `styles.v3.3.css`.
+- Bumped the service-worker cache namespace to `dpn-command-center-v3.3`.
+- Preserved the manual-dispatch-only execution policy and the rule that automation installation is not runtime evidence.
+
 ## v3.2 — Capture Expansion
 
 - Expanded standardized capture automation from 12 to 16 public DPN product repositories.
