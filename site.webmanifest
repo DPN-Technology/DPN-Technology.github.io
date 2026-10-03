@@ -24,6 +24,11 @@
   ],
   "shortcuts": [
     {
+      "name": "Product Worlds",
+      "short_name": "Worlds",
+      "url": "/#product-worlds"
+    },
+    {
       "name": "Visual Evidence",
       "short_name": "Evidence",
       "url": "/#inside-builds"
