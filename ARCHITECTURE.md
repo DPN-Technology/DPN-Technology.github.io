@@ -344,7 +344,7 @@ Network Mapper disables autopilot scanning during capture. Authenticated applica
 
 ### Current standardized coverage
 
-The public Capture Factory standard is currently installed in 10 product repositories:
+The public Capture Factory standard is currently installed in 12 product repositories:
 
 - DPN One
 - DPN Service Desk
@@ -356,5 +356,16 @@ The public Capture Factory standard is currently installed in 10 product reposit
 - DPN Executive Control System
 - DPN Human Resources Software
 - DPN AI
+- DPN OS
+- DPN Death the Developer
 
 Factory implementations differ where application architecture requires it, but all retain the same evidence boundary: isolated runner state, manual dispatch, explicit manifest caveats, and no promotion to runtime proof until capture artifacts exist.
+
+
+### Native desktop capture path
+
+Browser-first products use Playwright. Native desktop products use an isolated virtual X11 display and capture the actual application window rendered by the project's desktop toolkit.
+
+DPN OS executes its PySide6/QML launchers with repository-native support files staged into the runner. Death the Developer instantiates its Tk application directly and switches real notebook tabs before capture. Neither path converts source markup into a simulated screenshot.
+
+Authenticated capture is allowed only when the application can create isolated runner-local identities from ephemeral credentials. ECS uses this model: its generated CEO boot secret creates the fresh local CEO credential used by Playwright. The manifest must identify repository seed data and runner-local telemetry as non-production.
