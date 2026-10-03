@@ -183,3 +183,17 @@ v3.2 packages the 16-product Capture Factory rollout as a versioned Command Cent
 - the PWA shell now uses v3.2 app/style assets and a v3.2 cache namespace.
 
 The current standardized automation footprint is 16 public product repositories. Runtime manifests remain a separate execution milestone.
+
+
+## v3.3 capture operations
+
+v3.3 turns the public Capture Factory from a discovery surface into an operations surface.
+
+- each installed capture factory now links directly to its exact public GitHub Actions workflow page;
+- hosted factories are labeled **READY TO RUN**;
+- Tool & Die Simulator is labeled **SELF-HOSTED RUNNER REQUIRED** because its real Unreal Engine 5.8 presentation layer cannot execute on a stock GitHub-hosted runner;
+- the Capture Factory summary separately reports installed factories, hosted-runner-ready factories, self-hosted requirements, committed runtime manifests, products with mapped actual visuals and repos not yet standardized;
+- runner classes remain explicit: Playwright, native Xvfb, PySide6/Xvfb and self-hosted Windows/Unreal;
+- opening a RUN FACTORY link does not itself prove execution; runtime proof still requires a committed evidence manifest/artifact.
+
+The GitHub connection used to maintain the site can inspect workflow runs and artifacts but cannot create a brand-new `workflow_dispatch` run. v3.3 therefore exposes the exact workflow page so a human operator can explicitly launch the manual evidence job without changing the workflow's no-push execution policy.
