@@ -1,17 +1,47 @@
 {
-  "name": "DPN Technology GitHub Command Center",
+  "id": "/",
+  "name": "DPN Technology Command Center",
   "short_name": "DPN Command",
-  "description": "Public engineering, architecture, trust, releases and systems doctrine for DPN Technology.",
+  "description": "Public DPN Technology products, engineering evidence, architecture, releases, build lineage and trust controls.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#030305",
   "theme_color": "#ff1738",
+  "categories": [
+    "developer",
+    "business",
+    "productivity"
+  ],
   "icons": [
     {
       "src": "/assets/dpn-logo.webp",
       "sizes": "any",
       "type": "image/webp",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Visual Evidence",
+      "short_name": "Evidence",
+      "url": "/#inside-builds"
+    },
+    {
+      "name": "Public Projects",
+      "short_name": "Projects",
+      "url": "/#projects"
+    },
+    {
+      "name": "Fusion Mesh",
+      "short_name": "Mesh",
+      "url": "/#fusion-mesh"
+    },
+    {
+      "name": "Build Lineage",
+      "short_name": "Lineage",
+      "url": "/#build-lineage"
     }
   ]
 }
