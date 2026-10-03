@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.3.css">
+  <link rel="stylesheet" href="./styles.v3.4.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -138,7 +138,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.3 CAPTURE OPS</span>
+      <span>BUILD // v3.4 EVIDENCE INGEST</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -684,6 +684,32 @@
       </div>
     </section>
 
+    <section class="section runtime-evidence-intake" id="runtime-evidence-intake">
+      <div class="section-head">
+        <p class="eyebrow">03E // RUNTIME EVIDENCE AUTO-INGEST</p>
+        <h2>When the real capture lands,<br><span>the Command Center can show it.</span></h2>
+        <p>Committed capture manifests are fetched from their originating public repositories. Only validated image files inside <code>docs/evidence/runtime/</code> are accepted, and every card retains the producing repository, manifest metadata and data-boundary disclosure.</p>
+      </div>
+
+      <div class="runtime-ingest-summary">
+        <article><span>VALID MANIFESTS</span><strong id="runtime-manifest-valid">—</strong><small>validated standard runtime evidence manifests</small></article>
+        <article><span>RUNTIME ARTIFACTS</span><strong id="runtime-artifact-count">—</strong><small>accepted public image artifacts</small></article>
+        <article><span>PRODUCTS REPRESENTED</span><strong id="runtime-product-count">—</strong><small>repositories with accepted runtime evidence</small></article>
+        <article><span>REJECTED / UNREADABLE</span><strong id="runtime-rejected-count">—</strong><small>manifest failed validation or could not be fetched</small></article>
+      </div>
+
+      <div class="runtime-ingest-note">
+        <span>AUTO-INGEST POLICY</span>
+        <b>PUBLIC · VALIDATED · SOURCE-BOUND</b>
+        <p>Auto-ingest does not copy files into the Command Center repository. Images remain hosted by the product repository and are displayed only after the manifest passes path/type/schema checks. No manifest means no automatic runtime-evidence claim.</p>
+      </div>
+
+      <div id="runtime-evidence-state" class="runtime-evidence-state">AWAITING PUBLIC MANIFESTS</div>
+      <div id="runtime-evidence-feed" class="runtime-evidence-feed" aria-live="polite">
+        <article class="runtime-evidence-empty">No validated runtime evidence manifests have been ingested yet.</article>
+      </div>
+    </section>
+
     <section class="section verification-board" id="verification-board">
       <div class="section-head">
         <p class="eyebrow">03D // PRODUCT VERIFICATION BOARD</p>
@@ -902,16 +928,17 @@
         <button type="button" data-target="release-explorer"><span>07</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
         <button type="button" data-target="evidence-matrix"><span>08</span><strong>Evidence Matrix</strong><small>README, security, license, architecture and release evidence</small></button>
         <button type="button" data-target="capture-factory"><span>09</span><strong>Runtime Capture Factory</strong><small>Repo-native screenshot automation and runtime manifest discovery</small></button>
-        <button type="button" data-target="verification-board"><span>10</span><strong>Product Verification Board</strong><small>Actual captures, source visuals, provenance, releases and repo evidence</small></button>
-        <button type="button" data-target="trust"><span>11</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
-        <button type="button" data-target="standards"><span>12</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
-        <button type="button" data-target="build-lineage"><span>13</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
-        <button type="button" data-target="build-journal"><span>14</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
-        <button type="button" data-target="roadmap"><span>15</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
+        <button type="button" data-target="runtime-evidence-intake"><span>10</span><strong>Runtime Evidence Intake</strong><small>Validated capture manifests and repo-hosted runtime images</small></button>
+        <button type="button" data-target="verification-board"><span>11</span><strong>Product Verification Board</strong><small>Actual captures, source visuals, provenance, releases and repo evidence</small></button>
+        <button type="button" data-target="trust"><span>12</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
+        <button type="button" data-target="standards"><span>13</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
+        <button type="button" data-target="build-lineage"><span>14</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
+        <button type="button" data-target="build-journal"><span>15</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
+        <button type="button" data-target="roadmap"><span>16</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
       </div>
     </form>
   </dialog>
 
-    <script src="./app.v3.3.js" defer></script>
+    <script src="./app.v3.4.js" defer></script>
 </body>
 </html>
