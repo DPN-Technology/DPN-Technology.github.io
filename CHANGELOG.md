@@ -2,6 +2,19 @@
 
 ## v2.7 — Visual Evidence Wall Expansion
 
+- Added eight more source-derived application views:
+  - DPN AI Desktop Command Center;
+  - DPN Network Mapper Topology Workbench;
+  - DPN Service Desk I.T. Ticket Queue;
+  - DPN Aqua Labs Inventory;
+  - DPN Aqua Labs Purchasing Command Center;
+  - DPN Aqua Labs Maintenance Work Order Center;
+  - DPN Aqua Labs End of Day Control Center;
+  - DPN Aqua Labs AquaNode Tank Sensor Command Center.
+- Visual evidence count now reaches 25 items in the Command Center source.
+- Added project/screen search on top of evidence-type filters for faster browsing.
+- DPN Secure Chat and DPN Editor remain evidence gaps because no accessible source repository is currently available to verify their interfaces.
+
 - Expanded ecosystem UI coverage with five additional source-derived interface views:
   - DPN OS Control Center;
   - DPN Executive Control System Command Center;
