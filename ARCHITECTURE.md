@@ -298,3 +298,45 @@ The board may display a next public proof action based on missing evidence categ
 - retry an unavailable repository evidence scan.
 
 This field describes the next evidence gap. It is not an assessment of product quality or readiness.
+
+
+## v3.1 capture-factory architecture
+
+The Capture Factory is a repository-local evidence mechanism discovered by the public Command Center.
+
+```text
+public repository
+  ├─ .github/workflows/ui-evidence-capture.yml
+  ├─ tools/capture_ui_evidence.(mjs|py)
+  └─ docs/evidence/runtime/
+       ├─ manifest.json
+       └─ *.png
+```
+
+### Discovery semantics
+
+The public repo-tree scanner records three independent facts:
+
+1. **capture factory installed** — both the standard workflow and capture harness are discoverable;
+2. **runtime manifest committed** — `docs/evidence/runtime/manifest.json` is discoverable;
+3. **actual visual mapped** — the Command Center currently maps one or more captured project/output visuals to that repository.
+
+None of these facts implies production deployment or release readiness.
+
+### Execution model
+
+Current factories use `workflow_dispatch` only. They are intentionally not push-triggered.
+
+Each capture job is expected to:
+
+- create isolated runtime state;
+- generate or use ephemeral capture-only credentials when authentication is required;
+- avoid private production data;
+- render the actual application;
+- create PNG evidence;
+- write a small manifest describing source commit, routes, viewport and data boundary;
+- optionally commit only the evidence output.
+
+### Safety boundaries
+
+Network Mapper disables autopilot scanning during capture. Authenticated applications use runner-local credentials/state. Synthetic data must be labeled in the manifest and must not be presented as production data.
