@@ -1041,6 +1041,61 @@
     });
   }
 
+  function setupVisualEvidenceRegistry() {
+    const wall = document.querySelector(".evidence-wall");
+    const registry = document.querySelector(".visual-evidence-registry");
+    if (!wall || !registry) return;
+
+    const figures = [...wall.querySelectorAll("figure")];
+    const buttons = [...registry.querySelectorAll("[data-evidence-filter]")];
+    const counters = {
+      all: $("visual-count-all"),
+      runtime: $("visual-count-runtime"),
+      source: $("visual-count-source"),
+      artwork: $("visual-count-art"),
+      visible: $("visual-count-visible")
+    };
+
+    const typeOf = (figure) => figure.classList.contains("evidence-runtime")
+      ? "runtime"
+      : figure.classList.contains("evidence-source")
+        ? "source"
+        : figure.classList.contains("evidence-artwork")
+          ? "artwork"
+          : "other";
+
+    const totals = figures.reduce((acc, figure) => {
+      const type = typeOf(figure);
+      acc.all++;
+      if (type in acc) acc[type]++;
+      return acc;
+    }, { all: 0, runtime: 0, source: 0, artwork: 0 });
+
+    for (const key of ["all", "runtime", "source", "artwork"]) {
+      if (counters[key]) counters[key].textContent = String(totals[key]);
+    }
+
+    const apply = (filter) => {
+      let visible = 0;
+      figures.forEach(figure => {
+        const show = filter === "all" || typeOf(figure) === filter;
+        figure.hidden = !show;
+        if (show) visible++;
+      });
+      buttons.forEach(button => {
+        const active = button.dataset.evidenceFilter === filter;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+      if (counters.visible) counters.visible.textContent = String(visible);
+      registry.dataset.activeFilter = filter;
+      addTerminal("EVIDENCE", `Visual evidence filter: ${filter.toUpperCase()} // ${visible} visible`);
+    };
+
+    buttons.forEach(button => button.addEventListener("click", () => apply(button.dataset.evidenceFilter || "all")));
+    apply("all");
+  }
+
   function setupEvents() {
     els.search?.addEventListener("input", renderProjects);
     els.stateFilter?.addEventListener("change", renderProjects);
@@ -1064,6 +1119,7 @@
   }
 
   setupEvents();
+  setupVisualEvidenceRegistry();
   setupStormToggle();
   setupClock();
   setupArchitecture();
