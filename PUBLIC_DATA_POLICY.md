@@ -84,7 +84,9 @@ v2.8 deep links may place the following public identifiers in the page URL:
 
 - a visual-evidence slug;
 - a public repository name;
-- a public release repository/tag identifier.
+- a public release repository/tag identifier;
+- a public architecture-domain identifier;
+- a public Fusion Mesh registry-node identifier.
 
 No private repository identifier, credential, account token, internal infrastructure name or private telemetry is intentionally written into these deep links.
 
