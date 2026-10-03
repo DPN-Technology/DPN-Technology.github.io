@@ -102,3 +102,18 @@ v2.9 makes the public visual museum easier to verify and easier to present.
 - v2.9 offline caching points to the v2.9 application and stylesheet.
 
 Exact provenance is intentionally added only where source paths were verified in the public repository tree.
+
+
+## v3.0 evidence uplift
+
+v3.0 adds a product-by-product verification layer on top of the existing evidence museum.
+
+- the visual evidence museum now includes an actual Death the Developer browser-smoke verification capture;
+- the public gallery contains 26 evidence items;
+- the Product Verification Board combines mapped visual evidence, exact provenance, bounded repository evidence and public release records per public project;
+- visual states are descriptive only: actual capture present, source visual only, or no mapped visual;
+- the board exposes the next missing public proof artifact without turning evidence into a quality score;
+- MemeSpace runtime visuals are now attributed to the public MemeSpace repository;
+- exact provenance coverage includes both source-derived and runtime items when an exact public source path is mapped.
+
+The verification board does not claim production readiness, security quality, deployment status or runtime health.
