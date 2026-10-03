@@ -150,3 +150,8 @@ The runtime manifest must disclose that boundary.
 Ephemeral capture credentials are not public evidence and must not be committed to the repository, embedded in screenshots, included in manifests or printed in logs after generation.
 
 A discovered capture workflow/harness is automation evidence only. The Command Center must not translate it into a runtime-capture claim until an actual captured artifact is available.
+
+
+Native desktop capture must use a temporary display/profile and must not import the operator's real desktop, home directory or application secrets.
+
+Authenticated evidence may use generated first-run/bootstrap credentials only when those credentials exist solely inside the isolated capture runtime. Seed records rendered after authentication must be described as repository-defined seed/demo state rather than production records.
