@@ -289,3 +289,16 @@ The Command Center now includes a short first-session DPN boot sequence, an ecos
 Product Focus reuses the existing public repository and evidence model. Visitors can inspect multiple mapped visuals for a product, see the evidence type, review bounded public repository metadata, open the public source repository, or jump into the existing public dossier.
 
 The boot animation stores only a session-level “seen” flag in the browser. It does not authenticate the visitor or imply access beyond the public Command Center.
+
+
+## v3.9 command bridge
+
+v3.9 connects the visual systems introduced in v3.6–v3.8 into a more continuous command experience.
+
+The persistent Command Bridge provides direct access to the six major Product Worlds, Founder Command and the visual-evidence surface while reflecting public repository/evidence counts.
+
+Product-to-product routing now uses a short command transition rather than an abrupt section jump. Product Focus adds previous/next controls, keyboard navigation, a multi-screen mosaic and a larger visual gallery.
+
+When validated runtime evidence is available through the existing public runtime-manifest intake, Product Focus prioritizes those actual captures ahead of source-derived fallback visuals.
+
+Founder Command uses the approved public leadership portrait and public DPN history. It does not expose private identity, infrastructure or higher-clearance information.
