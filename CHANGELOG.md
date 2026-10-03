@@ -1,3 +1,17 @@
+## v3.4 — Runtime Evidence Auto-Ingest
+
+- Added automatic discovery and display of validated `docs/evidence/runtime/manifest.json` files.
+- Added a dedicated Runtime Evidence Intake surface.
+- Added strict manifest validation for repository identity, schema version, evidence type, bounded artifact count and safe image filenames.
+- Added repo-hosted runtime image rendering without copying images into the Pages repository.
+- Added source-manifest, source-image, route/view, viewport, generated-at, source-commit and data-boundary metadata to runtime cards.
+- Added rejected/unreadable manifest visibility.
+- Added runtime evidence counts to Capture Factory and Product Verification Board state.
+- Added auto-ingested runtime evidence to product proof-state calculations.
+- Added Runtime Evidence Intake to Presentation Mode and the Command Palette.
+- Promoted Command Center assets to `app.v3.4.js` and `styles.v3.4.css`.
+- Bumped the service-worker cache namespace to `dpn-command-center-v3.4`.
+
 ## v3.3 — Capture Operations
 
 - Added direct RUN FACTORY links for every discovered standard capture workflow.
