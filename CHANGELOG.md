@@ -1,3 +1,22 @@
+## v2.8 — Public Command Experience
+
+- Added full-screen visual evidence inspector with previous/next keyboard navigation.
+- Added evidence pin/compare mode.
+- Added shareable deep links for visual evidence, public project dossiers and public releases.
+- Added repository-backed public project dossiers with current metadata, release records, inspected artifact paths and mapped visuals.
+- Added inspectable release detail surfaces.
+- Added product constellations for Control/Infrastructure, AI/Development, Retail/Aquarium, Workforce/Business, Platform/Identity and Interactive/Simulation navigation.
+- Added public build-lineage cards combining public push signals, public GitHub releases and mapped visual evidence.
+- Expanded Architecture Atlas drill-downs with related public product surfaces.
+- Expanded Fusion Mesh node inspection with product family, mapped visuals, public releases and repository evidence context.
+- Expanded command palette to index current public repositories and visual evidence.
+- Added runtime-capture-share and capture/source-gap transparency metrics.
+- Added Full, Balanced and Low visual modes; Low mode stops binary-rain/lightning rendering work.
+- Added dedicated mobile command dock.
+- Added PWA service worker and manifest shortcuts for core public command surfaces.
+- Added Organization JSON-LD and richer application metadata.
+- Preserved public-only trust boundaries: no private repositories, no fabricated runtime state, no claim that GitHub activity equals production deployment.
+
 # DPN Technology GitHub Command Center — Changelog
 
 ## v2.7 — Visual Evidence Wall Expansion
