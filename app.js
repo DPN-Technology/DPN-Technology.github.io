@@ -475,69 +475,150 @@
     setInterval(tick, 1000);
   }
 
-  function setupBinaryRain() {
-    const canvas = $("binary-rain");
-    if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const ctx = canvas.getContext("2d", { alpha: true });
-    let width = 0;
-    let height = 0;
-    let columns = 0;
-    let drops = [];
-    const fontSize = 16;
-    const chars = ["0", "1", "0", "1", "1", "0", "0", "1"];
+  function setupDpnStorm() {
+    const binary = $("binary-rain");
+    const lightning = $("lightning-canvas");
+    const flash = $("page-flash");
+    if (!binary || !lightning || !flash) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    const bctx = binary.getContext("2d");
+    const lctx = lightning.getContext("2d");
+    let w = 0;
+    let h = 0;
+    let dpr = 1;
+    let cols = [];
+    let lastBolt = 0;
 
     function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      columns = Math.ceil(width / fontSize);
-      drops = Array.from({ length: columns }, () => Math.random() * -40);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+      w = window.innerWidth;
+      h = window.innerHeight;
+
+      for (const canvas of [binary, lightning]) {
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        canvas.style.width = `${w}px`;
+        canvas.style.height = `${h}px`;
+        const ctx = canvas.getContext("2d");
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      const size = w < 700 ? 15 : 18;
+      cols = Array.from({ length: Math.ceil(w / size) }, (_, i) => ({
+        y: -Math.random() * h,
+        speed: 1 + Math.random() * 1.5,
+        phase: i % 9
+      }));
     }
 
-    function frame() {
-      ctx.fillStyle = "rgba(2,3,4,0.085)";
-      ctx.fillRect(0, 0, width, height);
-      ctx.font = `${fontSize}px Consolas, monospace`;
+    function rain(t) {
+      bctx.fillStyle = "rgba(3,3,5,.15)";
+      bctx.fillRect(0, 0, w, h);
+      bctx.font = `800 ${w < 700 ? 14 : 17}px Consolas, monospace`;
+      const cw = w / Math.max(cols.length, 1);
 
-      for (let i = 0; i < drops.length; i++) {
-        const char = chars[(Math.random() * chars.length) | 0];
-        const bright = Math.random() > 0.94;
-        ctx.fillStyle = bright ? "rgba(255,45,62,.48)" : "rgba(229,9,20,.19)";
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = -Math.random() * 25;
-        drops[i] += 0.43 + Math.random() * 0.22;
+      cols.forEach((col, i) => {
+        for (let j = 0; j < 7; j++) {
+          const y = col.y - j * 22;
+          if (y < -20 || y > h + 20) continue;
+
+          bctx.fillStyle = j === 0
+            ? "rgba(255,80,96,.75)"
+            : `rgba(255,22,55,${Math.max(.025, .35 - j * .045)})`;
+          bctx.shadowBlur = j === 0 ? 12 : 0;
+          bctx.shadowColor = "#ff1738";
+          bctx.fillText(
+            ((Math.floor(t / 170) + i + j + col.phase) % 2).toString(),
+            i * cw,
+            y
+          );
+        }
+
+        col.y += col.speed;
+        if (col.y > h + 160) col.y = -Math.random() * 280;
+      });
+
+      bctx.shadowBlur = 0;
+    }
+
+    function bolt(sx, sy, ex, ey, depth = 0) {
+      const pts = [[sx, sy]];
+      const count = Math.max(8, Math.floor(Math.hypot(ex - sx, ey - sy) / 52));
+
+      for (let i = 1; i < count; i++) {
+        const fraction = i / count;
+        const spread = depth ? 16 : 32;
+        pts.push([
+          sx + (ex - sx) * fraction + (Math.random() - .5) * spread,
+          sy + (ey - sy) * fraction + (Math.random() - .5) * spread
+        ]);
       }
+      pts.push([ex, ey]);
+
+      for (const [width, alpha, blur] of [[6, .07, 20], [2, .42, 10], [.7, .96, 3]]) {
+        lctx.lineWidth = width;
+        lctx.strokeStyle = `rgba(255,${depth ? 40 : 85},${depth ? 58 : 105},${alpha})`;
+        lctx.shadowBlur = blur;
+        lctx.shadowColor = "#ff1738";
+        lctx.beginPath();
+        pts.forEach((point, index) => {
+          if (index) lctx.lineTo(point[0], point[1]);
+          else lctx.moveTo(point[0], point[1]);
+        });
+        lctx.stroke();
+      }
+
+      if (depth < 1) {
+        for (let i = 3; i < pts.length - 2; i += 5) {
+          if (Math.random() < .45) {
+            const point = pts[i];
+            const dir = Math.random() < .5 ? -1 : 1;
+            bolt(
+              point[0],
+              point[1],
+              point[0] + dir * (45 + Math.random() * 80),
+              point[1] + 45 + Math.random() * 90,
+              1
+            );
+          }
+        }
+      }
+      lctx.shadowBlur = 0;
+    }
+
+    function triggerLightning(t) {
+      const interval = 1800 + Math.random() * 2200;
+      if (t - lastBolt <= interval) return;
+      lastBolt = t;
+
+      lctx.clearRect(0, 0, w, h);
+      const startX = w * (.12 + Math.random() * .76);
+      const endX = w * (.18 + Math.random() * .65);
+      const endY = h * (.3 + Math.random() * .55);
+
+      bolt(startX, -20, endX, endY);
+
+      flash.animate(
+        [{ opacity: 0 }, { opacity: .24 }, { opacity: .04 }, { opacity: 0 }],
+        { duration: 230, easing: "linear" }
+      );
+
+      setTimeout(() => lctx.clearRect(0, 0, w, h), 250);
+    }
+
+    function frame(t) {
+      rain(t);
+      triggerLightning(t);
       requestAnimationFrame(frame);
     }
 
     resize();
     window.addEventListener("resize", resize, { passive: true });
-    frame();
-  }
-
-  function setupLightning() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const bolts = [...document.querySelectorAll(".bolt")];
-
-    const flash = () => {
-      if (!bolts.length) return;
-      const bolt = bolts[(Math.random() * bolts.length) | 0];
-      bolt.animate([
-        { opacity: 0.04, filter: "drop-shadow(0 0 2px rgba(255,38,55,.25))" },
-        { opacity: 0.72, filter: "drop-shadow(0 0 18px rgba(255,38,55,.9))", offset: 0.15 },
-        { opacity: 0.12, offset: 0.28 },
-        { opacity: 0.5, offset: 0.42 },
-        { opacity: 0.12 }
-      ], { duration: 320, easing: "linear" });
-      setTimeout(flash, 3500 + Math.random() * 7000);
-    };
-
-    setTimeout(flash, 1800);
+    requestAnimationFrame(frame);
+    addTerminal("VISUAL", "DPN Website-matched binary storm online");
   }
 
   function setupEvents() {
@@ -556,7 +637,6 @@
   setupClock();
   setupArchitecture();
   setupCommandPalette();
-  setupBinaryRain();
-  setupLightning();
+  setupDpnStorm();
   loadTelemetry();
 })();
