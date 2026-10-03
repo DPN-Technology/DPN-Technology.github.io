@@ -1,3 +1,21 @@
+## v3.1 — Runtime Capture Factory
+
+- Added public Capture Factory discovery to the Command Center.
+- Public repo-tree evidence scans now detect the standard UI capture workflow, capture harness and committed runtime manifest independently.
+- Added a Capture Factory dashboard showing installed factories, committed manifests, products with mapped actual visuals and repos not yet standardized.
+- Added capture-workflow/harness/manifest links to public project dossiers when discovered.
+- Added Capture Factory state to the Product Verification Board.
+- Updated next-proof guidance to distinguish installing a factory, running a factory and promoting a committed runtime capture.
+- Added manual-only repo-native Playwright capture factories to DPN One, Service Desk, Network Mapper, Operational Control, WatchTower and Workforce.
+- Existing Aqua Labs Python capture automation is recognized by the same standard.
+- Service Desk uses a generated ephemeral admin key and explicitly synthetic local capture ticket.
+- Network Mapper capture disables autopilot/network scanning.
+- Operational Control bootstraps a synthetic local identity in an isolated data directory.
+- WatchTower uses runner-local first-run credentials without committing them.
+- Workforce uses generated ephemeral admin/encryption credentials and an isolated local database.
+- No factory is treated as runtime proof until an actual artifact/manifest exists.
+- Updated the service-worker cache namespace and core files to v3.1.
+
 ## v3.0 — Evidence Uplift
 
 - Added an actual Death the Developer browser-smoke verification capture from the public repository evidence folder.
