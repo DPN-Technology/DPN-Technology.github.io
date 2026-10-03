@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.5.css">
+  <link rel="stylesheet" href="./styles.v3.6.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,6 +47,7 @@
   <div class="page-flash" id="page-flash" aria-hidden="true"></div>
   <div class="ambient-grid" aria-hidden="true"></div>
   <div class="scan-overlay" aria-hidden="true"></div>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
   <header class="topbar">
     <a class="brand-lockup" href="#top" aria-label="DPN Technology Command Center home">
@@ -54,6 +55,7 @@
       <span><strong>DPN TECHNOLOGY</strong><small>GITHUB COMMAND CENTER</small></span>
     </a>
     <nav class="topnav" aria-label="Primary navigation">
+      <a href="#visual-overdrive">Command Deck</a>
       <a href="#company">Company</a>
       <a href="#architecture">Architecture</a>
       <a href="#projects">Public Work</a>
@@ -71,6 +73,7 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
+        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v3.6 VISUAL OVERDRIVE</div>
         <div class="hero-brandline">
           <span class="hero-brandmark"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></span>
           <div><p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p><strong>DEVELOP PIONEER NAVIGATE</strong></div>
@@ -79,8 +82,14 @@
         <p class="hero-slogan">We Develop what doesn’t exist. We Pioneer what comes next. We Navigate the future.</p>
         <p class="hero-intro">A public engineering command surface for DPN Technology: company direction, public source, systems architecture, engineering standards, release evidence, reliability and trust.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#architecture">Enter Architecture Atlas</a>
-          <a class="button ghost" href="#projects">Inspect Public Work</a>
+          <a class="button primary" href="#visual-overdrive">Enter Command Deck</a>
+          <a class="button ghost" href="#inside-builds">Open Visual Evidence</a>
+        </div>
+        <div class="hero-live-matrix" aria-label="Live public command summary">
+          <div><span>PUBLIC REPOS</span><strong id="hero-repo-count">—</strong></div>
+          <div><span>RELEASE RECORDS</span><strong id="hero-release-count">—</strong></div>
+          <div><span>VISUAL EVIDENCE</span><strong id="hero-visual-count">—</strong></div>
+          <div><span>PUBLIC SIGNAL</span><strong id="hero-public-state">SYNCING</strong></div>
         </div>
         <div class="hero-tags" aria-label="DPN engineering traits">
           <span>EVIDENCE-DRIVEN</span><span>SECURE BY DESIGN</span><span>RECOVERABLE</span><span>LOCAL-FIRST</span>
@@ -104,7 +113,12 @@
 
         <a class="cinematic-window secondary-window" href="#inside-builds">
           <img src="./assets/projects/network-mapper.webp" alt="DPN Network Mapper sample topology capture">
-          <div class="mini-window-copy"><b>NETWORK VISIBILITY</b><span>SAMPLE TOPOLOGY // NOT LIVE INFRASTRUCTURE</span></div>
+          <div class="mini-window-copy"><b>NETWORK VISIBILITY</b><span>ACTUAL PROJECT CAPTURE // PUBLIC SAFE</span></div>
+        </a>
+
+        <a class="cinematic-window tertiary-window" href="#inside-builds">
+          <img src="./assets/projects/aqua-desktop-dashboard.svg" alt="DPN Aqua Labs Store Command Center source-derived interface">
+          <div class="mini-window-copy"><b>AQUA LABS COMMAND</b><span>SOURCE-VERIFIED UI // NOT RUNTIME</span></div>
         </a>
 
         <div class="cinematic-command-chip">
@@ -119,6 +133,99 @@
         <div><span>PLATFORM</span><strong>SOFTWARE + SYSTEMS + AI</strong></div>
         <div><span>POSTURE</span><strong>BUILD WITH EVIDENCE</strong></div>
         <div><span>VISUAL LANGUAGE</span><strong>BLACK // RED // BINARY STORM</strong></div>
+      </div>
+    </section>
+
+
+    <section class="visual-overdrive" id="visual-overdrive" aria-label="DPN visual command deck">
+      <div class="overdrive-shell">
+        <header class="overdrive-header reveal">
+          <div>
+            <p class="eyebrow">00X // DPN VISUAL COMMAND DECK</p>
+            <h2>The ecosystem should<br><span>look as advanced as it is.</span></h2>
+            <p>Real project captures and source-verified application interfaces are surfaced immediately. Every visual keeps its evidence boundary visible so the presentation gets stronger without inventing runtime claims.</p>
+          </div>
+          <div class="overdrive-status">
+            <span><i class="live-dot"></i> PUBLIC SIGNAL</span>
+            <strong id="overdrive-signal">SYNCHRONIZING</strong>
+            <small id="overdrive-sync">GitHub public telemetry</small>
+          </div>
+        </header>
+
+        <div class="overdrive-kpis reveal">
+          <article><span>PUBLIC PROJECTS</span><strong id="overdrive-repos">—</strong><small>discoverable DPN repositories</small></article>
+          <article><span>PUBLIC RELEASES</span><strong id="overdrive-releases">—</strong><small>release records in current scan</small></article>
+          <article><span>VISUAL EVIDENCE</span><strong id="overdrive-visuals">—</strong><small>typed project visuals</small></article>
+          <article><span>LATEST SIGNAL</span><strong id="overdrive-push">—</strong><small id="overdrive-push-repo">awaiting GitHub</small></article>
+        </div>
+
+        <div class="overdrive-stage reveal" data-overdrive-stage>
+          <div class="od-grid-floor" aria-hidden="true"></div>
+          <svg class="od-links" viewBox="0 0 1200 760" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M600 380L210 145"/><path d="M600 380L600 115"/><path d="M600 380L990 145"/>
+            <path d="M600 380L205 615"/><path d="M600 380L600 650"/><path d="M600 380L995 615"/>
+          </svg>
+
+          <div class="od-core" data-tilt>
+            <span class="od-ring od-ring-a"></span><span class="od-ring od-ring-b"></span><span class="od-ring od-ring-c"></span>
+            <span class="od-sweep"></span>
+            <div class="od-core-logo"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></div>
+            <strong>DPN SYSTEM CORE</strong>
+            <small>DEVELOP // PIONEER // NAVIGATE</small>
+          </div>
+
+          <a class="od-card od-a actual" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>01 // SERVICE DESK</span><b>ACTUAL CAPTURE</b></div>
+            <img src="./assets/projects/service-desk.webp" alt="DPN Service Desk application capture">
+            <footer><strong>IT OPERATIONS</strong><span>Request intake + support workflow</span></footer>
+          </a>
+
+          <a class="od-card od-b actual" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>02 // NETWORK MAPPER</span><b>ACTUAL CAPTURE</b></div>
+            <img src="./assets/projects/network-mapper.webp" alt="DPN Network Mapper project capture">
+            <footer><strong>NETWORK VISIBILITY</strong><span>Discovery + topology workbench</span></footer>
+          </a>
+
+          <a class="od-card od-c source" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>03 // OPERATIONAL CONTROL</span><b>SOURCE-VERIFIED</b></div>
+            <img src="./assets/projects/operational-control-command-nexus.svg" alt="DPN Operational Control source-derived interface">
+            <footer><strong>COMMAND NEXUS</strong><span>Control + program health surface</span></footer>
+          </a>
+
+          <a class="od-card od-d source" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>04 // AQUA LABS</span><b>SOURCE-VERIFIED</b></div>
+            <img src="./assets/projects/aqua-desktop-dashboard.svg" alt="DPN Aqua Labs Store Command Center source-derived interface">
+            <footer><strong>STORE COMMAND</strong><span>POS + operations + facility control</span></footer>
+          </a>
+
+          <a class="od-card od-e source" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>05 // DPN ONE</span><b>SOURCE-VERIFIED</b></div>
+            <img src="./assets/projects/dpn-one-overview.svg" alt="DPN One source-derived interface">
+            <footer><strong>UNIFIED CONTROL PLANE</strong><span>Identity + launcher + entitlements</span></footer>
+          </a>
+
+          <a class="od-card od-f source" href="#inside-builds" data-tilt>
+            <div class="od-card-head"><span>06 // DEATH THE DEVELOPER</span><b>SOURCE-VERIFIED</b></div>
+            <img src="./assets/projects/death-the-developer-studio.svg" alt="Death the Developer source-derived studio interface">
+            <footer><strong>AGENT STUDIO</strong><span>Code + browser + build + research</span></footer>
+          </a>
+        </div>
+
+        <div class="overdrive-lower reveal">
+          <article class="overdrive-activity">
+            <div class="od-panel-head"><span>PUBLIC ENGINEERING SIGNAL</span><b>LIVE FROM GITHUB</b></div>
+            <div id="overdrive-activity-feed"><p>Acquiring recent public repository activity…</p></div>
+          </article>
+          <article class="overdrive-manifesto">
+            <div class="od-panel-head"><span>DPN DESIGN LANGUAGE</span><b>VISUAL SYSTEM</b></div>
+            <div class="od-manifesto-grid">
+              <span><i>01</i><b>BLACK CORE</b><small>Low-noise command surfaces</small></span>
+              <span><i>02</i><b>RED ENERGY</b><small>Lightning, alerts and focus</small></span>
+              <span><i>03</i><b>BINARY STORM</b><small>Persistent DPN motion language</small></span>
+              <span><i>04</i><b>REAL EVIDENCE</b><small>Show the product, label the proof</small></span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -138,7 +245,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.5 CAPTURE RUN INTEL</span>
+      <span>BUILD // v3.6 VISUAL OVERDRIVE</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -953,6 +1060,6 @@
     </form>
   </dialog>
 
-    <script src="./app.v3.5.js" defer></script>
+    <script src="./app.v3.6.js" defer></script>
 </body>
 </html>
