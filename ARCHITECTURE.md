@@ -241,3 +241,29 @@ Reduced-motion preference defaults the visitor toward Low mode.
 ### PWA / offline behavior
 
 The service worker caches same-origin static presentation resources. It does not cache or fabricate authenticated/private data. GitHub API calls remain network requests; when unavailable, existing static fallback behavior applies.
+
+
+## v2.9 provenance model
+
+Source-derived evidence may be associated with exact public source paths. A provenance mapping contains:
+
+- the public DPN repository;
+- one or more exact file paths used to derive the visual;
+- a platform classification;
+- a short provenance note.
+
+The browser generates direct GitHub links using the repository's currently discovered public default branch.
+
+A provenance mapping means that the visual structure was derived from those public source files. It does not prove the application executed successfully, that displayed placeholder concepts contain real data, or that the source is deployed to production.
+
+### Platform filtering
+
+Visual evidence is classified for browsing as Desktop, Web, Mobile, Game or Artwork. Platform classification is presentation metadata, not a runtime capability claim.
+
+### Presentation mode
+
+Presentation mode is a client-side guided navigation state. It changes navigation emphasis and visual intensity only; it does not change public data access or evidence semantics.
+
+### Network state
+
+The browser reports its own online/offline state. This is not DPN infrastructure health. Public GitHub telemetry remains separately sourced from the GitHub public API.
