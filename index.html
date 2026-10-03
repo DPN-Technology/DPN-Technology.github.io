@@ -38,9 +38,20 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.7.css">
+  <link rel="stylesheet" href="./styles.v3.8.css">
 </head>
 <body>
+  <div id="dpn-boot" class="dpn-boot" aria-hidden="true">
+    <div class="dpn-boot-storm" aria-hidden="true"></div>
+    <div class="dpn-boot-shell">
+      <div class="dpn-boot-logo"><span></span><img src="./assets/dpn-logo.webp" alt="DPN Technology"></div>
+      <p>DPN://PUBLIC_COMMAND_INTERFACE</p>
+      <h1>COMMAND CENTER</h1>
+      <div class="dpn-boot-lines" id="dpn-boot-lines" aria-live="polite"></div>
+      <div class="dpn-boot-progress"><i id="dpn-boot-progress"></i></div>
+      <div class="dpn-boot-footer"><span>DEVELOP // PIONEER // NAVIGATE</span><button id="dpn-boot-skip" type="button">SKIP BOOT</button></div>
+    </div>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <canvas id="binary-rain" aria-hidden="true"></canvas>
   <canvas id="lightning-canvas" aria-hidden="true"></canvas>
@@ -64,7 +75,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -74,7 +85,7 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v3.7 PRODUCT WORLDS</div>
+        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v3.8 IMMERSIVE SYSTEMS</div>
         <div class="hero-brandline">
           <span class="hero-brandmark"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></span>
           <div><p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p><strong>DEVELOP PIONEER NAVIGATE</strong></div>
@@ -245,6 +256,27 @@
         </div>
       </div>
 
+
+        <div class="ecosystem-map reveal" aria-label="Interactive DPN ecosystem connections">
+          <div class="ecosystem-map-head"><span>DPN ECOSYSTEM ROUTER</span><b>SELECT A NODE TO ENTER ITS WORLD</b></div>
+          <div class="ecosystem-map-stage">
+            <svg viewBox="0 0 1200 410" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M600 205L145 90"/><path d="M600 205L360 65"/><path d="M600 205L840 65"/><path d="M600 205L1055 90"/>
+              <path d="M600 205L325 340"/><path d="M600 205L875 340"/>
+              <circle cx="600" cy="205" r="92"/><circle cx="600" cy="205" r="145"/>
+            </svg>
+            <button type="button" class="eco-core" data-world-target="world-operational-control"><img src="./assets/dpn-logo.webp" alt=""><strong>DPN CORE</strong><small>PUBLIC COMMAND</small></button>
+            <button type="button" class="eco-node eco-control" data-world-target="world-operational-control"><span>01</span><b>OPERATIONAL CONTROL</b></button>
+            <button type="button" class="eco-node eco-aqua" data-world-target="world-aqua-labs"><span>02</span><b>AQUA LABS</b></button>
+            <button type="button" class="eco-node eco-dtd" data-world-target="world-dtd"><span>03</span><b>DEATH THE DEVELOPER</b></button>
+            <button type="button" class="eco-node eco-one" data-world-target="world-dpn-one"><span>04</span><b>DPN ONE</b></button>
+            <button type="button" class="eco-node eco-desk" data-world-target="world-service-desk"><span>05</span><b>SERVICE DESK</b></button>
+            <button type="button" class="eco-node eco-map" data-world-target="world-network-mapper"><span>06</span><b>NETWORK MAPPER</b></button>
+            <div class="eco-pulse ep1"></div><div class="eco-pulse ep2"></div><div class="eco-pulse ep3"></div>
+          </div>
+          <div class="ecosystem-boundary">RELATIONSHIPS REPRESENT DPN PRODUCT NAVIGATION // NOT LIVE NETWORK CONNECTIVITY</div>
+        </div>
+
       <nav class="product-world-rail" aria-label="DPN product world navigation">
         <button class="active" type="button" data-world-target="world-operational-control"><span>01</span>OPERATIONAL CONTROL</button>
         <button type="button" data-world-target="world-aqua-labs"><span>02</span>AQUA LABS</button>
@@ -268,7 +300,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-Operational-Control">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Operational-Control" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-Operational-Control">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-Operational-Control">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Operational-Control" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame" data-world-tilt>
@@ -293,7 +325,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-Aqua-Labs-Point-of-Sale-System">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Aqua-Labs-Point-of-Sale-System" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-Aqua-Labs-Point-of-Sale-System">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-Aqua-Labs-Point-of-Sale-System">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Aqua-Labs-Point-of-Sale-System" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame" data-world-tilt>
@@ -318,7 +350,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-Death-the-Developer">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Death-the-Developer" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-Death-the-Developer">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-Death-the-Developer">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Death-the-Developer" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame" data-world-tilt>
@@ -343,7 +375,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-One">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-One" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-One">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-One">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-One" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame" data-world-tilt>
@@ -368,7 +400,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-Service-Desk">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Service-Desk" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-Service-Desk">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-Service-Desk">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Service-Desk" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame actual" data-world-tilt>
@@ -393,7 +425,7 @@
               <span><small>VISUAL EVIDENCE</small><b data-world-stat="visuals">—</b></span>
               <span><small>PRIMARY LANGUAGE</small><b data-world-stat="language">—</b></span>
             </div>
-            <div class="world-actions"><button type="button" data-world-dossier="DPN-Network-Mapper">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Network-Mapper" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
+            <div class="world-actions"><button type="button" class="world-focus-button" data-world-focus="DPN-Network-Mapper">FOCUS SYSTEM</button><button type="button" data-world-dossier="DPN-Network-Mapper">OPEN DOSSIER</button><a href="https://github.com/DPN-Technology/DPN-Network-Mapper" target="_blank" rel="noreferrer">SOURCE ↗</a></div>
           </div>
           <div class="world-visual">
             <div class="world-visual-frame actual" data-world-tilt>
@@ -423,7 +455,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.7 PRODUCT WORLDS</span>
+      <span>BUILD // v3.8 IMMERSIVE SYSTEMS</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -1238,6 +1270,41 @@
     </form>
   </dialog>
 
-    <script src="./app.v3.7.js" defer></script>
+
+  <dialog id="product-focus" class="product-focus">
+    <form method="dialog" class="product-focus-shell">
+      <header class="product-focus-head">
+        <div><span id="product-focus-code">DPN://PRODUCT_FOCUS</span><h2 id="product-focus-title">DPN PRODUCT</h2><p id="product-focus-description"></p></div>
+        <button type="submit" aria-label="Close product focus">CLOSE ×</button>
+      </header>
+      <div class="product-focus-body">
+        <div class="product-focus-viewer">
+          <div class="product-focus-stage">
+            <img id="product-focus-image" src="./assets/dpn-logo.webp" alt="">
+            <span id="product-focus-evidence">PUBLIC EVIDENCE</span>
+            <div class="product-focus-scan"></div>
+          </div>
+          <div id="product-focus-gallery" class="product-focus-gallery" aria-label="Product visual evidence gallery"></div>
+        </div>
+        <aside class="product-focus-intel">
+          <div class="focus-intel-grid">
+            <span><small>LAST PUBLIC PUSH</small><b id="focus-stat-push">—</b></span>
+            <span><small>PUBLIC RELEASES</small><b id="focus-stat-releases">—</b></span>
+            <span><small>VISUAL EVIDENCE</small><b id="focus-stat-visuals">—</b></span>
+            <span><small>PRIMARY LANGUAGE</small><b id="focus-stat-language">—</b></span>
+          </div>
+          <div class="focus-boundary"><span>EVIDENCE BOUNDARY</span><b id="focus-boundary-text">PUBLIC SOURCE ONLY</b></div>
+          <div class="focus-actions">
+            <button id="focus-open-dossier" type="button">OPEN PROJECT DOSSIER</button>
+            <a id="focus-open-repo" href="https://github.com/DPN-Technology" target="_blank" rel="noreferrer">OPEN SOURCE ↗</a>
+          </div>
+          <div class="focus-system-log"><span>SYSTEM LOG</span><div id="focus-system-log"><p>&gt; product focus initialized</p></div></div>
+        </aside>
+      </div>
+    </form>
+  </dialog>
+
+
+    <script src="./app.v3.8.js" defer></script>
 </body>
 </html>
