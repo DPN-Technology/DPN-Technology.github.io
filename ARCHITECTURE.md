@@ -603,3 +603,14 @@ Because the shell is rebuilt after the standard telemetry and runtime-evidence i
 Module navigation searches mapped evidence titles/descriptions for a related screen. If no direct mapped screen exists, the shell retains the current evidence and explicitly reports that no direct screen is mapped instead of inventing one.
 
 Architecture-path mode is decorative visualization of the public subsystem model, not a runtime network or service dependency graph.
+
+
+## v4.2 readability layer
+
+The readability layer is presentation-only.
+
+A browser-local interface scale is applied at the document root. The default is the larger scale, with optional XL and standard modes.
+
+The setting changes typography and selected layout dimensions only. It does not alter evidence classification, GitHub telemetry, runtime-manifest validation, application behavior or public/private data boundaries.
+
+Targeted minimum sizes are applied to the densest UI surfaces rather than relying only on global zoom, which preserves the command-center composition while improving legibility.
