@@ -1,5 +1,26 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.6 — Public Fusion Mesh
+
+- Added a public-safe DPN Fusion Mesh inspired by the DPN Website status center.
+- Added a dynamic topology built from public GitHub repositories and organization surfaces.
+- Added a node detail drawer with repository metadata.
+- Added public event-bus output built from push and release records.
+- Added registry statistics:
+  - public mesh nodes;
+  - release sources;
+  - recently pushed public repositories;
+  - public event records.
+- Added project intelligence filters for:
+  - recent pushes;
+  - release records;
+  - open issues;
+  - public stars.
+- Added a runtime-generated public build journal.
+- Added a storm on/off control to the top command bar.
+- Preserved the distinction between registry relationships and runtime integrations.
+- The topology does not claim application uptime, private infrastructure, or live network connectivity.
+
 ## v2.5 — Cinematic DPN Build Surfaces
 
 - Added Website-inspired perspective project windows to the hero.
