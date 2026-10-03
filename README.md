@@ -337,3 +337,20 @@ The monitor wall itself uses the real public evidence registry:
 Every shell includes a primary evidence monitor, two secondary monitors, source-structured module navigation, product context, public counts, architecture-path mode, previous/next evidence controls, Full Focus access and the v4.0 public-demo boot sequence.
 
 New validated runtime evidence therefore becomes visible automatically on the next normal Command Center evidence refresh without hand-editing the Product World.
+
+
+## v4.2 readability
+
+v4.2 raises the visual floor for small command-center text.
+
+The interface now defaults to the larger readability scale. A new top-bar control cycles between:
+
+- TEXT // L — new default;
+- TEXT // XL — larger accessibility-oriented presentation;
+- TEXT // STD — the former compact scale.
+
+The selected scale is stored locally in the visitor's browser.
+
+The pass specifically targets the dense surfaces introduced across v3.6–v4.1: Product Worlds, Live Product Shells, Product Runtime Theater, Command Bridge, Founder Command, evidence metadata, project cards, telemetry, architecture drawers and command controls.
+
+Mobile layouts retain a moderated scale so the larger desktop presentation remains usable on narrow screens.
