@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.4.css">
+  <link rel="stylesheet" href="./styles.v3.5.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -138,7 +138,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.4 EVIDENCE INGEST</span>
+      <span>BUILD // v3.5 CAPTURE RUN INTEL</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -659,9 +659,9 @@
 
     <section class="section capture-factory" id="capture-factory">
       <div class="section-head">
-        <p class="eyebrow">03D // RUNTIME CAPTURE FACTORY</p>
+        <p class="eyebrow">03D // CAPTURE OPERATIONS + RUN INTELLIGENCE</p>
         <h2>Turn source proof into<br><span>repeatable runtime evidence.</span></h2>
-        <p>The Capture Factory detects repo-native screenshot harnesses and manual GitHub Actions workflows. Installed automation is shown separately from committed runtime evidence so scaffolding is never presented as proof that a capture actually ran.</p>
+        <p>The Capture Factory detects repo-native screenshot harnesses and manual GitHub Actions workflows. v3.5 adds an on-demand public workflow-history scan so installed automation, the latest execution result and committed runtime evidence remain three separate facts.</p>
       </div>
 
       <div class="capture-summary">
@@ -677,6 +677,20 @@
         <span>EXECUTION POLICY</span>
         <b>MANUAL DISPATCH ONLY</b>
         <p>Capture workflows are intentionally not triggered on every push. Use each card’s RUN FACTORY link to open the exact GitHub Actions workflow, choose <b>Run workflow</b>, and keep <b>commit_results=true</b> when you want successful captures committed as public evidence.</p>
+      </div>
+
+      <div class="capture-run-toolbar">
+        <button id="scan-capture-runs" type="button">CHECK LATEST CAPTURE RUNS</button>
+        <strong id="capture-run-scan-state">ON DEMAND // NOT CHECKED</strong>
+        <p>Run history is queried only when requested so the Command Center does not spend public GitHub API budget on Actions history during every page load. A successful workflow run is execution evidence, not runtime proof; the standard manifest and image artifacts are still required.</p>
+      </div>
+
+      <div class="capture-run-summary" aria-label="Latest public capture workflow run states">
+        <article><span>LAST RUN SUCCEEDED</span><strong id="capture-run-success">—</strong><small>latest manual capture run concluded successfully</small></article>
+        <article><span>LAST RUN FAILED</span><strong id="capture-run-failed">—</strong><small>latest manual capture run needs attention</small></article>
+        <article><span>RUNNING / QUEUED</span><strong id="capture-run-active">—</strong><small>latest capture workflow has not completed</small></article>
+        <article><span>NO RUN DISCOVERED</span><strong id="capture-run-none">—</strong><small>public API returned no workflow_dispatch run</small></article>
+        <article><span>RUN STATUS UNKNOWN</span><strong id="capture-run-unknown">—</strong><small>rate limit, API error or non-terminal result</small></article>
       </div>
 
       <div id="capture-factory-grid" class="capture-factory-grid" aria-live="polite">
@@ -712,7 +726,7 @@
 
     <section class="section verification-board" id="verification-board">
       <div class="section-head">
-        <p class="eyebrow">03D // PRODUCT VERIFICATION BOARD</p>
+        <p class="eyebrow">03F // PRODUCT VERIFICATION BOARD</p>
         <h2>Proof maturity,<br><span>without pretending it is a score.</span></h2>
         <p>This board combines mapped visual evidence, exact source provenance, repository evidence and public GitHub release records. It describes what is publicly inspectable now—not production readiness, security quality or deployment status.</p>
       </div>
@@ -939,6 +953,6 @@
     </form>
   </dialog>
 
-    <script src="./app.v3.4.js" defer></script>
+    <script src="./app.v3.5.js" defer></script>
 </body>
 </html>
