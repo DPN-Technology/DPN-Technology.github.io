@@ -422,3 +422,47 @@ Command Center may promote reviewed runtime evidence
 ```
 
 The workflow page link is an operations affordance, not an execution claim.
+
+
+## v3.4 runtime evidence ingestion
+
+The browser performs runtime evidence ingestion after the bounded public repository-tree scan.
+
+```text
+public repo tree
+  └─ docs/evidence/runtime/manifest.json discovered
+       ↓
+fetch raw public manifest
+       ↓
+validate schema + repository + evidenceType + artifact paths
+       ↓
+build bounded public evidence records
+       ↓
+render repo-hosted runtime images in Command Center
+```
+
+### Validation rules
+
+The ingestion path rejects a manifest unless it satisfies all of these:
+
+- object JSON document;
+- `schemaVersion === 1`;
+- `repository` exactly matches the repository being scanned;
+- `evidenceType === "actual-rendered-ui"`;
+- artifacts is an array with 1–12 entries;
+- every artifact file is a basename, contains no path separators or `..`, and has an approved image extension;
+- source commit, product, route, viewport and disclosure fields are bounded before presentation.
+
+Images are resolved only under the known public prefix:
+
+`docs/evidence/runtime/<artifact-file>`
+
+The manifest may describe a source commit from the runtime that was captured, while the evidence images themselves are loaded from the repository's current public default branch because the workflow's evidence commit occurs after the captured source commit.
+
+### Failure model
+
+Fetch/parse/validation failures are stored as rejected/unreadable manifest state. They never fall back to displaying unvalidated images.
+
+### Product proof aggregation
+
+Auto-ingested runtime artifacts contribute to the public product proof state as actual rendered evidence, but they do not alter production-health, deployment-readiness or security claims.
