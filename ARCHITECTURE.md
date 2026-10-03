@@ -130,3 +130,38 @@ These are source-control events, not production events.
 The public build journal merges recent public release records and public repository push activity into a chronological list.
 
 It does not include private project work and does not imply a public launch when a repository changes.
+
+
+## Public Engineering Evidence Matrix
+
+The evidence matrix inspects public repository trees through the GitHub public API.
+
+For each scanned public project repository, the browser looks for:
+
+- root README documentation;
+- `SECURITY.md` in the repository or a nested path;
+- license / copying files or third-party license/notice files;
+- architecture documentation;
+- public release records already discovered by the release scanner;
+- a public push within the last 30 days.
+
+### Meaning
+
+A discovered artifact means only that the artifact is present in the public repository tree.
+
+It does **not** prove:
+
+- security quality;
+- test quality;
+- runtime verification;
+- production readiness;
+- compliance;
+- release verification.
+
+An API failure is displayed as **unknown**, not **missing**.
+
+### API budget
+
+The scanner evaluates up to 20 public project repositories per page session to stay within reasonable unauthenticated GitHub API limits.
+
+The scan runs once per page load. A normal telemetry refresh does not intentionally multiply evidence-tree requests after the evidence state has already been populated.
