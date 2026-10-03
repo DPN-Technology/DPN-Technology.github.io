@@ -184,3 +184,24 @@ The Command Center must not infer that:
 Those facts require corresponding GitHub run/artifact or repository evidence.
 
 The capture workflows remain explicitly manual to avoid background CI consumption and unintended public evidence generation. Self-hosted requirements must remain visible when a project cannot truthfully execute on hosted infrastructure.
+
+
+## v3.4 auto-ingest boundaries
+
+Runtime auto-ingest accepts only manifests already committed to intentionally public product repositories.
+
+The Command Center must validate the manifest before rendering referenced images. It must reject path traversal, non-image artifacts, repository mismatches and unsupported evidence types.
+
+A valid runtime manifest proves that a repository published a capture record and corresponding public image path. It does not, by itself, prove:
+
+- production deployment;
+- production data authenticity;
+- continuous availability;
+- security posture;
+- test completeness;
+- customer usage;
+- regulatory or training validity.
+
+The manifest's `dataBoundary` disclosure must remain visible with the rendered artifact.
+
+Auto-ingest must not fetch private repositories, credentials, private runner logs or non-public artifacts.
