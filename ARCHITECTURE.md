@@ -162,6 +162,10 @@ An API failure is displayed as **unknown**, not **missing**.
 
 ### API budget
 
-The scanner evaluates up to 20 public project repositories per page session to stay within reasonable unauthenticated GitHub API limits.
+The scanner evaluates up to 20 public project repositories per scan to stay within reasonable unauthenticated GitHub API limits.
 
-The scan runs once per page load. A normal telemetry refresh does not intentionally multiply evidence-tree requests after the evidence state has already been populated.
+Discovered artifact paths and tree-result metadata may be retained in a 10-minute browser cache. Cache entries are keyed to repository name, default branch and public push timestamp, so a changed repository is rescanned instead of being treated as current from an older tree result.
+
+A telemetry refresh resets the in-memory evidence map and rebuilds it from current public repository metadata. Unchanged repositories can reuse valid cached evidence; changed or expired entries require a fresh public tree request.
+
+Cached and truncated-tree states are surfaced in the evidence matrix rather than hidden.
