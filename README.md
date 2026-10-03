@@ -54,3 +54,10 @@ The Command Center includes a typed visual evidence wall. Runtime/interface capt
 ### Ecosystem visual coverage
 
 The visual evidence wall now also covers DPN OS, ECS, Workforce, HR and WatchTower. These additional views are derived from the applications' current UI source and remain explicitly labeled as non-runtime evidence wherever a genuine execution capture is not available.
+
+
+### Visual evidence depth
+
+The v2.7 gallery now carries 25 visual evidence items across actual captures, source-derived interfaces and project artwork. It includes deeper multi-screen coverage for Aqua Labs plus source-backed DPN AI, Network Mapper and Service Desk administration views. The registry includes both evidence-type filters and a project/screen search.
+
+DPN Secure Chat and DPN Editor are intentionally not reconstructed without source: no accessible repository is currently available to verify those interfaces.
