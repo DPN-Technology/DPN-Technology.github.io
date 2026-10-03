@@ -344,7 +344,7 @@ Network Mapper disables autopilot scanning during capture. Authenticated applica
 
 ### Current standardized coverage
 
-The public Capture Factory standard is currently installed in 12 product repositories:
+The public Capture Factory standard is currently installed in 16 product repositories:
 
 - DPN One
 - DPN Service Desk
@@ -358,6 +358,10 @@ The public Capture Factory standard is currently installed in 12 product reposit
 - DPN AI
 - DPN OS
 - DPN Death the Developer
+- DPN Tool & Die Simulator
+- DPN War Simulator
+- MemeSpace
+- DPN Website
 
 Factory implementations differ where application architecture requires it, but all retain the same evidence boundary: isolated runner state, manual dispatch, explicit manifest caveats, and no promotion to runtime proof until capture artifacts exist.
 
@@ -369,3 +373,15 @@ Browser-first products use Playwright. Native desktop products use an isolated v
 DPN OS executes its PySide6/QML launchers with repository-native support files staged into the runner. Death the Developer instantiates its Tk application directly and switches real notebook tabs before capture. Neither path converts source markup into a simulated screenshot.
 
 Authenticated capture is allowed only when the application can create isolated runner-local identities from ephemeral credentials. ECS uses this model: its generated CEO boot secret creates the fresh local CEO credential used by Playwright. The manifest must identify repository seed data and runner-local telemetry as non-production.
+
+
+### Engine-specific capture runners
+
+Capture automation follows the real application runtime instead of forcing every product into a browser workflow.
+
+- Browser/server products use Playwright against an isolated local runtime.
+- Tk desktop/simulation products use a virtual X11 display and capture the rendered desktop window.
+- PySide6/QML products use a virtual X11 display with repository-native platform configuration.
+- Unreal products require an Unreal-capable Windows runner. The Tool & Die factory is labeled for a self-hosted `Windows` / `X64` / `unreal-5.8` runner and does not fall back to synthetic screenshots.
+
+A factory requiring unavailable infrastructure remains automation evidence only. The public site must wait for the committed runtime manifest before treating the run as completed evidence.
