@@ -85,3 +85,20 @@ Major additions:
 - structured organization metadata for search/social surfaces.
 
 Deep-link query parameters reference public-safe identifiers only: `evidence`, `project`, and `release`.
+
+
+## v2.9 provenance + presentation
+
+v2.9 makes the public visual museum easier to verify and easier to present.
+
+- source-derived visuals can expose exact public source-file provenance when a verified mapping exists;
+- the evidence dashboard shows how many source-derived screens have exact source mappings;
+- visual evidence can be filtered by both evidence type and platform (Desktop, Web, Mobile, Game, Artwork);
+- the evidence inspector displays platform, source repository, exact source files and claim boundaries;
+- browser titles/descriptions follow the currently opened evidence, dossier, release, architecture node or Fusion Mesh node;
+- the top bar can share the current deep-linked view;
+- browser online/offline state is visible;
+- client presentation mode provides a guided ten-step tour through the Command Center;
+- v2.9 offline caching points to the v2.9 application and stylesheet.
+
+Exact provenance is intentionally added only where source paths were verified in the public repository tree.
