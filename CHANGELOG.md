@@ -1,3 +1,18 @@
+## v4.2 — Readability Pass
+
+- Increased the default Command Center interface scale.
+- Added a persistent TEXT // L / XL / STD control in the top command bar.
+- Enlarged small labels, metadata, telemetry, command controls and evidence classifications throughout the site.
+- Increased Live Product Shell navigation, monitor metadata, module context and command-bar readability.
+- Increased Product Runtime Theater labels, screen-bank controls and public telemetry sizing.
+- Increased Command Bridge, Founder Command, command-palette, project-card and visual-evidence text sizing.
+- Increased architecture drawer labels and subsystem descriptions.
+- Widened key shell and HUD areas where larger text needs more room.
+- Kept responsive reductions on mobile so larger desktop text does not destroy small-screen layouts.
+- Stores the selected readability mode locally in the browser.
+- Promoted Command Center assets to `app.v4.2.js` and `styles.v4.2.css`.
+- Bumped evidence/run caches and service-worker namespace to v4.2.
+
 ## v4.1 — Live Product Shells
 
 - Added source-structured application shells to all six major Product Worlds.
