@@ -1,3 +1,17 @@
+## v4.0 — Product Runtime Theater
+
+- Turned each major Product World into a mini public demo surface.
+- Added per-product screen banks driven by mapped public visual evidence.
+- Added runtime-first screen ordering when validated runtime-manifest captures exist.
+- Added per-world public presentation boot sequences with evidence counts and boundaries.
+- Added product-specific architecture drawers for Operational Control, Aqua Labs, Death the Developer, DPN One, Service Desk and Network Mapper.
+- Added theater command strips for Boot Public Demo, Architecture and Full Focus.
+- Added per-world actual/source/artwork/release/push telemetry.
+- Added a Product Runtime Theater banner and command-palette entry.
+- Preserved evidence classifications throughout all theater surfaces.
+- Promoted Command Center assets to `app.v4.0.js` and `styles.v4.0.css`.
+- Bumped evidence/run caches and the service-worker namespace to v4.0.
+
 ## v3.9 — Command Bridge
 
 - Added a persistent Command Bridge HUD for rapid navigation across major DPN systems.
