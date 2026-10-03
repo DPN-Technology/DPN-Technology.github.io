@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v3.8.css">
+  <link rel="stylesheet" href="./styles.v3.9.css">
 </head>
 <body>
   <div id="dpn-boot" class="dpn-boot" aria-hidden="true">
@@ -52,7 +52,12 @@
       <div class="dpn-boot-footer"><span>DEVELOP // PIONEER // NAVIGATE</span><button id="dpn-boot-skip" type="button">SKIP BOOT</button></div>
     </div>
   </div>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="route-transition" class="route-transition" aria-hidden="true">
+      <div class="route-transition-grid"></div>
+      <div class="route-transition-core"><img src="./assets/dpn-logo.webp" alt=""><span>DPN://COMMAND_BRIDGE</span><strong id="route-transition-label">ROUTING</strong><small id="route-transition-target">PUBLIC SYSTEM</small></div>
+      <div class="route-transition-beam"></div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
   <canvas id="binary-rain" aria-hidden="true"></canvas>
   <canvas id="lightning-canvas" aria-hidden="true"></canvas>
   <div class="page-flash" id="page-flash" aria-hidden="true"></div>
@@ -69,6 +74,7 @@
       <a href="#visual-overdrive">Command Deck</a>
       <a href="#product-worlds">Product Worlds</a>
       <a href="#company">Company</a>
+      <a href="#founder-command">Founder</a>
       <a href="#architecture">Architecture</a>
       <a href="#projects">Public Work</a>
       <a href="#trust">Trust Center</a>
@@ -82,10 +88,30 @@
     </div>
   </header>
 
+  <aside id="command-bridge" class="command-bridge" aria-label="DPN Command Bridge">
+    <div class="bridge-head">
+      <div><span>DPN://COMMAND_BRIDGE</span><strong id="bridge-active-label">CORE</strong></div>
+      <button id="bridge-collapse" type="button" aria-label="Collapse Command Bridge">−</button>
+    </div>
+    <div class="bridge-signal"><i class="live-dot"></i><span id="bridge-signal">PUBLIC SIGNAL // SYNCING</span></div>
+    <nav class="bridge-nav">
+      <button type="button" data-bridge-target="top" data-bridge-label="CORE"><span>00</span><b>CORE</b></button>
+      <button type="button" data-bridge-target="world-operational-control" data-bridge-label="OPERATIONAL CONTROL"><span>01</span><b>CONTROL</b></button>
+      <button type="button" data-bridge-target="world-aqua-labs" data-bridge-label="AQUA LABS"><span>02</span><b>AQUA</b></button>
+      <button type="button" data-bridge-target="world-dtd" data-bridge-label="DEATH THE DEVELOPER"><span>03</span><b>DTD</b></button>
+      <button type="button" data-bridge-target="world-dpn-one" data-bridge-label="DPN ONE"><span>04</span><b>ONE</b></button>
+      <button type="button" data-bridge-target="world-service-desk" data-bridge-label="SERVICE DESK"><span>05</span><b>DESK</b></button>
+      <button type="button" data-bridge-target="world-network-mapper" data-bridge-label="NETWORK MAPPER"><span>06</span><b>MAP</b></button>
+      <button type="button" data-bridge-target="founder-command" data-bridge-label="FOUNDER COMMAND"><span>07</span><b>FOUNDER</b></button>
+      <button type="button" data-bridge-target="inside-builds" data-bridge-label="VISUAL EVIDENCE"><span>08</span><b>EVIDENCE</b></button>
+    </nav>
+    <div class="bridge-foot"><span>REPOS <b id="bridge-repos">—</b></span><span>VISUALS <b id="bridge-visuals">—</b></span></div>
+  </aside>
+
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v3.8 IMMERSIVE SYSTEMS</div>
+        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v3.9 COMMAND BRIDGE</div>
         <div class="hero-brandline">
           <span class="hero-brandmark"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></span>
           <div><p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p><strong>DEVELOP PIONEER NAVIGATE</strong></div>
@@ -455,7 +481,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v3.8 IMMERSIVE SYSTEMS</span>
+      <span>BUILD // v3.9 COMMAND BRIDGE</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -556,6 +582,62 @@
         <article><strong>INTEGRATED</strong><span>Connect through visible contracts.</span></article>
         <article><strong>EXPERIMENTAL</strong><span>Try ambitious ideas visibly.</span></article>
         <article><strong>EVIDENCE-DRIVEN</strong><span>Prove the important claims.</span></article>
+      </div>
+    </section>
+
+
+    <section class="founder-command reveal" id="founder-command">
+      <div class="founder-command-bg" aria-hidden="true"><span>FOUNDER // COMMAND // BUILD</span></div>
+      <div class="founder-command-grid">
+        <div class="founder-portrait-stack">
+          <div class="founder-portrait-frame">
+            <div class="founder-scan"></div>
+            <img src="./assets/aaron-sherk-portrait.jpg" alt="Aaron “Diesel” Sherk, CEO and Founder of DPN Technology">
+            <span class="founder-logo"><img src="./assets/dpn-logo.webp" alt=""></span>
+            <div class="founder-frame-meta"><span>LEADERSHIP // PUBLIC</span><b>AARON “DIESEL” SHERK</b></div>
+          </div>
+          <div class="founder-portrait-signal"><i class="live-dot"></i><span>FOUNDER COMMAND // HANDS-ON ENGINEERING</span></div>
+        </div>
+
+        <div class="founder-command-copy">
+          <p class="eyebrow">01A // FOUNDER COMMAND</p>
+          <h2>Build close to<br><span>the problem.</span></h2>
+          <p class="founder-lead">Aaron “Diesel” Sherk leads DPN Technology as CEO and Founder while remaining directly involved in product direction, engineering, infrastructure, automation and the systems being built.</p>
+          <blockquote>“Ideas are the start. The build is what matters.”</blockquote>
+
+          <div class="founder-command-stats">
+            <article><span>TECHNICAL ROOTS</span><strong>2007</strong><small>Hands-on Sound / A.V. / I.T. work</small></article>
+            <article><span>DPN FOUNDED</span><strong>2018</strong><small>Develop Pioneer Navigate</small></article>
+            <article><span>OPERATING MODE</span><strong>HANDS-ON</strong><small>Leadership stays close to the build</small></article>
+            <article><span>ENGINEERING METHOD</span><strong>BUILD → VERIFY</strong><small>Evidence over presentation-only claims</small></article>
+          </div>
+
+          <div class="founder-timeline">
+            <article><span>2007</span><div><b>Technical roots</b><p>Hands-on Sound, A.V. and I.T. work established the practical systems mindset that still shapes DPN.</p></div></article>
+            <article><span>2018</span><div><b>DPN founded</b><p>Develop Pioneer Navigate became the operating identity behind the growing software and technology ecosystem.</p></div></article>
+            <article><span>NOW</span><div><b>Connected systems</b><p>DPN is building software, infrastructure, AI, automation, operational control and interactive systems under one engineering model.</p></div></article>
+          </div>
+
+          <div class="founder-actions">
+            <a href="#product-worlds" data-route-link="product-worlds" data-route-label="PRODUCT WORLDS">ENTER PRODUCT WORLDS</a>
+            <a href="https://github.com/DPN-Technology" target="_blank" rel="noreferrer">VIEW PUBLIC GITHUB ↗</a>
+          </div>
+        </div>
+
+        <aside class="founder-command-console">
+          <div class="founder-console-head"><span>DPN://FOUNDER_COMMAND</span><b>PUBLIC SAFE</b></div>
+          <div class="founder-console-core">
+            <div class="founder-radar"><span></span><i></i><img src="./assets/dpn-logo.webp" alt=""></div>
+            <strong>DEVELOP.<br><em>PIONEER.</em><br>NAVIGATE.</strong>
+          </div>
+          <div class="founder-console-lines">
+            <span><b>MISSION</b> Build what is missing.</span>
+            <span><b>PRIORITY</b> Make systems usable.</span>
+            <span><b>CONTROL</b> Keep authority explicit.</span>
+            <span><b>EVIDENCE</b> Show what can be proven.</span>
+            <span><b>RECOVERY</b> Design the path back.</span>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -1251,6 +1333,7 @@
       <label class="command-search"><span>⌕</span><input id="command-search" autocomplete="off" placeholder="Navigate the public command center…"></label>
       <div class="command-results" id="command-results">
         <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
+        <button type="button" data-target="founder-command"><span>01A</span><strong>Founder Command</strong><small>Aaron “Diesel” Sherk, public DPN history and operating philosophy</small></button>
         <button type="button" data-target="fusion-mesh"><span>02</span><strong>Public Fusion Mesh</strong><small>Registry topology, event bus and node drawer</small></button>
         <button type="button" data-target="architecture"><span>03</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
         <button type="button" data-target="product-families"><span>04</span><strong>Product Constellations</strong><small>Browse the DPN ecosystem by operating domain</small></button>
@@ -1280,10 +1363,14 @@
       <div class="product-focus-body">
         <div class="product-focus-viewer">
           <div class="product-focus-stage">
+            <button id="focus-prev" class="focus-nav focus-prev" type="button" aria-label="Previous product visual">‹</button>
             <img id="product-focus-image" src="./assets/dpn-logo.webp" alt="">
             <span id="product-focus-evidence">PUBLIC EVIDENCE</span>
             <div class="product-focus-scan"></div>
+            <button id="focus-next" class="focus-nav focus-next" type="button" aria-label="Next product visual">›</button>
+            <div class="focus-screen-meta"><span id="focus-screen-position">1 / 1</span><b id="focus-screen-title">PUBLIC VISUAL</b></div>
           </div>
+          <div id="product-focus-mosaic" class="product-focus-mosaic"></div>
           <div id="product-focus-gallery" class="product-focus-gallery" aria-label="Product visual evidence gallery"></div>
         </div>
         <aside class="product-focus-intel">
@@ -1305,6 +1392,6 @@
   </dialog>
 
 
-    <script src="./app.v3.8.js" defer></script>
+    <script src="./app.v3.9.js" defer></script>
 </body>
 </html>
