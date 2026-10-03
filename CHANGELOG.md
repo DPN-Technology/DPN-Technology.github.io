@@ -1,5 +1,22 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.5 — Cinematic DPN Build Surfaces
+
+- Added Website-inspired perspective project windows to the hero.
+- Added a large orbit-backed DPN logo composition behind real project imagery.
+- Added a floating secondary project capture.
+- Added a DPN public signal strip with live GitHub sync state.
+- Added the **Inside the Builds** visual evidence gallery.
+- Imported verified DPN project captures from the Website repository:
+  - DPN Service Desk actual request interface;
+  - DPN Network Mapper sample topology;
+  - MemeSpace pool output from actual game code;
+  - DPN Aqua Labs unpaired mobile interface;
+  - Death the Developer project artwork.
+- Added context labels to prevent project visuals from implying live infrastructure or production deployment.
+- Added stronger red orbit section transitions and Website-style cinematic depth.
+- Preserved the official DPN logo, CEO portrait, binary storm, branching lightning and public-only telemetry boundaries.
+
 ## v2.4 — DPN Leadership Presentation
 
 - Imported the approved Aaron “Diesel” Sherk CEO portrait from the DPN Website repository.
