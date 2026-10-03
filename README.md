@@ -354,3 +354,19 @@ The selected scale is stored locally in the visitor's browser.
 The pass specifically targets the dense surfaces introduced across v3.6–v4.1: Product Worlds, Live Product Shells, Product Runtime Theater, Command Bridge, Founder Command, evidence metadata, project cards, telemetry, architecture drawers and command controls.
 
 Mobile layouts retain a moderated scale so the larger desktop presentation remains usable on narrow screens.
+
+
+## v4.3 guided demo mode
+
+v4.3 adds a presentation-focused Guided Demo Mode intended for walking another person through DPN's public product ecosystem.
+
+The top-bar DEMO control opens a full-screen tour across the six major Product Worlds. Each product uses the same evidence priority as the rest of the Command Center:
+
+1. validated runtime-manifest captures;
+2. static actual captures;
+3. source-derived interfaces;
+4. artwork/fallback evidence.
+
+The demo supports product selection, previous/next evidence navigation, thumbnails, keyboard arrows, autoplay, public repository statistics, subsystem summaries, evidence-boundary labels and handoff into either the Live Product Shell or Full Focus viewer.
+
+Autoplay is presentation-only and does not trigger any repository workflow, product process or runtime action.
