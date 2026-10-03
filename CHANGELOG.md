@@ -2,6 +2,9 @@
 
 ## v2.7 — Visual Evidence Wall Expansion
 
+- Added a visual-evidence registry with live counts for total visuals, actual captures, source-derived interfaces and artwork.
+- Added interactive evidence filters so visitors can isolate actual captures from source-derived views instead of conflating evidence types.
+
 - Expanded **Inside the Builds** into a typed visual evidence wall.
 - Added three additional source-backed DPN application views:
   - DPN Operational Control Command Nexus source-derived interface view;
