@@ -132,7 +132,7 @@ The standard factory consists of:
 
 The Command Center scans public repository trees for these exact artifacts. A factory being installed does **not** mean the workflow has run. A runtime manifest is displayed separately.
 
-The standardized capture-factory coverage now spans 12 public products: DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce, Aqua Labs, Executive Control System, Human Resources Software, DPN AI, DPN OS and Death the Developer.
+The standardized capture-factory coverage now spans 16 public products: DPN One, Service Desk, Network Mapper, Operational Control, WatchTower, Workforce, Aqua Labs, Executive Control System, Human Resources Software, DPN AI, DPN OS, Death the Developer, Tool & Die Simulator, DPN War Simulator, MemeSpace and DPN Website.
 
 The new Node-based factories are manual-dispatch only. They use isolated runner-local state and generate evidence manifests that document capture route, viewport, source commit and data-boundary caveats.
 
@@ -157,3 +157,29 @@ The Capture Factory now includes native desktop applications in addition to brow
 - **DPN Executive Control System** — the capture factory now generates all required CEO/COO/agent/master secrets, authenticates against the fresh runner-local CEO account and captures the Command Center, Servers & Systems, Integrations and Clearance Matrix in addition to the secure entry screen.
 
 These workflows remain manual-dispatch only. Their installation is not runtime proof until a committed runtime manifest/capture exists.
+
+
+### v3.1 simulation and web capture wave
+
+The Capture Factory now extends into DPN's simulation, game and public-web projects.
+
+- **DPN War Simulator** — launches the real Tk seamless 3D client under Xvfb and captures the open world, Training & Career Center, USS Enterprise CV-6 space and 3D Bridge Practical from a fresh isolated profile.
+- **MemeSpace** — starts the real local Node/Next.js runtime with an isolated SQLite data directory and captures the entry experience, Neon Arcade lobby, Reactor Pinball, After Hours Pool and Quantum Reels.
+- **DPN Website** — starts the real DPN Web Core and captures Home, Leadership, MemeSpace Product World and Public Status pages. Status values belong to the isolated capture runtime and public registry, not production uptime.
+- **DPN Tool & Die Simulator** — uses the real Unreal Engine 5.8 project. Its manual factory intentionally requires a self-hosted interactive Windows x64 runner with Unreal Engine 5.8 and the Visual Studio 2022 C++ toolchain; it builds the editor target, generates the ShopFloor map and requests a real runtime high-resolution screenshot.
+
+Tool & Die's factory is installed but cannot execute on a stock GitHub-hosted runner. It must not be presented as runtime proof until a compatible self-hosted Unreal runner actually produces and commits the evidence manifest.
+
+
+## v3.2 capture expansion
+
+v3.2 packages the 16-product Capture Factory rollout as a versioned Command Center release.
+
+- added standardized factories for DPN Tool & Die Simulator, DPN War Simulator, MemeSpace and DPN Website;
+- added capture-runner labels to every public Capture Factory card;
+- Tool & Die is visibly marked **SELF-HOSTED WINDOWS · UNREAL 5.8** rather than being presented like a stock hosted capture job;
+- native X11, PySide6/Xvfb and Playwright runner classes are shown separately;
+- the Capture Factory still treats workflow installation and committed runtime evidence as separate facts;
+- the PWA shell now uses v3.2 app/style assets and a v3.2 cache namespace.
+
+The current standardized automation footprint is 16 public product repositories. Runtime manifests remain a separate execution milestone.
