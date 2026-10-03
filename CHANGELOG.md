@@ -1,5 +1,13 @@
 # DPN Technology GitHub Command Center — Changelog
 
+## v2.4 — DPN Leadership Presentation
+
+- Imported the approved Aaron “Diesel” Sherk CEO portrait from the DPN Website repository.
+- Added the portrait as a real public binary asset.
+- Replaced the text-only leadership monogram with the approved image.
+- Added DPN Website-inspired portrait framing, red edge treatment and company-logo badge.
+- Preserved factual leadership copy and public/private boundaries.
+
 ## v2.3 — DPN Website Identity
 
 - Imported the official `assets/dpn-logo.webp` from the DPN Website repository as a real public binary asset.
