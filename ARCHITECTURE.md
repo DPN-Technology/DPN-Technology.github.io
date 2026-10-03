@@ -90,3 +90,43 @@ Each node links to organization standards in `DPN-Technology/.github`.
 - Do not infer private repository existence.
 - Do not present GitHub public metadata as production system health.
 - Respect reduced-motion preferences.
+
+
+## Public Fusion Mesh
+
+The Fusion Mesh is a browser-generated registry visualization.
+
+It includes:
+
+- the DPN GitHub organization;
+- the public organization engineering hub;
+- the public GitHub Command Center;
+- currently discoverable public project repositories.
+
+The topology is a **relationship/discovery view**.
+
+It must not be interpreted as:
+
+- a network topology;
+- service-to-service runtime connectivity;
+- application uptime;
+- production deployment;
+- health monitoring;
+- private repository inventory.
+
+Repository nodes are generated only from GitHub public API metadata.
+
+## Public event bus
+
+The event bus combines public evidence records:
+
+- repository push timestamps;
+- public release records.
+
+These are source-control events, not production events.
+
+## Build journal
+
+The public build journal merges recent public release records and public repository push activity into a chronological list.
+
+It does not include private project work and does not imply a public launch when a repository changes.
