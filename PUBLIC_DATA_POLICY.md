@@ -65,3 +65,10 @@ Discoverable artifact categories include:
 - architecture documentation.
 
 Artifact presence is presented as repository evidence, not a quality score.
+
+
+### Browser evidence cache
+
+To reduce repeated unauthenticated GitHub API requests, the Command Center may store recently discovered public artifact-path evidence in the visitor's browser for up to 10 minutes.
+
+The cache contains only public repository evidence already returned by GitHub, is keyed to public repository push metadata, and is not transmitted to DPN Technology by the static Command Center.
