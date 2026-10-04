@@ -625,3 +625,16 @@ It does not introduce new evidence sources. Product visuals come from the same r
 Autoplay changes only the currently displayed product/visual in the client. It does not dispatch workflows, start applications, create telemetry or alter repository state.
 
 The demo's subsystem summaries come from the public Product Theater configuration and retain the same non-runtime topology boundary.
+
+
+## v5.0 system-nexus model
+
+The System Nexus is a client-side aggregation layer over existing public repository, evidence and product-model state.
+
+The product graph uses fixed public relationship edges for navigation and presentation. These edges do not assert verified runtime integration, network paths or service dependencies.
+
+Public Proof Coverage is computed deterministically from public evidence categories already present in the Command Center. It is an evidence-completeness indicator only.
+
+The Nexus does not introduce new telemetry sources or privileged APIs. It reads the same public GitHub metadata, evidence registry, release records and validated runtime-manifest state used elsewhere in the site.
+
+Nexus actions delegate into existing surfaces: Guided Demo, Live Product Shell, Product Focus, Project Dossier and public repository source.
