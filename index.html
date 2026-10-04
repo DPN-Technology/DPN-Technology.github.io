@@ -38,7 +38,7 @@
   </script>
   <title>DPN Technology // GitHub Command Center</title>
   <link rel="preconnect" href="https://api.github.com">
-  <link rel="stylesheet" href="./styles.v4.3.css">
+  <link rel="stylesheet" href="./styles.v5.0.css">
 </head>
 <body>
   <div id="dpn-boot" class="dpn-boot" aria-hidden="true">
@@ -81,7 +81,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="guided-demo-toggle" class="storm-status-chip guided-demo-toggle" type="button">DEMO</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="guided-demo-toggle" class="storm-status-chip guided-demo-toggle" type="button">DEMO</button><button id="system-nexus-toggle" class="storm-status-chip system-nexus-toggle" type="button">NEXUS</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -109,9 +109,10 @@
   </aside>
 
   <main id="main">
+    <span id="system-nexus-anchor" class="system-nexus-anchor" aria-hidden="true"></span>
     <section class="hero" id="top">
       <div class="hero-copy">
-        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v4.3 GUIDED DEMO MODE</div>
+        <div class="hero-version-chip"><span class="live-dot"></span>DPN COMMAND CENTER // v5.0 SYSTEM NEXUS</div>
         <div class="hero-brandline">
           <span class="hero-brandmark"><img src="./assets/dpn-logo.webp" alt="DPN Technology"></span>
           <div><p class="eyebrow">DPN://PUBLIC_ENGINEERING_INTERFACE</p><strong>DEVELOP PIONEER NAVIGATE</strong></div>
@@ -487,7 +488,7 @@
       <span id="signal-github">GITHUB // ACQUIRING</span>
       <span>STORM // HIGH</span>
       <span>MODE // PUBLIC SAFE</span>
-      <span>BUILD // v4.3 GUIDED DEMO MODE</span>
+      <span>BUILD // v5.0 SYSTEM NEXUS</span>
       <span id="signal-age">LAST SYNC // —</span>
     </section>
 
@@ -1338,6 +1339,7 @@
       </div>
       <label class="command-search"><span>⌕</span><input id="command-search" autocomplete="off" placeholder="Navigate the public command center…"></label>
       <div class="command-results" id="command-results">
+        <button type="button" data-target="system-nexus-anchor"><span>00N</span><strong>System Nexus</strong><small>Global DPN ecosystem graph and public proof intelligence</small></button>
         <button type="button" data-target="product-worlds"><span>00Y</span><strong>Live Product Shells</strong><small>Source-structured navigation, multi-monitor evidence and product runtime theater</small></button>
         <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
         <button type="button" data-target="founder-command"><span>01A</span><strong>Founder Command</strong><small>Aaron “Diesel” Sherk, public DPN history and operating philosophy</small></button>
@@ -1470,7 +1472,98 @@
     </div>
   </dialog>
 
+  <dialog id="system-nexus" class="system-nexus">
+    <div class="system-nexus-shell">
+      <header class="nexus-head">
+        <div>
+          <span>DPN://SYSTEM_NEXUS</span>
+          <h2>ECOSYSTEM COMMAND GRAPH</h2>
+          <p>Public product relationships, repository signal and evidence intelligence in one command surface.</p>
+        </div>
+        <div class="nexus-head-actions">
+          <button id="nexus-demo-all" type="button">RUN GUIDED DEMO</button>
+          <button id="nexus-close" type="button">CLOSE ×</button>
+        </div>
+      </header>
 
-    <script src="./app.v4.3.js" defer></script>
+      <div class="nexus-warning">
+        <i class="live-dot"></i>
+        <b>PUBLIC PROOF COVERAGE ONLY</b>
+        <span>Scores measure visible public evidence. They are not product health, security posture, uptime, production readiness or customer-use scores.</span>
+      </div>
+
+      <div class="nexus-body">
+        <section class="nexus-map-panel">
+          <div class="nexus-map-head">
+            <span>GLOBAL DPN PRODUCT GRAPH</span>
+            <b>RELATIONSHIP MODEL // NOT LIVE NETWORK TOPOLOGY</b>
+          </div>
+          <div id="nexus-map" class="nexus-map">
+            <svg id="nexus-links" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="nexus-core">
+              <span class="nexus-core-radar"></span>
+              <img src="./assets/dpn-logo.webp" alt="">
+              <strong>DPN CORE</strong>
+              <small>DEVELOP // PIONEER // NAVIGATE</small>
+            </div>
+            <div id="nexus-nodes" class="nexus-nodes"></div>
+          </div>
+          <div class="nexus-map-footer">
+            <span id="nexus-total-products">6 PRODUCTS</span>
+            <span id="nexus-runtime-products">0 RUNTIME-PROMOTED</span>
+            <span id="nexus-proof-average">0% AVG PUBLIC PROOF</span>
+          </div>
+        </section>
+
+        <aside class="nexus-detail">
+          <div class="nexus-detail-head">
+            <div>
+              <span>SELECTED PRODUCT</span>
+              <h3 id="nexus-product-title">DPN TECHNOLOGY</h3>
+            </div>
+            <div id="nexus-proof-ring" class="nexus-proof-ring" style="--proof:0%">
+              <strong id="nexus-proof-score">0%</strong>
+              <small>PUBLIC PROOF</small>
+            </div>
+          </div>
+
+          <p id="nexus-product-description">Select a product node to inspect its public engineering evidence.</p>
+
+          <div class="nexus-stats">
+            <span><small>LAST PUBLIC PUSH</small><b id="nexus-stat-push">—</b></span>
+            <span><small>RELEASE RECORDS</small><b id="nexus-stat-releases">—</b></span>
+            <span><small>VISUAL EVIDENCE</small><b id="nexus-stat-visuals">—</b></span>
+            <span><small>PRIMARY LANGUAGE</small><b id="nexus-stat-language">—</b></span>
+          </div>
+
+          <div class="nexus-proof-breakdown">
+            <div class="nexus-section-head"><span>PUBLIC PROOF BREAKDOWN</span><b id="nexus-proof-label">0 / 100</b></div>
+            <div id="nexus-proof-items"></div>
+          </div>
+
+          <div class="nexus-modules">
+            <div class="nexus-section-head"><span>PRODUCT MODULES</span><b>PUBLIC MODEL</b></div>
+            <div id="nexus-module-list"></div>
+          </div>
+
+          <div class="nexus-gallery">
+            <div class="nexus-section-head"><span>TOP VISUAL EVIDENCE</span><b>RUNTIME FIRST</b></div>
+            <div id="nexus-gallery"></div>
+          </div>
+
+          <div class="nexus-actions">
+            <button id="nexus-open-demo" type="button">DEMO THIS PRODUCT</button>
+            <button id="nexus-enter-shell" type="button">ENTER LIVE SHELL</button>
+            <button id="nexus-open-focus" type="button">OPEN FULL FOCUS</button>
+            <button id="nexus-open-dossier" type="button">PROJECT DOSSIER</button>
+            <a id="nexus-open-source" href="https://github.com/DPN-Technology" target="_blank" rel="noreferrer">PUBLIC SOURCE ↗</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+
+    <script src="./app.v5.0.js" defer></script>
 </body>
 </html>
