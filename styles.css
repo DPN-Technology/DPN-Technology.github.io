@@ -3197,3 +3197,214 @@ body.advanced-depth .secondary-detail-toggle{
 @media(max-width:650px){
   .secondary-detail-toggle{display:inline-flex!important}
 }
+
+
+/* ============================================================
+   DPN COMMAND CENTER v5.2 // MOBILE HARDENING
+   ============================================================ */
+@media(max-width:760px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  body{
+    padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))!important;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%
+  }
+
+  .topbar{
+    position:sticky!important;
+    top:0!important;
+    width:100%!important;
+    max-width:100vw!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-areas:"brand status"!important;
+    gap:.55rem!important;
+    padding:calc(.55rem + env(safe-area-inset-top,0px)) .65rem .55rem!important
+  }
+  .brand-lockup{
+    min-width:0!important;
+    max-width:100%!important;
+    overflow:hidden
+  }
+  .brand-lockup>span:last-child{min-width:0;overflow:hidden}
+  .brand-lockup strong{
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.78rem!important
+  }
+  .brand-lockup small{display:none!important}
+  .topnav{display:none!important}
+
+  .top-status{
+    width:auto!important;
+    max-width:min(54vw,310px)!important;
+    justify-self:end!important;
+    overflow:visible!important;
+    padding:0!important;
+    gap:.3rem!important
+  }
+  .top-status .replay-boot,
+  .top-status .readability-toggle,
+  .top-status .guided-demo-toggle,
+  .top-status .presentation-toggle,
+  .top-status .share-view,
+  .top-status .connection-state,
+  .top-status .visual-mode-toggle,
+  .top-status .install-app,
+  .top-status .storm-toggle,
+  .top-status .pulse,
+  .top-status #github-api-state,
+  .top-status #command-clock{display:none!important}
+  .top-status .system-nexus-toggle,
+  .top-status .secondary-detail-toggle,
+  .top-status .command-launcher{
+    display:inline-flex!important;
+    min-width:0!important;
+    align-items:center;
+    justify-content:center;
+    padding:.42rem .48rem!important;
+    font-size:.54rem!important;
+    line-height:1!important;
+    white-space:nowrap
+  }
+  .top-status .command-launcher{font-size:0!important}
+  .top-status .command-launcher::after{content:"CMD";font-size:.54rem}
+
+  .mobile-command-dock{
+    height:calc(60px + env(safe-area-inset-bottom,0px))!important;
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    overflow:hidden
+  }
+  .mobile-command-dock a,.mobile-command-dock button{
+    min-width:0!important;
+    padding:.2rem!important;
+    touch-action:manipulation
+  }
+  .mobile-command-dock b{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.42rem
+  }
+
+  .hero,.section,.telemetry-strip,footer,.visual-overdrive,.product-worlds,.founder-command{
+    width:calc(100% - 1rem)!important;
+    max-width:calc(100% - 1rem)!important;
+    margin-inline:auto!important
+  }
+  .hero{
+    min-height:auto!important;
+    padding:1.2rem 0 3rem!important;
+    gap:1.1rem!important
+  }
+  .hero h1{font-size:clamp(2.75rem,16vw,4.7rem)!important;line-height:.86!important}
+  .hero-copy,.hero-command,.cinematic-hero{width:100%!important;max-width:100%!important}
+  .cinematic-hero{padding:1rem .25rem 7.5rem!important}
+  .primary-window{width:100%!important;margin:0!important}
+  .secondary-window{width:82%!important;margin:.55rem 0 0 auto!important}
+  .cinematic-command-chip{left:.25rem!important;right:.25rem!important;width:auto!important;bottom:4.5rem!important}
+  .cinematic-note{left:.25rem!important;right:.25rem!important;max-width:none!important}
+  .hero-bottom{position:static!important;margin-top:1rem!important}
+
+  .product-world{padding:1rem!important;border-radius:0}
+  .world-copy h3{font-size:clamp(2.45rem,12vw,4rem)!important;overflow-wrap:anywhere}
+  .world-live-stats{grid-template-columns:1fr!important}
+  .world-actions{display:grid!important;grid-template-columns:1fr!important}
+  .world-actions button,.world-actions a{width:100%!important}
+  .world-evidence-strip{overflow-x:auto!important;overscroll-behavior-inline:contain}
+  .world-evidence-strip button{flex:0 0 min(72vw,260px)}
+
+  .dpn-boot{
+    min-height:100dvh;
+    padding:calc(.6rem + env(safe-area-inset-top,0px)) .6rem calc(.6rem + env(safe-area-inset-bottom,0px))
+  }
+  .dpn-boot-shell{
+    width:100%!important;
+    max-height:calc(100dvh - 1.2rem - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+    overflow:auto;
+    padding:1rem!important
+  }
+  .dpn-boot-footer{flex-wrap:wrap;align-items:flex-start}
+  .dpn-boot-footer button{margin-left:auto}
+
+  .command-palette{
+    width:calc(100dvw - 1rem)!important;
+    max-width:calc(100dvw - 1rem)!important;
+    max-height:calc(100dvh - 1rem)!important;
+    margin:auto!important
+  }
+  .command-shell{max-height:calc(100dvh - 1rem);overflow:hidden}
+  .command-results{max-height:calc(100dvh - 9.5rem)!important;padding:.45rem!important}
+  .command-results button{
+    grid-template-columns:34px minmax(0,1fr)!important;
+    padding:.6rem!important
+  }
+  .command-results button small{grid-column:2!important}
+
+  .evidence-inspector,.project-dossier,.release-inspector,
+  .product-focus,.guided-demo,.system-nexus{
+    width:100dvw!important;
+    height:100dvh!important;
+    max-width:100dvw!important;
+    max-height:100dvh!important;
+    margin:0!important;
+    inset:0!important;
+    border:0!important;
+    padding:0!important
+  }
+  .dossier-shell,.product-focus-shell,.guided-demo-shell,.system-nexus-shell{
+    width:100%!important;
+    height:100%!important;
+    max-width:100%!important;
+    max-height:100dvh!important;
+    border:0!important
+  }
+  .product-focus-body,.guided-demo-body,.nexus-body,.dossier-body{
+    min-height:0!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain
+  }
+  .product-focus-head,.guided-demo-head,.nexus-head{
+    padding-top:calc(.7rem + env(safe-area-inset-top,0px))!important
+  }
+
+  .mesh-drawer{
+    top:0!important;
+    width:100dvw!important;
+    max-width:100dvw!important;
+    padding:calc(1rem + env(safe-area-inset-top,0px)) 1rem calc(1rem + env(safe-area-inset-bottom,0px))!important
+  }
+
+  .offline-banner{bottom:calc(64px + env(safe-area-inset-bottom,0px))!important}
+  .presentation-dock{bottom:calc(64px + env(safe-area-inset-bottom,0px))!important}
+
+  [data-tilt],[data-world-tilt],.hero-command{transform:none!important}
+}
+
+@media(max-width:420px){
+  .top-status{max-width:58vw!important}
+  .top-status .system-nexus-toggle{font-size:0!important}
+  .top-status .system-nexus-toggle::after{content:"NEXUS";font-size:.5rem}
+  .top-status .secondary-detail-toggle{font-size:0!important}
+  .top-status .secondary-detail-toggle::after{content:"DETAILS";font-size:.5rem}
+  .hero-live-matrix,.overdrive-kpis{grid-template-columns:1fr!important}
+  .mobile-command-dock b{font-size:.38rem}
+}
+
+@media(max-height:520px) and (orientation:landscape){
+  .topbar{position:relative!important}
+  .hero{padding-top:.75rem!important}
+  .dpn-boot-shell{max-height:calc(100dvh - .8rem)}
+  .product-focus,.guided-demo,.system-nexus{height:100dvh!important}
+}
+
+@media(hover:none),(pointer:coarse){
+  [data-tilt],[data-world-tilt],.hero-command,.od-card,.world-visual-frame{
+    transform:none!important
+  }
+  .od-card:hover,.nexus-node:hover{transform:none!important}
+}
