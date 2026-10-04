@@ -81,7 +81,7 @@
       <a href="#standards">Standards</a>
     </nav>
     <div class="top-status">
-      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="guided-demo-toggle" class="storm-status-chip guided-demo-toggle" type="button">DEMO</button><button id="system-nexus-toggle" class="storm-status-chip system-nexus-toggle" type="button">NEXUS</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
+      <button id="replay-boot" class="storm-status-chip replay-boot" type="button">BOOT</button><button id="readability-toggle" class="storm-status-chip readability-toggle" type="button" aria-label="Cycle interface text size">TEXT // L</button><button id="guided-demo-toggle" class="storm-status-chip guided-demo-toggle" type="button">DEMO</button><button id="system-nexus-toggle" class="storm-status-chip system-nexus-toggle" type="button">NEXUS</button><button id="presentation-toggle" class="storm-status-chip presentation-toggle" type="button" aria-pressed="false">PRESENT // OFF</button><button id="share-view" class="storm-status-chip share-view" type="button">SHARE VIEW</button><span id="connection-state" class="connection-state" aria-live="polite">NETWORK // CHECKING</span><button id="visual-mode-toggle" class="storm-status-chip visual-mode-toggle" type="button" aria-label="Cycle visual performance mode">FX // FULL</button><button id="install-app" class="storm-status-chip install-app" type="button" hidden>INSTALL</button><button id="storm-toggle" class="storm-status-chip storm-toggle" type="button" aria-pressed="true">⚡ STORM // HIGH</button><button id="secondary-detail-toggle" class="storm-status-chip secondary-detail-toggle" type="button" aria-pressed="false" title="Show deeper technical sections">DETAILS // OFF</button><button id="command-launcher" class="command-launcher" type="button" aria-label="Open command palette">CTRL K</button>
       <span class="pulse"></span>
       <span id="github-api-state">PUBLIC TELEMETRY INITIALIZING</span>
       <time id="command-clock" datetime="">--:--:--</time>
@@ -506,7 +506,7 @@
       <p class="truth-note">Telemetry is derived from GitHub’s public API and covers public repositories only. It is not an organization-wide production-health indicator.</p>
     </section>
 
-    <section class="operations-console" id="operations-console" aria-label="Public operations console">
+    <section class="operations-console" id="operations-console" aria-label="Public operations console" data-secondary-detail="true">
       <div class="ops-head">
         <div><p class="eyebrow">DPN://PUBLIC_OPERATIONS_FEED</p><h2>Live engineering activity.<br><span>Public evidence only.</span></h2></div>
         <div class="ops-state"><span class="live-dot"></span><strong>GITHUB PUBLIC API</strong><small id="ops-last-sync">awaiting first sync</small></div>
@@ -650,7 +650,7 @@
 
     <section class="storm-divider" aria-hidden="true"><span>01000100 01000101 01010110</span><b>DPN // BINARY STORM</b><span>01010000 01001001 01001111 01001110 01000101 01000101 01010010</span></section>
 
-    <section class="section fusion-mesh" id="fusion-mesh">
+    <section class="section fusion-mesh" id="fusion-mesh" data-secondary-detail="true">
       <div class="section-head">
         <p class="eyebrow">01B // PUBLIC FUSION MESH</p>
         <h2>Registered public surfaces.<br><span>Mapped without pretending they are live integrations.</span></h2>
@@ -764,7 +764,7 @@
       </div>
     </section>
 
-    <section class="section product-families" id="product-families">
+    <section class="section product-families" id="product-families" data-secondary-detail="true">
       <div class="section-head">
         <p class="eyebrow">02B // PRODUCT CONSTELLATIONS</p>
         <h2>One ecosystem.<br><span>Multiple operating domains.</span></h2>
@@ -1015,7 +1015,7 @@
 
     <section class="storm-divider" aria-hidden="true"><span>00110100 01000100 01010000 01001110</span><b>TRUST // EVIDENCE // RECOVERY</b><span>01010010 01000101 01010011 01010100 01001111 01010010 01000101</span></section>
 
-    <section class="section evidence-matrix" id="evidence-matrix">
+    <section class="section evidence-matrix" id="evidence-matrix" data-secondary-detail="true">
       <div class="section-head">
         <p class="eyebrow">03C // PUBLIC ENGINEERING EVIDENCE</p>
         <h2>Evidence you can<br><span>actually inspect.</span></h2>
@@ -1063,7 +1063,7 @@
       </article>
     </section>
 
-    <section class="section capture-factory" id="capture-factory">
+    <section class="section capture-factory" id="capture-factory" data-secondary-detail="true">
       <div class="section-head">
         <p class="eyebrow">03D // CAPTURE OPERATIONS + RUN INTELLIGENCE</p>
         <h2>Turn source proof into<br><span>repeatable runtime evidence.</span></h2>
@@ -1249,7 +1249,7 @@
       <div id="lineage-board" class="lineage-board"><p class="feed-empty">Building public version lineage…</p></div>
     </section>
 
-    <section class="section build-journal" id="build-journal">
+    <section class="section build-journal" id="build-journal" data-secondary-detail="true">
       <div class="section-head">
         <p class="eyebrow">05B // PUBLIC BUILD JOURNAL</p>
         <h2>Progress,<br><span>with public context.</span></h2>
@@ -1343,20 +1343,15 @@
         <button type="button" data-target="product-worlds"><span>00Y</span><strong>Live Product Shells</strong><small>Source-structured navigation, multi-monitor evidence and product runtime theater</small></button>
         <button type="button" data-target="company"><span>01</span><strong>Company Core</strong><small>Leadership, mission, DPN DNA</small></button>
         <button type="button" data-target="founder-command"><span>01A</span><strong>Founder Command</strong><small>Aaron “Diesel” Sherk, public DPN history and operating philosophy</small></button>
-        <button type="button" data-target="fusion-mesh"><span>02</span><strong>Public Fusion Mesh</strong><small>Registry topology, event bus and node drawer</small></button>
         <button type="button" data-target="architecture"><span>03</span><strong>Architecture Atlas</strong><small>Planes, fabric and system models</small></button>
-        <button type="button" data-target="product-families"><span>04</span><strong>Product Constellations</strong><small>Browse the DPN ecosystem by operating domain</small></button>
         <button type="button" data-target="projects"><span>05</span><strong>Public Work</strong><small>Live repository discovery and project dossiers</small></button>
         <button type="button" data-target="inside-builds"><span>06</span><strong>Visual Evidence Museum</strong><small>26+ captures and source-backed interface views</small></button>
         <button type="button" data-target="release-explorer"><span>07</span><strong>Release Explorer</strong><small>Public releases and evidence vocabulary</small></button>
-        <button type="button" data-target="evidence-matrix"><span>08</span><strong>Evidence Matrix</strong><small>README, security, license, architecture and release evidence</small></button>
-        <button type="button" data-target="capture-factory"><span>09</span><strong>Runtime Capture Factory</strong><small>Repo-native screenshot automation and runtime manifest discovery</small></button>
         <button type="button" data-target="runtime-evidence-intake"><span>10</span><strong>Runtime Evidence Intake</strong><small>Validated capture manifests and repo-hosted runtime images</small></button>
         <button type="button" data-target="verification-board"><span>11</span><strong>Product Verification Board</strong><small>Actual captures, source visuals, provenance, releases and repo evidence</small></button>
         <button type="button" data-target="trust"><span>12</span><strong>Trust Center</strong><small>Security, reliability, incident response</small></button>
         <button type="button" data-target="standards"><span>13</span><strong>Engineering Standards</strong><small>Governance and reusable templates</small></button>
         <button type="button" data-target="build-lineage"><span>14</span><strong>Build Lineage</strong><small>Public versions, pushes, releases and visual evidence</small></button>
-        <button type="button" data-target="build-journal"><span>15</span><strong>Public Build Journal</strong><small>Push and release activity with context</small></button>
         <button type="button" data-target="roadmap"><span>16</span><strong>Public Direction</strong><small>Foundations DPN is building toward</small></button>
       </div>
     </form>
