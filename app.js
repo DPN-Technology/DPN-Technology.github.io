@@ -1204,7 +1204,13 @@
     if(!els.palette||!els.launcher)return;
     const open=()=>{if(typeof els.palette.showModal==="function"&&!els.palette.open)els.palette.showModal();els.paletteSearch?.focus();addTerminal("CMD","Command palette opened");};
     const close=()=>{if(els.palette.open)els.palette.close();};
-    const closeAndGo=target=>{close();document.getElementById(target)?.scrollIntoView({behavior:"smooth",block:"start"});addTerminal("NAV",`Command jump: ${target}`);};
+    const closeAndGo=target=>{
+      close();
+      const node=document.getElementById(target);
+      if(node?.dataset.secondaryDetail==="true")setSecondaryDetails(true);
+      node?.scrollIntoView({behavior:"smooth",block:"start"});
+      addTerminal("NAV",`Command jump: ${target}`);
+    };
     els.launcher.addEventListener("click",open);$("mobile-command-launcher")?.addEventListener("click",open);
     window.addEventListener("keydown",event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();if(els.palette.open)close();else open();}});
     els.paletteResults?.addEventListener("click",event=>{
@@ -1376,6 +1382,8 @@
 
     resize();
     window.addEventListener("resize", resize, { passive: true });
+    window.addEventListener("orientationchange", resize, { passive: true });
+    window.visualViewport?.addEventListener("resize", resize, { passive: true });
     requestAnimationFrame(frame);
     addTerminal("VISUAL", "DPN Website-matched binary storm online");
   }
@@ -1575,7 +1583,10 @@
   }
 
   function setupVisualMode(){
-    const button=$("visual-mode-toggle");if(!button)return;const modes=["full","balanced","low"],saved=localStorage.getItem("dpn-command-visual-mode");state.visualMode=modes.includes(saved)?saved:(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"low":"full");
+    const button=$("visual-mode-toggle");if(!button)return;
+    const modes=["full","balanced","low"],saved=localStorage.getItem("dpn-command-visual-mode");
+    const compact=window.matchMedia("(max-width: 760px), (pointer: coarse)").matches;
+    state.visualMode=modes.includes(saved)?saved:(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"low":compact?"balanced":"full");
     const apply=()=>{document.documentElement.dataset.visualMode=state.visualMode;button.textContent=state.visualMode==="full"?"FX // FULL":state.visualMode==="balanced"?"FX // BALANCED":"FX // LOW";localStorage.setItem("dpn-command-visual-mode",state.visualMode);};apply();
     button.addEventListener("click",()=>{state.visualMode=modes[(modes.indexOf(state.visualMode)+1)%modes.length];apply();addTerminal("VISUAL",`Performance mode: ${state.visualMode.toUpperCase()}`);});
   }
@@ -3039,6 +3050,14 @@
   }
 
 
+  function setSecondaryDetails(value){
+    const button=$("secondary-detail-toggle");
+    document.body.classList.toggle("advanced-depth",value);
+    button?.setAttribute("aria-pressed",String(value));
+    if(button)button.textContent=value?"DETAILS // ON":"DETAILS // OFF";
+    try{localStorage.setItem("dpn-secondary-detail",value?"on":"off")}catch{}
+  }
+
   function setupSecondaryDetails(){
     const button=$("secondary-detail-toggle");
     const secondaryIds=new Set(["operations-console","fusion-mesh","product-families","evidence-matrix","capture-factory","build-journal"]);
@@ -3046,14 +3065,8 @@
     let enabled=false;
     try{enabled=localStorage.getItem("dpn-secondary-detail")==="on"}catch{}
     if(secondaryIds.has(deepTarget))enabled=true;
-    const apply=value=>{
-      document.body.classList.toggle("advanced-depth",value);
-      button?.setAttribute("aria-pressed",String(value));
-      if(button)button.textContent=value?"DETAILS // ON":"DETAILS // OFF";
-      try{localStorage.setItem("dpn-secondary-detail",value?"on":"off")}catch{}
-    };
-    apply(enabled);
-    button?.addEventListener("click",()=>apply(!document.body.classList.contains("advanced-depth")));
+    setSecondaryDetails(enabled);
+    button?.addEventListener("click",()=>setSecondaryDetails(!document.body.classList.contains("advanced-depth")));
   }
 
   function setupVerificationBoard() {
