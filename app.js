@@ -220,12 +220,9 @@
     ["product-worlds","Product Worlds"],
     ["company","Company + Leadership"],
     ["founder-command","Founder Command"],
-    ["product-families","Product Constellations"],
-    ["fusion-mesh","Public Fusion Mesh"],
     ["architecture","Architecture Atlas"],
     ["projects","Public Project Dossiers"],
     ["inside-builds","Visual Evidence Museum"],
-    ["capture-factory","Runtime Capture Factory"],
     ["runtime-evidence-intake","Runtime Evidence Intake"],
     ["verification-board","Product Verification Board"],
     ["build-lineage","Build Lineage"],
@@ -1574,7 +1571,7 @@
     if(!els.paletteResults)return;els.paletteResults.querySelectorAll(".dynamic-command").forEach(node=>node.remove());
     const repoButtons=state.repos.slice(0,20).map(repo=>`<button type="button" class="dynamic-command" data-project="${escapeHtml(repo.name)}"><span>PRJ</span><strong>${escapeHtml(repo.name)}</strong><small>Open public project dossier</small></button>`).join("");
     const evidenceButtons=evidenceCatalog().slice(0,30).map(item=>`<button type="button" class="dynamic-command" data-evidence="${escapeHtml(item.slug)}"><span>VIS</span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.type.toUpperCase())} visual evidence</small></button>`).join("");
-    els.paletteResults.insertAdjacentHTML("beforeend",repoButtons+evidenceButtons+'<button type="button" class="dynamic-command" data-target="product-worlds"><span>CMD</span><strong>Open Product Worlds</strong><small>Enter the six cinematic DPN product subsystems</small></button><button type="button" class="dynamic-command" data-action="actual-captures"><span>CMD</span><strong>Show Actual Captures</strong><small>Filter the evidence museum to runtime/project output</small></button><button type="button" class="dynamic-command" data-action="capture-gaps"><span>CMD</span><strong>Show Capture Gaps</strong><small>Find source-derived screens awaiting runtime capture</small></button><button type="button" class="dynamic-command" data-target="verification-board"><span>CMD</span><strong>Open Product Verification Board</strong><small>Inspect proof state product by product</small></button><button type="button" class="dynamic-command" data-target="capture-factory"><span>CMD</span><strong>Open Capture Operations</strong><small>Launch manual runtime evidence factories</small></button><button type="button" class="dynamic-command" data-target="runtime-evidence-intake"><span>CMD</span><strong>Open Runtime Evidence Intake</strong><small>Inspect validated repo-hosted runtime captures</small></button>');
+    els.paletteResults.insertAdjacentHTML("beforeend",repoButtons+evidenceButtons+'<button type="button" class="dynamic-command" data-target="product-worlds"><span>CMD</span><strong>Open Product Worlds</strong><small>Enter the six cinematic DPN product subsystems</small></button><button type="button" class="dynamic-command" data-action="actual-captures"><span>CMD</span><strong>Show Actual Captures</strong><small>Filter the evidence museum to runtime/project output</small></button><button type="button" class="dynamic-command" data-action="capture-gaps"><span>CMD</span><strong>Show Capture Gaps</strong><small>Find source-derived screens awaiting runtime capture</small></button><button type="button" class="dynamic-command" data-target="verification-board"><span>CMD</span><strong>Open Product Verification Board</strong><small>Inspect proof state product by product</small></button><button type="button" class="dynamic-command" data-target="runtime-evidence-intake"><span>CMD</span><strong>Open Runtime Evidence Intake</strong><small>Inspect validated repo-hosted runtime captures</small></button>');
   }
 
   function setupVisualMode(){
@@ -3041,6 +3038,24 @@
     renderSystemNexus();
   }
 
+
+  function setupSecondaryDetails(){
+    const button=$("secondary-detail-toggle");
+    const secondaryIds=new Set(["operations-console","fusion-mesh","product-families","evidence-matrix","capture-factory","build-journal"]);
+    const deepTarget=(location.hash||"").replace(/^#/,"").split(/[?&]/)[0];
+    let enabled=false;
+    try{enabled=localStorage.getItem("dpn-secondary-detail")==="on"}catch{}
+    if(secondaryIds.has(deepTarget))enabled=true;
+    const apply=value=>{
+      document.body.classList.toggle("advanced-depth",value);
+      button?.setAttribute("aria-pressed",String(value));
+      if(button)button.textContent=value?"DETAILS // ON":"DETAILS // OFF";
+      try{localStorage.setItem("dpn-secondary-detail",value?"on":"off")}catch{}
+    };
+    apply(enabled);
+    button?.addEventListener("click",()=>apply(!document.body.classList.contains("advanced-depth")));
+  }
+
   function setupVerificationBoard() {
     $("verification-search")?.addEventListener("input",renderVerificationBoard);
     $("verification-filter")?.addEventListener("change",renderVerificationBoard);
@@ -3074,6 +3089,7 @@
 
   setupEvents();
   setupReadability();
+  setupSecondaryDetails();
   setupGuidedDemo();
   setupSystemNexus();
   setupVisualOverdrive();
