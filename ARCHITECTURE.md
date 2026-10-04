@@ -178,8 +178,8 @@ v2.8 keeps the static browser-only runtime while adding richer client-side navig
 ```text
 Browser
   ├─ index.html
-  ├─ styles.v2.8.css
-  ├─ app.v2.8.js
+  ├─ styles.css
+  ├─ app.js
   ├─ service-worker.js
   ├─ same-origin static evidence assets
   └─ GitHub public API
@@ -638,3 +638,8 @@ Public Proof Coverage is computed deterministically from public evidence categor
 The Nexus does not introduce new telemetry sources or privileged APIs. It reads the same public GitHub metadata, evidence registry, release records and validated runtime-manifest state used elsewhere in the site.
 
 Nexus actions delegate into existing surfaces: Guided Demo, Live Product Shell, Product Focus, Project Dossier and public repository source.
+
+
+## Stable asset policy
+
+The live GitHub Pages surface uses `index.html`, `styles.css`, and `app.js`. Historical versions are preserved by Git history rather than copied into the repository root. This keeps the deploy surface small, prevents stale asset drift, and makes service-worker cache invalidation explicit through the cache namespace.
