@@ -1,3 +1,14 @@
+## v5.1 — UX Audit + Repository Consolidation
+
+- Audited the public Command Center layout for clipping, overflow, responsive scaling, dialog sizing and navigation density.
+- Converted the crowded one-row command header into a responsive two-row layout with scroll-safe navigation and controls.
+- Added viewport-safe sizing for evidence dialogs, product focus, Guided Demo and System Nexus surfaces.
+- Reworked the visual overdrive deck for smaller screens so cards enter a real grid instead of overlapping absolute-positioned layouts.
+- Added global min-width, media and long-label protections so advanced cards shrink and wrap instead of being cut off.
+- Consolidated the live frontend to stable `app.js` and `styles.css` assets.
+- Removed legacy copied JS/CSS generations from the repository root; Git history remains the source of historical versions.
+- Rotated the service-worker cache namespace to v5.1 so deployed clients receive the consolidated assets.
+
 ## v5.0 — System Nexus
 
 - Added a full-screen DPN System Nexus accessible from the top command bar.
