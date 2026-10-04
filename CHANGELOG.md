@@ -1,3 +1,19 @@
+## v5.0 — System Nexus
+
+- Added a full-screen DPN System Nexus accessible from the top command bar.
+- Added a global six-product ecosystem graph with DPN Core, animated relationship paths and product nodes.
+- Added runtime-promotion markers to product nodes when validated runtime-manifest evidence is accepted.
+- Added transparent 100-point Public Proof Coverage scoring for each major product.
+- Public Proof Coverage is explicitly not a health, security, uptime, readiness or customer-use score.
+- Added proof breakdowns for validated runtime capture, mapped visuals, README, security, licensing, architecture, releases, capture factory and accepted runtime manifest.
+- Added Nexus detail panels with public push age, release count, visual count and primary language.
+- Added product module summaries and runtime-first visual evidence previews.
+- Added direct Nexus actions for Guided Demo, Live Product Shell, Full Focus, Project Dossier and public source.
+- Added keyboard shortcut N to open the System Nexus when focus is not inside a text control.
+- Added ecosystem relationship paths as a public navigation/product model only, not runtime topology.
+- Promoted Command Center assets to `app.v5.0.js` and `styles.v5.0.css`.
+- Bumped evidence/run caches and service-worker namespace to v5.0.
+
 ## v4.3 — Guided Demo Mode
 
 - Added a full-screen, client-ready Guided Demo Mode accessible from the top command bar.
