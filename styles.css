@@ -3184,3 +3184,16 @@ section,[class*="grid"],[class*="panel"],[class*="shell"],[class*="stage"]{min-w
   .top-status .replay-boot,.top-status .guided-demo-toggle,.top-status .presentation-toggle,.top-status .share-view,.top-status .install-app{display:none!important}
   .topnav a{font-size:.66rem!important}
 }
+
+
+/* v5.1.1 information architecture: keep the public path focused, preserve depth on demand */
+body:not(.advanced-depth) [data-secondary-detail="true"]{display:none!important}
+.secondary-detail-toggle{border-color:rgba(255,255,255,.14)!important}
+body.advanced-depth .secondary-detail-toggle{
+  color:#fff!important;
+  border-color:rgba(255,38,55,.5)!important;
+  box-shadow:0 0 18px rgba(229,9,20,.15)
+}
+@media(max-width:650px){
+  .secondary-detail-toggle{display:inline-flex!important}
+}
