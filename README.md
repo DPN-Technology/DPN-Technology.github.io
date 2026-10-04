@@ -370,3 +370,26 @@ The top-bar DEMO control opens a full-screen tour across the six major Product W
 The demo supports product selection, previous/next evidence navigation, thumbnails, keyboard arrows, autoplay, public repository statistics, subsystem summaries, evidence-boundary labels and handoff into either the Live Product Shell or Full Focus viewer.
 
 Autoplay is presentation-only and does not trigger any repository workflow, product process or runtime action.
+
+
+## v5.0 system nexus
+
+v5.0 adds a global ecosystem command surface above the individual Product Worlds.
+
+The top-bar NEXUS control opens a full-screen graph covering Operational Control, Aqua Labs, Death the Developer, DPN One, Service Desk and Network Mapper. The graph is a public product/navigation relationship model; it is not a production network or verified runtime dependency topology.
+
+Each product receives a transparent Public Proof Coverage score out of 100. The score measures visible public engineering evidence only:
+
+- 25 points — validated runtime capture accepted through the runtime-manifest pipeline;
+- 15 points — mapped visual evidence;
+- 10 points — README/product documentation;
+- 10 points — security policy;
+- 10 points — license/third-party record;
+- 10 points — architecture evidence;
+- 10 points — public release record;
+- 5 points — runtime capture factory;
+- 5 points — accepted runtime manifest.
+
+The score is deliberately labeled as public proof coverage and must not be interpreted as product quality, security posture, uptime, production readiness or customer usage.
+
+The Nexus detail panel can launch the selected product into Guided Demo, its Live Product Shell, Full Focus, Project Dossier or the public GitHub source.
