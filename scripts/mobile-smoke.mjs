@@ -49,7 +49,26 @@ else pass("dynamic mobile viewport listener present");
 if(!app.includes('node?.dataset.secondaryDetail==="true"'))fail("hidden detail navigation auto-reveal missing");
 else pass("hidden detail navigation auto-reveals");
 
-if(!sw.includes("dpn-command-center-v5.2"))fail("service worker cache was not rotated");
-else pass("service worker cache v5.2");
+// The cache namespace must follow the deployed site's advertised version.
+// Avoid baking yesterday's release number into every future mobile smoke run.
+const siteVersion=html.match(/DPN COMMAND CENTER \/\/ (v\d+\.\d+)/)?.[1];
+if(!siteVersion)fail("advertised site version not found");
+else if(!sw.includes(`dpn-command-center-${siteVersion}`))fail(`service worker cache must match ${siteVersion}`);
+else pass(`service worker cache aligned to ${siteVersion}`);
+
+const frontierJs=fs.readFileSync("frontiers.js","utf8");
+const frontierCss=fs.readFileSync("frontiers.css","utf8");
+try{new Function(frontierJs);pass("frontiers.js parses");}catch(error){fail(`frontiers.js syntax: ${error.message}`);}
+if(!html.includes('id="frontiers"'))fail("2026 frontier section missing");
+else pass("2026 frontier section present");
+const cards=[...html.matchAll(/class="frontier-card(?: featured)?"/g)].length;
+if(cards<10)fail(`frontier registry incomplete: ${cards} cards`);
+else pass(`frontier initiative cards: ${cards}`);
+if(!frontierCss.includes("@media(max-width:650px)"))fail("frontier narrow screen layout missing");
+else pass("frontier mobile layout present");
+for(const file of ["./frontiers.css","./frontiers.js"]){
+ if(!sw.includes(file))fail(`PWA offline cache missing ${file}`);
+ else pass(`PWA includes ${file}`);
+}
 
 if(process.exitCode)process.exit(process.exitCode);
