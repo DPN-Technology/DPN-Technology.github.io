@@ -181,7 +181,7 @@
   const ARCH_PRODUCTS = {"core":["DPN-One","DPN-Operational-Control","DPN-Executive-Control-System"],"identity":["DPN-One","DPN-Executive-Control-System","DPN-Human-Resources-Software"],"observability":["DPN-Watch-Tower","DPN-Network-Mapper","DPN-Operational-Control"],"automation":["DPN-AI","DPN-Operational-Control","DPN-Workforce-Time-Management-System"],"integration":["DPN-One","DPN-Operational-Control","DPN-Aqua-Labs-Point-of-Sale-System"],"intelligence":["DPN-AI","DPN-Death-the-Developer"],"recovery":["DPN-OS","DPN-Watch-Tower","DPN-Executive-Control-System"]};
 
   const BASE_TITLE = "DPN Technology // GitHub Command Center";
-  const BASE_DESCRIPTION = "DPN Technology Command Center — inspect public products, engineering evidence, releases, architecture, build lineage and trust controls.";
+  const BASE_DESCRIPTION = "DPN Technology Command Center — public software, AI, language tooling, secure IT operations, interactive simulations, frontier research, evidence and trust.";
 
   const EVIDENCE_PROVENANCE = {
     "aqua-desktop-dashboard.svg": { repo:"DPN-Aqua-Labs-Point-of-Sale-System", platform:"desktop", files:["app/modern_ui.py"], note:"Current PySide6 Store Command Center structure." },
@@ -217,6 +217,7 @@
 
   const PRESENTATION_STEPS = [
     ["top","Command Center Core"],
+    ["frontiers","2026 Ecosystem Expansion"],
     ["product-worlds","Product Worlds"],
     ["company","Company + Leadership"],
     ["founder-command","Founder Command"],
@@ -275,11 +276,11 @@
   function familyForRepo(name){
     const value=String(name||"").toLowerCase();
     if(/aqua/.test(value))return"retail";
-    if(/dpn-ai|death-the-developer/.test(value))return"ai";
-    if(/operational-control|executive-control|watch-tower|network-mapper|dpn-os/.test(value))return"control";
+    if(/dpn-ai|death-the-developer|dpn-language|plantpulse/.test(value))return"ai";
+    if(/operational-control|executive-control|watch-tower|network-mapper|dpn-os|directory-services|system-optimizer|enterprise-greenkeeper/.test(value))return"control";
     if(/workforce|human-resources|service-desk/.test(value))return"workforce";
     if(/dpn-one/.test(value))return"platform";
-    if(/memespace|tool-die|simulator|fivem/.test(value))return"interactive";
+    if(/memespace|tool-die|simulator|fivem|last-settlement|dreambound/.test(value))return"interactive";
     return"platform";
   }
 
@@ -1579,7 +1580,7 @@
     if(!els.paletteResults)return;els.paletteResults.querySelectorAll(".dynamic-command").forEach(node=>node.remove());
     const repoButtons=state.repos.slice(0,20).map(repo=>`<button type="button" class="dynamic-command" data-project="${escapeHtml(repo.name)}"><span>PRJ</span><strong>${escapeHtml(repo.name)}</strong><small>Open public project dossier</small></button>`).join("");
     const evidenceButtons=evidenceCatalog().slice(0,30).map(item=>`<button type="button" class="dynamic-command" data-evidence="${escapeHtml(item.slug)}"><span>VIS</span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.type.toUpperCase())} visual evidence</small></button>`).join("");
-    els.paletteResults.insertAdjacentHTML("beforeend",repoButtons+evidenceButtons+'<button type="button" class="dynamic-command" data-target="product-worlds"><span>CMD</span><strong>Open Product Worlds</strong><small>Enter the six cinematic DPN product subsystems</small></button><button type="button" class="dynamic-command" data-action="actual-captures"><span>CMD</span><strong>Show Actual Captures</strong><small>Filter the evidence museum to runtime/project output</small></button><button type="button" class="dynamic-command" data-action="capture-gaps"><span>CMD</span><strong>Show Capture Gaps</strong><small>Find source-derived screens awaiting runtime capture</small></button><button type="button" class="dynamic-command" data-target="verification-board"><span>CMD</span><strong>Open Product Verification Board</strong><small>Inspect proof state product by product</small></button><button type="button" class="dynamic-command" data-target="runtime-evidence-intake"><span>CMD</span><strong>Open Runtime Evidence Intake</strong><small>Inspect validated repo-hosted runtime captures</small></button>');
+    els.paletteResults.insertAdjacentHTML("beforeend",repoButtons+evidenceButtons+'<button type="button" class="dynamic-command" data-target="frontiers"><span>NEW</span><strong>2026 DPN Expansion</strong><small>PhaseGate, DPN Language, Linux identity, security, simulations and tooling</small></button><button type="button" class="dynamic-command" data-target="product-worlds"><span>CMD</span><strong>Open Product Worlds</strong><small>Enter the six cinematic DPN product subsystems</small></button><button type="button" class="dynamic-command" data-action="actual-captures"><span>CMD</span><strong>Show Actual Captures</strong><small>Filter the evidence museum to runtime/project output</small></button><button type="button" class="dynamic-command" data-action="capture-gaps"><span>CMD</span><strong>Show Capture Gaps</strong><small>Find source-derived screens awaiting runtime capture</small></button><button type="button" class="dynamic-command" data-target="verification-board"><span>CMD</span><strong>Open Product Verification Board</strong><small>Inspect proof state product by product</small></button><button type="button" class="dynamic-command" data-target="runtime-evidence-intake"><span>CMD</span><strong>Open Runtime Evidence Intake</strong><small>Inspect validated repo-hosted runtime captures</small></button>');
   }
 
   function setupVisualMode(){
