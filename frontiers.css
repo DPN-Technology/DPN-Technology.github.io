@@ -1,0 +1,58 @@
+/* DPN Command Center v5.3 — October 2026 public roadmap / frontier registry.
+   Additive component, fully scoped. Respects reduced motion and narrow viewports. */
+#frontiers{--frontier-red:#ff3149;--frontier-edge:rgba(255,63,83,.26);position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse 90% 65% at 80% 0%,rgba(179,13,32,.16),transparent 70%),radial-gradient(ellipse 75% 80% at 8% 70%,rgba(80,4,12,.22),transparent 75%),#07080b;padding:clamp(3.5rem,8vw,7rem) max(1.3rem,calc((100vw - 1440px)/2));border-block:1px solid var(--frontier-edge);color:#f3f5f8}
+#frontiers:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;pointer-events:none;background-image:linear-gradient(rgba(255,57,78,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,57,78,.1) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(180deg,black,transparent 93%)}
+#frontiers *{box-sizing:border-box}
+#frontiers .frontier-brow{font:700 .73rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.19em;color:#ff8290;text-transform:uppercase}
+#frontiers .frontier-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:clamp(1.5rem,4vw,4rem);align-items:end;margin-bottom:2rem}
+#frontiers .frontier-head h2{font-size:clamp(2.5rem,5.8vw,5.7rem);line-height:1.01;letter-spacing:-.055em;margin:.9rem 0 1rem;font-weight:900;max-width:14ch;text-wrap:balance}
+#frontiers .frontier-head h2 span{color:#ff344a}
+#frontiers .frontier-head p{color:#a8adb8;line-height:1.72;max-width:58ch}
+#frontiers .frontier-feature{border:1px solid var(--frontier-edge);background:linear-gradient(140deg,rgba(92,9,20,.34),rgba(10,11,16,.92));padding:1.4rem 1.5rem 1.6rem;position:relative;box-shadow:0 24px 85px rgba(0,0,0,.24)}
+#frontiers .frontier-feature:before{content:"";position:absolute;left:0;top:0;width:68px;height:3px;background:#ff3349;box-shadow:0 0 25px #ff304c}
+#frontiers .frontier-feature strong{display:block;font-weight:800;letter-spacing:.03em;margin:.55rem 0}
+#frontiers .frontier-feature p{font-size:.92rem;margin:.65rem 0 0}
+#frontiers .frontier-pipeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.1);margin:2rem 0 2.6rem}
+#frontiers .frontier-pipeline>div{padding:1.05rem 1.2rem;background:#0d1015;min-width:0}
+#frontiers .frontier-pipeline b{display:block;font-size:.95rem;letter-spacing:.02em;margin:.28rem 0}
+#frontiers .frontier-pipeline small{font-size:.77rem;line-height:1.4;color:#a8afba}
+#frontiers .frontier-index{color:#ff566b;font:700 .75rem ui-monospace,monospace}
+#frontiers .frontier-register{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:space-between;align-items:end;margin-bottom:1.2rem}
+#frontiers .frontier-register h3{font-size:clamp(1.5rem,2.5vw,2.3rem);letter-spacing:-.025em;margin:.45rem 0}
+#frontiers .frontier-register p{color:#aab2bc;margin:0;font-size:.87rem}
+#frontiers .frontier-filters{display:flex;flex-wrap:wrap;gap:.5rem}
+#frontiers .frontier-filters button{border:1px solid rgba(255,255,255,.17);background:#11151b;border-radius:2px;padding:.67rem .82rem;font:700 .69rem/1.2 ui-monospace,monospace;letter-spacing:.065em;color:#bec4cf;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+#frontiers .frontier-filters button:hover,#frontiers .frontier-filters button:focus-visible{border-color:#fc5064;color:#fff}
+#frontiers .frontier-filters button[aria-pressed="true"]{color:#fff;background:rgba(195,19,41,.33);border-color:#ff536c;box-shadow:inset 0 -2px #ff304c}
+#frontiers .frontier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+#frontiers .frontier-card{--card-accent:#ff394e;position:relative;display:flex;flex-direction:column;min-width:0;min-height:262px;padding:1.5rem;background:linear-gradient(144deg,rgba(28,24,31,.92),rgba(9,11,15,.98) 60%);border:1px solid rgba(255,255,255,.115);box-shadow:0 20px 55px rgba(0,0,0,.22);transition:transform .2s,border-color .2s;overflow:hidden}
+#frontiers .frontier-card:before{content:"";position:absolute;right:-68px;top:-72px;width:230px;height:230px;border:1px solid color-mix(in srgb,var(--card-accent) 32%,transparent);border-radius:50%;box-shadow:0 0 0 35px rgba(255,255,255,.009),0 0 0 70px rgba(255,255,255,.012);pointer-events:none}
+#frontiers .frontier-card:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:42%;background:var(--card-accent);box-shadow:0 0 18px var(--card-accent);opacity:.8}
+#frontiers .frontier-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--card-accent) 70%,transparent)}
+#frontiers .frontier-card[hidden]{display:none!important}
+#frontiers .frontier-card[data-kind="research"]{--card-accent:#c89dff}
+#frontiers .frontier-card[data-kind="security"]{--card-accent:#f87952}
+#frontiers .frontier-card[data-kind="platform"]{--card-accent:#69c9f5}
+#frontiers .frontier-card[data-kind="experience"]{--card-accent:#e6b65d}
+#frontiers .frontier-card[data-kind="automation"]{--card-accent:#74e0a1}
+#frontiers .frontier-card .frontier-top{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap;margin-bottom:1.4rem}
+#frontiers .frontier-card .frontier-number{font:700 .75rem ui-monospace,monospace;color:var(--card-accent);margin-right:auto}
+#frontiers .frontier-card .frontier-status{font:700 .64rem/1.2 ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.24);padding:.38rem .47rem;color:#c9cdd4}
+#frontiers .frontier-card h4{font-size:clamp(1.22rem,1.8vw,1.65rem);letter-spacing:-.03em;margin:0 0 .65rem;color:#fff;position:relative;z-index:1}
+#frontiers .frontier-card p{font-size:.88rem;line-height:1.7;color:#aeb5bf;margin:0 0 1.4rem;position:relative;z-index:1}
+#frontiers .frontier-card .frontier-links{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:auto;align-items:center;position:relative;z-index:1}
+#frontiers .frontier-card .frontier-links a{font:750 .73rem/1.4 ui-monospace,monospace;letter-spacing:.045em;color:var(--card-accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.16rem}
+#frontiers .frontier-card .frontier-links a:hover{text-decoration:underline}
+#frontiers .frontier-card .frontier-links span{font:.71rem ui-monospace,monospace;color:#aab2bd}
+#frontiers .frontier-card.featured{grid-column:span 2;min-height:290px;background:radial-gradient(ellipse at 80% 20%,rgba(100,26,67,.22),transparent 60%),linear-gradient(140deg,#141219,#080b10)}
+#frontiers .frontier-card.featured h4{font-size:clamp(1.7rem,3vw,2.5rem)}
+#frontiers .frontier-card.featured p{max-width:64ch}
+#frontiers .frontier-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:1.65rem;padding:1rem 1.2rem;background:rgba(40,12,18,.28);border:1px solid rgba(255,70,80,.19);font-size:.83rem;line-height:1.6;color:#afb7c1}
+#frontiers .frontier-foot strong{color:#fff}
+#frontiers .frontier-foot a{color:#ff7f8b;font:700 .75rem ui-monospace,monospace;text-decoration:none;white-space:nowrap}
+#frontiers .frontier-foot a:hover{text-decoration:underline}
+#frontiers .frontier-count{color:#d1d7df;font:700 .73rem ui-monospace,monospace}
+#frontiers a:focus-visible,#frontiers button:focus-visible{outline:2px solid #ff6f82;outline-offset:3px}
+@media(max-width:1050px){#frontiers .frontier-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#frontiers .frontier-head{grid-template-columns:1fr}#frontiers .frontier-feature{max-width:680px}}
+@media(max-width:650px){#frontiers{padding:3.7rem 1.05rem}#frontiers .frontier-head h2{font-size:clamp(2.15rem,11vw,3.4rem)}#frontiers .frontier-grid{grid-template-columns:1fr}#frontiers .frontier-card.featured{grid-column:auto}#frontiers .frontier-card{min-height:225px;padding:1.3rem}#frontiers .frontier-pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}#frontiers .frontier-filters button{font-size:.65rem;padding:.61rem .7rem}#frontiers .frontier-card.featured h4{font-size:1.85rem}}
+@media(prefers-reduced-motion:reduce){#frontiers .frontier-card,#frontiers .frontier-filters button{transition:none}#frontiers .frontier-card:hover{transform:none}}
