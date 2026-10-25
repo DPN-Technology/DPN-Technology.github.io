@@ -2,7 +2,7 @@
   "id": "/",
   "name": "DPN Technology Command Center",
   "short_name": "DPN Command",
-  "description": "Public DPN Technology products, engineering evidence, architecture, releases, build lineage and trust controls.",
+  "description": "DPN Technology public products, 2026 initiatives, PhaseGate research, IT automation, AI, simulations, engineering proof and trust.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -23,6 +23,11 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "2026 New Frontiers",
+      "short_name": "Frontiers",
+      "url": "/#frontiers"
+    },
     {
       "name": "Product Worlds",
       "short_name": "Worlds",
