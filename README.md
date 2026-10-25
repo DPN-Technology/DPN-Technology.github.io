@@ -1,6 +1,6 @@
 # DPN Technology GitHub Command Center
 
-Static, dependency-free source for the planned `DPN-Technology.github.io` organization site.
+Static, dependency-free source for the published `DPN-Technology.github.io` organization Command Center.
 
 ## Design goals
 
@@ -393,3 +393,47 @@ Each product receives a transparent Public Proof Coverage score out of 100. The 
 The score is deliberately labeled as public proof coverage and must not be interpreted as product quality, security posture, uptime, production readiness or customer usage.
 
 The Nexus detail panel can launch the selected product into Guided Demo, its Live Product Shell, Full Focus, Project Dossier or the public GitHub source.
+
+
+## v5.3 — October 2026 ecosystem expansion
+
+The public Command Center now features an above-the-fold **New Frontiers** registry and filtered initiative cards, while retaining the existing v5.2 visual design, Product Worlds, architecture, evidence, trust and public GitHub explorer.
+
+Verified public repository-linked entries include:
+
+- **DPN Language** — experimental Rust-powered .dpn interpreter and IT automation tooling.
+- **DPN Directory Services** — public repo initialized; currently empty, not an implemented AD-compatible domain controller.
+- **DPN System Optimizer** — Windows local-first preview/approval-based maintenance.
+- **DPN PlantPulse** — active plant-health application development.
+- **MemeSpace** — development with security validation and production approval still required.
+- **The Last Settlement** — 3D branch under development, separate from the earlier 2D stable Windows release.
+- **DPN OS** — active Linux system/control environment development.
+- **DPN Enterprise Greenkeeper** — public audit/reporting project that explicitly discloses incomplete/degraded reporting.
+- **DPN AI and Death the Developer** — public AI and software-building work.
+
+Additional public-facing directions are explained conservatively without linking private repositories or claiming unverified execution:
+
+- **DPN PhaseGate** — exploratory research. Matter transfer has **not** been achieved or experimentally validated.
+- **Authorized security assessment services** — development direction; client work requires written authorization and supporting evidence.
+
+### Site integration
+
+- `frontiers.css` scopes the new black/red responsive design to `#frontiers`.
+- `frontiers.js` implements accessible, local-only initiative filters, and the content remains readable without scripting.
+- `app.js` includes a guided-presentation step and Command Palette entry for the expansion, and improves new-public-repository family classification.
+- `service-worker.js` uses the v5.3 offline cache namespace and includes both new files.
+- `site.webmanifest` has a New Frontiers shortcut.
+
+### Integrity and messaging requirements
+
+The GitHub Pages site remains **public-only**. Never expose L3/L4 infrastructure, personal credentials, private repository contents, confidential clients or operational secrets. A repository or CI status is not a proof of production readiness. A concept rendering is not a working hardware prototype, a security review is not completed certification, and an in-development 3D branch is not equivalent to a stable 3D release.
+
+### Testing checklist
+
+1. Open `/#frontiers` and verify every card, stage label and public source link.
+2. Test **All / R&D / Platforms / IT + Automation / Security / Experiences** filters with keyboard and touch.
+3. Check narrow 360px, 768px and 1440px layouts for overflow.
+4. Open Command Palette and select the 2026 DPN Expansion command.
+5. Enter guided presentation and confirm the new frontier step.
+6. Reload online then offline and confirm cached styles, scripting and readable fallback.
+7. Inspect the browser console for JS errors; confirm no private repo API calls or internal details are surfaced.
